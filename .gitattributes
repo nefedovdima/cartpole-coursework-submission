@@ -1,0 +1,9 @@
+# Preserve audited graphics and their SHA verbatim. SVG path data is generated;
+# line-by-line whitespace diagnostics are not meaningful for these assets.
+results/figures/*.svg -diff linguist-generated=true
+*.pdf binary
+*.png binary
+*.mp4 binary
+*.npz binary
+# csv.DictWriter audit exports use CRLF. Preserve exact source bytes and SHA.
+results/tables/**/*.csv -text whitespace=cr-at-eol

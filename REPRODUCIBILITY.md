@@ -20,6 +20,7 @@ export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 .venv/bin/python -B -m unittest discover -s tests -p 'test_cart_safety.py' -v
 .venv/bin/python -B -m unittest discover -s tests -p 'test_inference_compatibility.py' -v
 .venv/bin/python -m pip check
+sha256sum -c provenance/SHA256SUMS
 git diff --check
 ```
 
