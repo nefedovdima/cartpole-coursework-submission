@@ -4,6 +4,7 @@ from pydrake.systems.controllers import FiniteHorizonLinearQuadraticRegulatorOpt
 from pydrake.systems.primitives import Linearize
 
 from cartpole.common import Config, Error, State
+from cartpole.common.metrics import upright_angle_error
 from cartpole.simulator.pydrake.system import CartPoleSystem
 
 import math
@@ -27,18 +28,20 @@ class BalanceLQRControl:
 
         # Q = numpy.diag([1, 13, 1, 4])
         # R = numpy.diag([0.18])
-        Q = numpy.diag([10, 1, 10, 1])
-        R = numpy.diag([0.5])
+        self.Q = numpy.diag([10, 1, 10, 1])
+        self.R = numpy.diag([0.5])
 
         linearized = Linearize(system, context)
-        self.K, _ = LinearQuadraticRegulator(linearized.A(), linearized.B(), Q, R)
+        self.K, _ = LinearQuadraticRegulator(linearized.A(), linearized.B(), self.Q, self.R)
         
     def __call__(self, state):
         q = state.as_array()
         error = q - self.q0
-        print(f"ERROR: {error[0]:.2f} {error[1]:.2f} {error[2]:.2f} {error[3]:.2f}")
+        # State.as_array() is [x, theta, v, omega]. Feedback is u=-K*error;
+        # only the angular error is periodic. CartPoleEpisode limits u.
+        error[1] = upright_angle_error(state.pole_angle)
         u = -self.K @ error
-        return u[0]
+        return float(u[0])
     
 class ReverseBalanceLQRControl:
     def __init__(self, config):
@@ -67,20 +70,21 @@ class ReverseBalanceLQRControl:
     def __call__(self, state):
         q = state.as_array()
         error = q - self.q0
-        print(f"ERROR: {error[0]:.2f} {error[1]:.2f} {error[2]:.2f} {error[3]:.2f}")
         u = -self.K @ error
         return u[0]
 
 
 class TrajectoryLQRControl:
-    def __init__(self, config, trajectory):
-        Q = numpy.diag([1, 1, 1, 1])
-        R = numpy.diag([1])
+    def __init__(self, config, trajectory, *, Q=None, R=None, Qf=None):
+        Q = numpy.eye(4) if Q is None else Q
+        R = numpy.eye(1) if R is None else R
 
         options = FiniteHorizonLinearQuadraticRegulatorOptions()
         options.x0 = trajectory.states
         options.u0 = trajectory.targets
-        options.Qf = Q
+        options.Qf = Q if Qf is None else Qf
+        options.simulator_config.accuracy = 1e-6
+        options.simulator_config.max_step_size = .01
 
         system = CartPoleSystem()
         context = system.CreateContext(config, State().as_array())
@@ -103,6 +107,8 @@ class TrajectoryLQRControl:
 
         error = q - q0
         K = self.regulator.K.value(stamp)
-        u = u0 - K @ error
+        # Drake's affine term accounts for the reconstructed nominal's
+        # collocation defect. The physical input remains a scalar acceleration.
+        u = u0 - K @ error - self.regulator.k0.value(stamp)
 
-        return u[0]
+        return float(u[0, 0])

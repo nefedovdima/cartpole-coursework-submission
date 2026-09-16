@@ -1,0 +1,426 @@
+{
+  "schema": 1,
+  "id": "dqn_mechanics_v2",
+  "algorithm": "DQN",
+  "purpose": "experiment",
+  "environment": {
+    "id": "cartpole-request-v2-DQN-on",
+    "environment_api": "CourseworkCartPole-request-v2",
+    "filter": {
+      "enabled": true,
+      "version": "cart-safety-v1",
+      "limits": {
+        "position_limit": 0.24,
+        "velocity_limit": 2.0,
+        "acceleration_limit": 4.0,
+        "position_reserve": 1e-06,
+        "velocity_reserve": 1e-06,
+        "max_dt": 0.01,
+        "min_dt": 1e-09,
+        "dt_roundoff": 1e-12,
+        "intervention_inset": 1e-08
+      }
+    },
+    "physical_config": {
+      "max_position": 0.25,
+      "max_velocity": 2.0,
+      "max_acceleration": 4.0,
+      "hard_max_position": 0.27,
+      "hard_max_velocity": 2.5,
+      "hard_max_acceleration": 5.0,
+      "clamp_position": false,
+      "clamp_velocity": false,
+      "clamp_acceleration": false,
+      "pole_length": 0.18,
+      "pole_mass": 0.118,
+      "gravity": 9.8
+    },
+    "reward_version": "R1-v0",
+    "reward": {
+      "version": "R1-v0",
+      "reference_dt": 0.01,
+      "evaluation_state": "end of actual transition",
+      "formula": "dt_actual/.01*h*q(x/.25)*q(v/2)*q(omega/2)*q(.1*u_applied/4)-5*terminated",
+      "height_formula": "h=(1-cos(theta))/2",
+      "factor_formula": "q(z)=1/(1+z^2)",
+      "normalizations": {
+        "position_m": 0.25,
+        "velocity_m_per_s": 2.0,
+        "angular_velocity_rad_per_s": 2.0,
+        "acceleration_m_per_s2": 4.0
+      },
+      "weights": {
+        "height": 1.0,
+        "position": 1.0,
+        "velocity": 1.0,
+        "angular_velocity": 1.0,
+        "acceleration": 0.1,
+        "failure": 5.0
+      },
+      "running_reward_bounds": [
+        0.0,
+        1.0
+      ],
+      "survival_constant": 0.0,
+      "duration_tolerance_seconds": 1e-12
+    },
+    "gamma": 0.9980019986673331,
+    "timestep": 0.01,
+    "horizon": 10.0,
+    "integrator": {
+      "type": "RungeKutta3Integrator",
+      "target_accuracy": 1e-06,
+      "maximum_step_size": 0.01,
+      "fixed_step_mode": false
+    },
+    "observation": "[x/.25,v/2,sin(theta),cos(theta),omega/sqrt(9.8/.18)]",
+    "observation_dtype": "float32",
+    "action": {
+      "space": "Discrete(9)",
+      "grid": [
+        -4.0,
+        -3.0,
+        -2.0,
+        -1.0,
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0
+      ],
+      "replay": "integer request index",
+      "mapping": "u_requested=grid[index]; float64 normalized adapter before common physical filter",
+      "evaluation": "deterministic argmax index; identical adapter",
+      "filtered_dtype": "binary64; no requantization"
+    },
+    "reset": {
+      "distribution": "lower-box-v1",
+      "low": [
+        -0.02,
+        -0.02,
+        -0.05,
+        -0.05
+      ],
+      "high": [
+        0.02,
+        0.02,
+        0.05,
+        0.05
+      ],
+      "fields": [
+        "cart_position",
+        "cart_velocity",
+        "pole_angle",
+        "pole_angular_velocity"
+      ],
+      "admission": "filter_inner",
+      "attempts": 1,
+      "rejection_sampling": false
+    },
+    "seed_scheme": {
+      "entropy": [
+        "training_seed",
+        20260915,
+        2
+      ],
+      "generator": "PCG64",
+      "spawn_order": [
+        "env_reset",
+        "action_space",
+        "ddpg_noise_reserved"
+      ]
+    },
+    "replay": {
+      "n_steps": 1,
+      "n_envs": 1,
+      "optimize_memory_usage": false,
+      "handle_timeout_termination": true
+    },
+    "native_errors": {
+      "physical": [
+        2,
+        3
+      ],
+      "fatal": [
+        1,
+        4,
+        5,
+        6
+      ],
+      "unknown": "fatal"
+    },
+    "horizon_semantics": "external truncation; bootstrap terminal_observation; failure wins",
+    "refusal": "dt=0; applied=None; reward=-5; terminated; store once; no bootstrap",
+    "algorithm": "DQN"
+  },
+  "settings": {
+    "policy": "MlpPolicy",
+    "device": "explicit_cli",
+    "seed": 0,
+    "learning_rate": 0.0003,
+    "buffer_size": 8192,
+    "learning_starts": 128,
+    "batch_size": 64,
+    "train_freq": 1,
+    "gradient_steps": 1,
+    "tau": 1.0,
+    "gamma": 0.9980019986673331,
+    "n_steps": 1,
+    "optimize_memory_usage": false,
+    "replay_buffer_class": "AuditedReplayBuffer",
+    "replay_buffer_kwargs": {
+      "handle_timeout_termination": true
+    },
+    "target_update_interval": 1000,
+    "stats_window_size": 100,
+    "tensorboard_log": null,
+    "verbose": 0,
+    "_init_setup_model": true,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ],
+      "activation_fn": "ReLU",
+      "optimizer_class": "Adam",
+      "optimizer_kwargs": {
+        "eps": 1e-08
+      },
+      "normalize_images": true
+    },
+    "exploration_fraction": 0.2,
+    "exploration_initial_eps": 1.0,
+    "exploration_final_eps": 0.05,
+    "max_grad_norm": 10.0
+  },
+  "evaluation_interval": 10000,
+  "recovery_interval": 256,
+  "recovery_seconds": 60.0,
+  "keep_recovery": 3,
+  "telemetry_interval": 128,
+  "experience_block_size": 256,
+  "save_reserve_seconds": 30.0,
+  "validation_sha256": "5abe491f232c7425195749236570676776718c4c0a4cd14d9c8a6f7211a1f0b5",
+  "versions": {
+    "torch": "2.14.0",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0",
+    "drake": "1.57.0",
+    "numpy": "2.5.3",
+    "gymnasium": "1.3.0",
+    "matplotlib": "3.11.2"
+  },
+  "protocol": {
+    "n_envs": 1,
+    "dtype": "float32",
+    "amp": false,
+    "compile": false,
+    "evaluation": "none; mechanics only; no best selection",
+    "best": "PLAN physical selection_score; complete evaluations only",
+    "series": "sequential; fresh models; no final states",
+    "version": "local-ready-v2",
+    "profile_cuda": false,
+    "automatic_evaluation": false,
+    "pilot_max_transitions": 512,
+    "pilot_max_seconds": 300.0,
+    "scientific_result": false,
+    "planned_transitions": 512,
+    "seed_scheme": {
+      "entropy": [
+        "training_seed",
+        20260915,
+        2
+      ],
+      "generator": "PCG64",
+      "spawn_order": [
+        "env_reset",
+        "action_space",
+        "ddpg_noise_reserved"
+      ]
+    },
+    "main_budget_status": "mechanics",
+    "updates_per_transition": "one after learning_starts; resume completes owed update once"
+  },
+  "preparation_version": "local-ready-v2",
+  "training_contract": {
+    "id": "cartpole-request-v2-DQN-on",
+    "sha256": "35e669b8ab5908de9cb6fa71886f7ce19d5627dffb32fd2278f51c4421932af4",
+    "specification": {
+      "id": "cartpole-request-v2-DQN-on",
+      "environment_api": "CourseworkCartPole-request-v2",
+      "filter": {
+        "enabled": true,
+        "version": "cart-safety-v1",
+        "limits": {
+          "position_limit": 0.24,
+          "velocity_limit": 2.0,
+          "acceleration_limit": 4.0,
+          "position_reserve": 1e-06,
+          "velocity_reserve": 1e-06,
+          "max_dt": 0.01,
+          "min_dt": 1e-09,
+          "dt_roundoff": 1e-12,
+          "intervention_inset": 1e-08
+        }
+      },
+      "physical_config": {
+        "max_position": 0.25,
+        "max_velocity": 2.0,
+        "max_acceleration": 4.0,
+        "hard_max_position": 0.27,
+        "hard_max_velocity": 2.5,
+        "hard_max_acceleration": 5.0,
+        "clamp_position": false,
+        "clamp_velocity": false,
+        "clamp_acceleration": false,
+        "pole_length": 0.18,
+        "pole_mass": 0.118,
+        "gravity": 9.8
+      },
+      "reward_version": "R1-v0",
+      "reward": {
+        "version": "R1-v0",
+        "reference_dt": 0.01,
+        "evaluation_state": "end of actual transition",
+        "formula": "dt_actual/.01*h*q(x/.25)*q(v/2)*q(omega/2)*q(.1*u_applied/4)-5*terminated",
+        "height_formula": "h=(1-cos(theta))/2",
+        "factor_formula": "q(z)=1/(1+z^2)",
+        "normalizations": {
+          "position_m": 0.25,
+          "velocity_m_per_s": 2.0,
+          "angular_velocity_rad_per_s": 2.0,
+          "acceleration_m_per_s2": 4.0
+        },
+        "weights": {
+          "height": 1.0,
+          "position": 1.0,
+          "velocity": 1.0,
+          "angular_velocity": 1.0,
+          "acceleration": 0.1,
+          "failure": 5.0
+        },
+        "running_reward_bounds": [
+          0.0,
+          1.0
+        ],
+        "survival_constant": 0.0,
+        "duration_tolerance_seconds": 1e-12
+      },
+      "gamma": 0.9980019986673331,
+      "timestep": 0.01,
+      "horizon": 10.0,
+      "integrator": {
+        "type": "RungeKutta3Integrator",
+        "target_accuracy": 1e-06,
+        "maximum_step_size": 0.01,
+        "fixed_step_mode": false
+      },
+      "observation": "[x/.25,v/2,sin(theta),cos(theta),omega/sqrt(9.8/.18)]",
+      "observation_dtype": "float32",
+      "action": {
+        "space": "Discrete(9)",
+        "grid": [
+          -4.0,
+          -3.0,
+          -2.0,
+          -1.0,
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        "replay": "integer request index",
+        "mapping": "u_requested=grid[index]; float64 normalized adapter before common physical filter",
+        "evaluation": "deterministic argmax index; identical adapter",
+        "filtered_dtype": "binary64; no requantization"
+      },
+      "reset": {
+        "distribution": "lower-box-v1",
+        "low": [
+          -0.02,
+          -0.02,
+          -0.05,
+          -0.05
+        ],
+        "high": [
+          0.02,
+          0.02,
+          0.05,
+          0.05
+        ],
+        "fields": [
+          "cart_position",
+          "cart_velocity",
+          "pole_angle",
+          "pole_angular_velocity"
+        ],
+        "admission": "filter_inner",
+        "attempts": 1,
+        "rejection_sampling": false
+      },
+      "seed_scheme": {
+        "entropy": [
+          "training_seed",
+          20260915,
+          2
+        ],
+        "generator": "PCG64",
+        "spawn_order": [
+          "env_reset",
+          "action_space",
+          "ddpg_noise_reserved"
+        ]
+      },
+      "replay": {
+        "n_steps": 1,
+        "n_envs": 1,
+        "optimize_memory_usage": false,
+        "handle_timeout_termination": true
+      },
+      "native_errors": {
+        "physical": [
+          2,
+          3
+        ],
+        "fatal": [
+          1,
+          4,
+          5,
+          6
+        ],
+        "unknown": "fatal"
+      },
+      "horizon_semantics": "external truncation; bootstrap terminal_observation; failure wins",
+      "refusal": "dt=0; applied=None; reward=-5; terminated; store once; no bootstrap",
+      "algorithm": "DQN"
+    },
+    "sources": {
+      "cartpole/rl/training_contract.py": "aec421679861a6f30b881b28d4e7360f225e189b038617b059e0b113192aa1d1",
+      "cartpole/rl/env.py": "202ca8c254154ee75d4c981bd536007d46c46e8ff615463611f3f5eeee87de43",
+      "cartpole/rl/pilot_config.py": "32f9a3726ee043a0eac18a831d262693905c633480dffe60ce6194dee185774f",
+      "cartpole/rl/reward_pilot.py": "e4d152160b9e2eeb71aaa4f3bb6824ff6881d7b10c7d1b0cee6f8ba7f370a584",
+      "cartpole/safety.py": "7a0a0ff6450dac4d542bceb6bcaecbb7752bf65fd53078cb94d9b0a8d940ae26",
+      "cartpole/simulator/constrained.py": "353ad4d0974fe1dea0903481956770bfca10399ddc99bc8e149163892fe3f9de",
+      "cartpole/simulator/pydrake/simulator.py": "ce04333e1625955cd5a31d5695705e3645720ac060fa45184f83f66bd8986021",
+      "cartpole/simulator/pydrake/system.py": "e5e4e2b4980eae6f80dd5975f891c0999c4ed416694647bd13aa661d3f4d6f43",
+      "cartpole/experiment_config.py": "9212e135daf683b43f240c0347cae6edeb6a257c9ba6725a8e93cb038846c667",
+      "cartpole/common/interface.py": "72f44c3460b78683337c6547989aa5f59e28b831bd44f05908f3d84270f64a67",
+      "cartpole/experiments/lqr_hold.py": "2a373a86261286c26d6119bb6484c0f8b496f8822f9bc9a4d5a3f226b4fe5484",
+      "cartpole/common/metrics.py": "0d9f3d19e5b6b62f645b145dadf9d7ecdf4460947dea7828f100d55207bddd71",
+      "cartpole/common/episode_log.py": "85979717a5d93ab702d60f9a2a46af2fd1ce79d690514fa840f55a7ba9d76806",
+      "cartpole/experiments/gym_diagnostics.py": "e74eac8a947d459832e828f551eb8181c9e128b30b3ff2cd6ceaf59e4fb8ca07",
+      "cartpole/experiments/safety_metrics.py": "68196937c541c5e25dcdf8b24d5a8880761ad34df845d7d984bad8401aea7af8",
+      "cartpole/rl/training_diagnostics.py": "a38706c9c0f6647b6f39beef695a0667fc3a595cf0bad03fd88aa0786dff0092",
+      "cartpole/experiments/cloud_learning.py": "3710204895c0b90bd879e8493238c28eec72b28fd08a8ff764a5f263a9617330",
+      "cartpole/experiments/cloud_runner.py": "dbb6d348b32815f5fe32dfe7a1842559b9a3617c9b9b408ce6b2d88a47b11300",
+      "cartpole/experiments/cloud_checkpoint.py": "6b35eed082aaceb329f29f118b8537eb97b43881e31cb1051a75aa2307fae3d9",
+      "cartpole/experiments/cloud_evaluation.py": "4760379e76ea964486a8094638bab6226dd6f6035d7380b9d286e4d29be2167b",
+      "cartpole/experiments/cloud_config.py": "0843c4000a7d33593c71d33b5204659e40cc8e8c4f55ee9ad3483562ae82754e",
+      "cartpole/experiments/cloud_checks.py": "51815fd834ca92093b46c7f3531c834a49c7de4bb19d2adcd42bbbccf25d1f37",
+      "cartpole/experiments/filtered_sac.py": "e91977c615e3a8de464791cb0eec825fd822d6e79963fbd015410a49a877afe7",
+      "cartpole/rl/methods.py": "9eba26853acd376341222a5cff7cd414a9ccdf8ca69527f619b8b8757abed28f",
+      "cartpole/experiments/method_config.py": "d39fa149ac85677c889a098f32591d47370c1d2dcdc91adedb2369ecbce6beeb"
+    }
+  }
+}

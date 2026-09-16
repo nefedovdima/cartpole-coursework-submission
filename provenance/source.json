@@ -1,0 +1,12 @@
+{
+  "upstream_url": "https://github.com/robotics-laboratory/cart-pole",
+  "upstream_branch": "linear-stable",
+  "upstream_commit": "57e3bf01435ac6ddc9c70091d9a1dd32dd185d5f",
+  "research_commit": "96332cf7a15ada8f65ef1efb5203f630b084ef0d",
+  "research_url": "https://github.com/nefedovdima/cartpole-coursework",
+  "snapshot_method": "selected byte-identical scientific sources over upstream history; research Git history not imported",
+  "report_source": "cartpole-intermediate-report-20260916",
+  "report_original_sha256": "1b5d93209ebee3d576b6477c1b88fa4ac6cb6d821fbf9b4ad3fb656643ad0d3d",
+  "robustness_status": "prepared; no rollout results",
+  "license_status": "no upstream license found; no new license grant"
+}

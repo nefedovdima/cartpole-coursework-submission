@@ -1,0 +1,64 @@
+{
+  "DDPG_on": {
+    "baseline": "ddpg_on_baseline",
+    "keys": {
+      "ddpg_on_baseline": [
+        0.0,
+        0.3333333333333333,
+        0.0,
+        2.3385000000000002,
+        2.3385000000000002
+      ],
+      "ddpg_on_lr1e4": [
+        0.0,
+        0.21666666666666667,
+        0.0,
+        0.9248333333333333,
+        0.9271666666666666
+      ],
+      "ddpg_on_warmup5000": [
+        0.0,
+        0.6666666666666666,
+        0.0,
+        4.705,
+        4.705
+      ]
+    },
+    "selected_for_confirmation": "ddpg_on_warmup5000",
+    "decision": "confirm_fixed_variant",
+    "strict_improvement": true,
+    "rule": "lexicographic min success, mean success, min mean final hold, mean mean final hold, mean mean longest hold; validation20, all3seeds, best in training mode; exact ties retain baseline",
+    "named_excluded": true
+  },
+  "SAC_off": {
+    "baseline": "sac_off_baseline",
+    "keys": {
+      "sac_off_baseline": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0736666666666667
+      ],
+      "sac_off_lr1e4": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0013333333333333346
+      ],
+      "sac_off_warmup5000": [
+        0.0,
+        0.3333333333333333,
+        0.0,
+        2.0113333333333334,
+        2.1261666666666668
+      ]
+    },
+    "selected_for_confirmation": "sac_off_warmup5000",
+    "decision": "confirm_fixed_variant",
+    "strict_improvement": true,
+    "rule": "lexicographic min success, mean success, min mean final hold, mean mean final hold, mean mean longest hold; validation20, all3seeds, best in training mode; exact ties retain baseline",
+    "named_excluded": true
+  }
+}

@@ -1,0 +1,2 @@
+# Audited Linux x86_64 / Python 3.12 CPU environment. Scientific pins unchanged.
+-r requirements-cloud-check.txt

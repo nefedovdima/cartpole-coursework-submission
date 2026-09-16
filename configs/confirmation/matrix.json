@@ -1,0 +1,52 @@
+{
+  "version": "development-confirmation-v1",
+  "stage": "confirmation",
+  "transitions": 100000,
+  "seeds": [
+    3,
+    4,
+    5
+  ],
+  "variants": [
+    "confirm_ddpg_on_warmup5000",
+    "confirm_sac_off_warmup5000"
+  ],
+  "training_jobs": [
+    {
+      "id": "train_confirm_ddpg_on_warmup5000_seed3",
+      "variant": "confirm_ddpg_on_warmup5000",
+      "seed": 3
+    },
+    {
+      "id": "train_confirm_ddpg_on_warmup5000_seed4",
+      "variant": "confirm_ddpg_on_warmup5000",
+      "seed": 4
+    },
+    {
+      "id": "train_confirm_ddpg_on_warmup5000_seed5",
+      "variant": "confirm_ddpg_on_warmup5000",
+      "seed": 5
+    },
+    {
+      "id": "train_confirm_sac_off_warmup5000_seed3",
+      "variant": "confirm_sac_off_warmup5000",
+      "seed": 3
+    },
+    {
+      "id": "train_confirm_sac_off_warmup5000_seed4",
+      "variant": "confirm_sac_off_warmup5000",
+      "seed": 4
+    },
+    {
+      "id": "train_confirm_sac_off_warmup5000_seed5",
+      "variant": "confirm_sac_off_warmup5000",
+      "seed": 5
+    }
+  ],
+  "max_new_trainings": 6,
+  "baseline_retraining": false,
+  "stage1_retraining": false,
+  "final5000": false,
+  "parameters_locked": true,
+  "criterion": "each seed best validation20 success>=.8; at least2 last>=.8; all jobs complete"
+}

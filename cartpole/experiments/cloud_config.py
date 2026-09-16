@@ -1,0 +1,152 @@
+"""Frozen E6d SAC/TQC configurations, separate from the historical CPU pilots."""
+import copy
+import inspect
+import json
+from pathlib import Path
+
+from cartpole.experiments.lqr_hold import ROOT
+from cartpole.rl.pilot_config import make_pilot_config
+from cartpole.rl.sac import sac_settings
+
+
+NAMES = ('sac64_reference', 'sac256', 'tqc256')
+FILTERED_NAMES = ('sac_filtered_pilot',)
+from cartpole.experiments.method_config import NAMES as METHOD_NAMES
+from cartpole.experiments.development_config import NAMES as DEVELOPMENT_NAMES
+from cartpole.experiments.confirmation_config import NAMES as CONFIRMATION_NAMES
+ALL_NAMES = NAMES + FILTERED_NAMES + METHOD_NAMES + DEVELOPMENT_NAMES + CONFIRMATION_NAMES
+VALIDATION_SHA256 = '5abe491f232c7425195749236570676776718c4c0a4cd14d9c8a6f7211a1f0b5'
+VERSIONS = {'torch': '2.14.0', 'stable-baselines3': '2.9.0', 'sb3-contrib': '2.9.0',
+            'drake': '1.57.0', 'numpy': '2.5.3', 'gymnasium': '1.3.0', 'matplotlib': '3.11.2'}
+
+
+def specification(name):
+    if name in CONFIRMATION_NAMES:
+        from cartpole.experiments.confirmation_config import specification as confirmation_specification
+        return confirmation_specification(name)
+    if name in DEVELOPMENT_NAMES:
+        from cartpole.experiments.development_config import specification as development_specification
+        return development_specification(name)
+    if name in METHOD_NAMES:
+        from cartpole.experiments.method_config import specification as method_specification
+        return method_specification(name)
+    if name in FILTERED_NAMES:
+        from cartpole.rl.training_contract import identity
+        cfg = specification('sac64_reference')
+        contract = identity()
+        cfg.update(id=name, preparation_version='S3a', training_contract=contract,
+                   environment=contract['specification'], evaluation_interval=512,
+                   recovery_interval=256, recovery_seconds=60., telemetry_interval=128,
+                   experience_block_size=256, save_reserve_seconds=30.)
+        cfg['settings'].update(buffer_size=8192, learning_starts=128, batch_size=64)
+        cfg['protocol'].update(profile_cuda=False, pilot_max_transitions=512, pilot_max_seconds=300.,
+                               scientific_result=False, seed_scheme=contract['specification']['seed_scheme'])
+        return cfg
+    if name not in NAMES:
+        raise ValueError(f'unknown cloud configuration: {name}')
+    settings = sac_settings()
+    settings['device'] = 'explicit_cli'
+    settings['replay_buffer_class'] = 'AuditedReplayBuffer'
+    width = 64 if name == 'sac64_reference' else 256
+    settings['policy_kwargs']['net_arch'] = {'pi': [width, width], 'qf': [width, width]}
+    if name == 'tqc256':
+        # Installed sb3-contrib 2.9 supports n_steps; retain explicit n_steps=1.
+        settings['policy_kwargs']['n_quantiles'] = 25
+        settings['top_quantiles_to_drop_per_net'] = 2
+    return dict(schema=1, id=name, algorithm='TQC' if name == 'tqc256' else 'SAC',
+                purpose='experiment', environment=make_pilot_config(), settings=settings,
+                evaluation_interval=10000, recovery_interval=5000,
+                recovery_seconds=120., keep_recovery=3, telemetry_interval=1000,
+                experience_block_size=5000, save_reserve_seconds=120.,
+                validation_sha256=VALIDATION_SHA256, versions=VERSIONS,
+                protocol=dict(n_envs=1, dtype='float32', amp=False, compile=False,
+                              evaluation='deterministic; fixed 20 validation + 3 named',
+                              best='PLAN physical selection_score; complete evaluations only',
+                              series='sequential; fresh models; no final states'))
+
+
+def load_config(name, seed, device, *, purpose='experiment'):
+    if name not in ALL_NAMES:
+        raise ValueError(f'unknown cloud configuration: {name}')
+    if isinstance(seed, bool) or not isinstance(seed, int) or not 0 <= seed < 2**32:
+        raise ValueError('training seed must be an integer in [0, 2**32)')
+    if device not in ('cpu', 'cuda') and not (isinstance(device, str) and device.startswith('cuda:')):
+        raise ValueError('device must explicitly be cpu or cuda[:index], never auto')
+    directory = 'confirmation' if name in CONFIRMATION_NAMES else 'development' if name in DEVELOPMENT_NAMES else 'cloud'
+    data = json.loads((ROOT/'configs'/directory/f'{name}.json').read_text())
+    if data != specification(name):
+        raise ValueError('cloud protocol file differs from its frozen E6d specification')
+    data['settings'].update(seed=seed, device=device)
+    if purpose not in ('experiment', 'smoke', 'benchmark'):
+        raise ValueError('unknown run purpose')
+    data['purpose'] = purpose
+    if name in DEVELOPMENT_NAMES and (purpose != 'experiment' or seed not in (0,1,2)):
+        raise ValueError('development stage1 permits only experiment seeds0/1/2; confirmation is not authorized')
+    if name in CONFIRMATION_NAMES and (purpose != 'experiment' or seed not in (3,4,5)):
+        raise ValueError('confirmation permits only experiment seeds3/4/5')
+    if purpose == 'smoke':
+        data['settings'].update(buffer_size=32, learning_starts=8, batch_size=16)
+        data.update(recovery_interval=32, recovery_seconds=10., telemetry_interval=1,
+                    save_reserve_seconds=2., experience_block_size=32)
+    elif purpose == 'benchmark':
+        data['save_reserve_seconds'] = 5.
+    return data
+
+
+def validate_config(config):
+    expected = load_config(config['id'], config['settings']['seed'],
+                           config['settings']['device'], purpose=config['purpose'])
+    if config != expected:
+        raise ValueError('environment/algorithm/protocol configuration mismatch')
+
+
+def constructor(config, replay_class):
+    import torch
+    args = copy.deepcopy(config['settings'])
+    args['replay_buffer_class'] = replay_class
+    args['policy_kwargs']['activation_fn'] = torch.nn.ReLU
+    args['policy_kwargs']['optimizer_class'] = torch.optim.Adam
+    if config['algorithm'] == 'DDPG':
+        from cartpole.rl.methods import GeneratorGaussianNoise
+        from cartpole.rl.training_contract import seed_streams
+        args['action_noise'] = GeneratorGaussianNoise(seed_streams(args['seed'])['ddpg_noise_reserved']['seed'])
+    return args
+
+
+def resolved_model(model, config):
+    """Persist constructor defaults as well as the effective network/optimizer."""
+    from stable_baselines3 import SAC, DDPG, DQN
+    from sb3_contrib import TQC
+    classes = {'SAC': SAC, 'TQC': TQC, 'DDPG': DDPG, 'DQN': DQN}
+    if config.get('algorithm') not in classes:
+        raise ValueError(f'unknown algorithm: {config.get("algorithm")}')
+    cls = classes[config['algorithm']]
+    policy_cls = type(model.policy)
+    def defaults(call):
+        return {key: repr(p.default) for key, p in inspect.signature(call).parameters.items()
+                if p.default is not inspect.Parameter.empty}
+    unknown = set(constructor(config, type(model.replay_buffer)))-set(inspect.signature(cls).parameters)
+    if unknown:
+        raise ValueError(f'unsupported installed {cls.__name__} parameters: {sorted(unknown)}')
+    optimizers = [getattr(getattr(model, name, None), 'optimizer', None) for name in ('actor', 'critic', 'policy')]
+    optimizers.append(getattr(model, 'ent_coef_optimizer', None))
+    optimized = {id(p): p for optimizer in optimizers if optimizer is not None
+                 for group in optimizer.param_groups for p in group['params']}
+    return dict(constructor_defaults=defaults(cls), policy_defaults=defaults(policy_cls),
+                policy_class=f'{policy_cls.__module__}.{policy_cls.__name__}',
+                architecture=str(model.policy), device=str(model.device),
+                parameters={key: sum(p.numel() for p in getattr(model, key).parameters())
+                            for key in ('policy', 'actor', 'critic', 'critic_target', 'q_net', 'q_net_target') if hasattr(model, key)},
+                parameters_with_requires_grad=sum(p.numel() for p in model.policy.parameters() if p.requires_grad),
+                optimized_parameters=sum(p.numel() for p in optimized.values()),
+                target_entropy=float(model.target_entropy) if hasattr(model, 'target_entropy') else None,
+                actor_optimizer=repr(model.actor.optimizer) if hasattr(model, 'actor') else None,
+                critic_optimizer=repr(model.critic.optimizer) if hasattr(model, 'critic') else None,
+                optimizers={key: repr(getattr(model, key).optimizer) for key in ('actor', 'critic', 'policy')
+                            if hasattr(getattr(model, key, None), 'optimizer')},
+                replay_class=type(model.replay_buffer).__name__, n_envs=model.n_envs,
+                train_freq=dict(frequency=model.train_freq.frequency, unit=model.train_freq.unit.value),
+                gradient_steps=model.gradient_steps, dtype=str(next(model.policy.parameters()).dtype),
+                one_step_replay=True, n_steps=getattr(model, 'n_steps', 1),
+                quantiles_after_truncation=(model.critic.n_quantiles*model.critic.n_critics
+                    -model.top_quantiles_to_drop_per_net*model.critic.n_critics) if config['algorithm'] == 'TQC' else None)

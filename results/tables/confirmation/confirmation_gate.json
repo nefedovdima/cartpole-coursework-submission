@@ -1,0 +1,94 @@
+{
+  "ddpg_on_warmup5000": {
+    "confirmed": false,
+    "all_jobs_accepted": true,
+    "all_best_ge_08": false,
+    "last_ge_08_count": 0,
+    "required_last_count": 2,
+    "rows": [
+      {
+        "seed": 3,
+        "best_successes": 4,
+        "last_successes": 0,
+        "best_success_rate": 0.2,
+        "last_success_rate": 0.0,
+        "best_ge_08": false,
+        "last_ge_08": false,
+        "accepted_train": true,
+        "accepted_external": true
+      },
+      {
+        "seed": 4,
+        "best_successes": 0,
+        "last_successes": 0,
+        "best_success_rate": 0.0,
+        "last_success_rate": 0.0,
+        "best_ge_08": false,
+        "last_ge_08": false,
+        "accepted_train": true,
+        "accepted_external": true
+      },
+      {
+        "seed": 5,
+        "best_successes": 20,
+        "last_successes": 0,
+        "best_success_rate": 1.0,
+        "last_success_rate": 0.0,
+        "best_ge_08": true,
+        "last_ge_08": false,
+        "accepted_train": true,
+        "accepted_external": true
+      }
+    ],
+    "subset": "validation",
+    "states_per_seed": 20,
+    "named_excluded": true,
+    "parameters_changed": false
+  },
+  "sac_off_warmup5000": {
+    "confirmed": false,
+    "all_jobs_accepted": true,
+    "all_best_ge_08": false,
+    "last_ge_08_count": 0,
+    "required_last_count": 2,
+    "rows": [
+      {
+        "seed": 3,
+        "best_successes": 0,
+        "last_successes": 0,
+        "best_success_rate": 0.0,
+        "last_success_rate": 0.0,
+        "best_ge_08": false,
+        "last_ge_08": false,
+        "accepted_train": true,
+        "accepted_external": true
+      },
+      {
+        "seed": 4,
+        "best_successes": 0,
+        "last_successes": 0,
+        "best_success_rate": 0.0,
+        "last_success_rate": 0.0,
+        "best_ge_08": false,
+        "last_ge_08": false,
+        "accepted_train": true,
+        "accepted_external": true
+      },
+      {
+        "seed": 5,
+        "best_successes": 0,
+        "last_successes": 0,
+        "best_success_rate": 0.0,
+        "last_success_rate": 0.0,
+        "best_ge_08": false,
+        "last_ge_08": false,
+        "accepted_train": true,
+        "accepted_external": true
+      }
+    ],
+    "subset": "validation",
+    "states_per_seed": 20,
+    "named_excluded": true,
+    "parameters_changed": false
+  }
+}

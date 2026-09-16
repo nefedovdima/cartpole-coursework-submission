@@ -1,8 +1,8 @@
 import pydrake
 
-from pydrake.solvers.mathematicalprogram import Solve
+from pydrake.solvers import Solve
 from pydrake.systems.primitives import Linearize
-from pydrake.systems.trajectory_optimization import DirectCollocation
+from pydrake.planning import DirectCollocation
 from pydrake.trajectories import PiecewisePolynomial
 
 from cartpole.common import Config, Error, State
@@ -12,7 +12,7 @@ import math
 import numpy
 
 
-def build_trajectory(config, initial_state, sample_n=100, max_duration=10):
+def make_trajectory_program(config, initial_state, sample_n=100, max_duration=10):
     system = CartPoleSystem()
     context = system.CreateContext(config, initial_state.as_array())
         
@@ -20,8 +20,8 @@ def build_trajectory(config, initial_state, sample_n=100, max_duration=10):
         system,
         context,
         num_time_samples=sample_n,
-        minimum_timestep=0.001,
-        maximum_timestep=0.1,
+        minimum_time_step=0.001,
+        maximum_time_step=0.1,
         input_port_index=system.get_input_port().get_index())
 
     program.AddEqualTimeIntervalsConstraints()
@@ -57,6 +57,12 @@ def build_trajectory(config, initial_state, sample_n=100, max_duration=10):
     # program.AddFinalCost(u**2)
     program.AddFinalCost(x**2)
 
+    # DirectCollocation aliases its plant; keep it alive through the solve.
+    return program, system
+
+
+def build_trajectory(config, initial_state, sample_n=100, max_duration=10):
+    program, system = make_trajectory_program(config, initial_state, sample_n, max_duration)
     result = Solve(program.prog())
     assert result.is_success(), 'Impossible find trajectory'
     
@@ -80,7 +86,7 @@ class Trajectory:
         return time_steps, state_values, target_values
 
     def __call__(self, timestamp):
-        state = self.states.value(timestamp)
+        state = self.states.value(timestamp).reshape(4)
         target = self.targets.value(timestamp)
 
-        return State.from_array(state), target[0] 
+        return State.from_array(state), float(target[0, 0])

@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Cite this coursework and acknowledge the upstream robotics-laboratory/cart-pole project."
+title: "Управление перевёрнутым маятником методами обучения с подкреплением"
+authors:
+  - family-names: "Нефедов"
+    given-names: "Дмитрий"
+version: "intermediate-2026-09-16"
+date-released: "2026-09-16"
+references:
+  - type: software
+    title: "robotics-laboratory/cart-pole"
+    authors:
+      - name: "robotics-laboratory/cart-pole contributors"
+    url: "https://github.com/robotics-laboratory/cart-pole"
+    version: "57e3bf01435ac6ddc9c70091d9a1dd32dd185d5f (linear-stable)"

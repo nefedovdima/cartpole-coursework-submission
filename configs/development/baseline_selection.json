@@ -1,0 +1,207 @@
+{
+  "DDPG_on": {
+    "key": [
+      0.0,
+      0.3333333333333333,
+      0.0,
+      2.3385000000000002,
+      2.3385000000000002
+    ],
+    "validation": [
+      {
+        "episodes": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "boundary_failure_rate": 0.0,
+        "termination_rate": 0.0,
+        "mean_duration": 10.0,
+        "mean_reward": 713.6122931877137,
+        "mean_hold_final": 7.0155,
+        "mean_hold_longest": 7.0155,
+        "mean_control_effort": 33.55967203805821,
+        "lift_count": 20,
+        "mean_first_hold_start": 2.9844999999999997,
+        "maxima": {
+          "max_abs_position": 0.2399989720756161,
+          "max_abs_velocity": 1.3852844248707115,
+          "max_abs_omega": 12.802346762185115,
+          "max_abs_applied_acceleration": 4.0
+        },
+        "mean_rms_acceleration": 1.8319197443151896,
+        "minimum_position_margin_interval": 0.010001000000000065,
+        "minimum_velocity_margin_interval": 0.6147155751292885,
+        "successful_only": {
+          "episodes": 20,
+          "successes": 20,
+          "success_rate": 1.0,
+          "boundary_failure_rate": 0.0,
+          "termination_rate": 0.0,
+          "mean_duration": 10.0,
+          "mean_reward": 713.6122931877137,
+          "mean_hold_final": 7.0155,
+          "mean_hold_longest": 7.0155,
+          "mean_control_effort": 33.55967203805821,
+          "lift_count": 20,
+          "mean_first_hold_start": 2.9844999999999997,
+          "maxima": {
+            "max_abs_position": 0.2399989720756161,
+            "max_abs_velocity": 1.3852844248707115,
+            "max_abs_omega": 12.802346762185115,
+            "max_abs_applied_acceleration": 4.0
+          }
+        },
+        "first_hold_start_count": 20,
+        "mean_first_hold_confirmation": 4.9845,
+        "first_hold_confirmation_count": 20
+      },
+      {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "boundary_failure_rate": 0.0,
+        "termination_rate": 0.0,
+        "mean_duration": 10.0,
+        "mean_reward": 86.50584814776555,
+        "mean_hold_final": 0.0,
+        "mean_hold_longest": 0.0,
+        "mean_control_effort": 124.55784063405258,
+        "lift_count": 0,
+        "mean_first_hold_start": null,
+        "maxima": {
+          "max_abs_position": 0.23999899989008766,
+          "max_abs_velocity": 1.3538566400037828,
+          "max_abs_omega": 15.381931181137286,
+          "max_abs_applied_acceleration": 4.0
+        },
+        "mean_rms_acceleration": 3.5292648072013706,
+        "minimum_position_margin_interval": 0.010001000000000038,
+        "minimum_velocity_margin_interval": 0.6461433599962172,
+        "successful_only": null,
+        "first_hold_start_count": 0,
+        "mean_first_hold_confirmation": null,
+        "first_hold_confirmation_count": 0
+      },
+      {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "boundary_failure_rate": 0.0,
+        "termination_rate": 0.0,
+        "mean_duration": 10.0,
+        "mean_reward": 25.087415775484438,
+        "mean_hold_final": 0.0,
+        "mean_hold_longest": 0.0,
+        "mean_control_effort": 109.90671060113505,
+        "lift_count": 0,
+        "mean_first_hold_start": null,
+        "maxima": {
+          "max_abs_position": 0.23999899999926327,
+          "max_abs_velocity": 1.0000437340908,
+          "max_abs_omega": 7.581876531332841,
+          "max_abs_applied_acceleration": 4.0
+        },
+        "mean_rms_acceleration": 3.315172961735218,
+        "minimum_position_margin_interval": 0.01000100000000001,
+        "minimum_velocity_margin_interval": 0.9999562659092001,
+        "successful_only": null,
+        "first_hold_start_count": 0,
+        "mean_first_hold_confirmation": null,
+        "first_hold_confirmation_count": 0
+      }
+    ],
+    "snapshot": "1789491164457590414"
+  },
+  "SAC_off": {
+    "key": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0736666666666667
+    ],
+    "validation": [
+      {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "boundary_failure_rate": 0.0,
+        "termination_rate": 0.0,
+        "mean_duration": 10.0,
+        "mean_reward": 114.90646663958933,
+        "mean_hold_final": 0.0,
+        "mean_hold_longest": 0.0,
+        "mean_control_effort": 71.77706589809463,
+        "lift_count": 0,
+        "mean_first_hold_start": null,
+        "maxima": {
+          "max_abs_position": 0.13610783864294712,
+          "max_abs_velocity": 0.7551003019243505,
+          "max_abs_omega": 12.594727483188326,
+          "max_abs_applied_acceleration": 3.956752300262451
+        },
+        "mean_rms_acceleration": 2.679124048122242,
+        "minimum_position_margin_interval": 0.11386964589249104,
+        "minimum_velocity_margin_interval": 1.2448996980756495,
+        "successful_only": null,
+        "first_hold_start_count": 0,
+        "mean_first_hold_confirmation": null,
+        "first_hold_confirmation_count": 0
+      },
+      {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "boundary_failure_rate": 0.0,
+        "termination_rate": 0.0,
+        "mean_duration": 10.0,
+        "mean_reward": 181.24696358296964,
+        "mean_hold_final": 0.0,
+        "mean_hold_longest": 0.2040000000000001,
+        "mean_control_effort": 46.575454774356714,
+        "lift_count": 0,
+        "mean_first_hold_start": null,
+        "maxima": {
+          "max_abs_position": 0.17006056550380133,
+          "max_abs_velocity": 0.8586510580739085,
+          "max_abs_omega": 14.145078774816914,
+          "max_abs_applied_acceleration": 3.9749841690063477
+        },
+        "mean_rms_acceleration": 2.1580415537303157,
+        "minimum_position_margin_interval": 0.07992790358211635,
+        "minimum_velocity_margin_interval": 1.1413489419260916,
+        "successful_only": null,
+        "first_hold_start_count": 0,
+        "mean_first_hold_confirmation": null,
+        "first_hold_confirmation_count": 0
+      },
+      {
+        "episodes": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "boundary_failure_rate": 1.0,
+        "termination_rate": 1.0,
+        "mean_duration": 7.620017238833762,
+        "mean_reward": 82.00843459040323,
+        "mean_hold_final": 0.0,
+        "mean_hold_longest": 0.016999999999999994,
+        "mean_control_effort": 52.256112364880025,
+        "lift_count": 0,
+        "mean_first_hold_start": null,
+        "maxima": {
+          "max_abs_position": 0.2500000000000012,
+          "max_abs_velocity": 0.7946336279586701,
+          "max_abs_omega": 22.306287774480708,
+          "max_abs_applied_acceleration": 3.9998559951782227
+        },
+        "mean_rms_acceleration": 2.619542324586519,
+        "minimum_position_margin_interval": -1.2212453270876722e-15,
+        "minimum_velocity_margin_interval": 1.20536637204133,
+        "successful_only": null,
+        "first_hold_start_count": 0,
+        "mean_first_hold_confirmation": null,
+        "first_hold_confirmation_count": 0
+      }
+    ],
+    "snapshot": "1789491164457590414"
+  }
+}

@@ -1,0 +1,4 @@
+# E6d isolated local CPU validation; never install into the working .venv.
+--extra-index-url https://download.pytorch.org/whl/cpu
+-r requirements-cloud-base.txt
+torch==2.14.0+cpu

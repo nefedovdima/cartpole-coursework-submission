@@ -1,0 +1,4355 @@
+{
+  "version": "structured-robustness-dev-v1",
+  "generator": "NumPy PCG64",
+  "generator_seed": 2026091601,
+  "fields": [
+    "cart_position",
+    "cart_velocity",
+    "pole_angle",
+    "pole_angular_velocity"
+  ],
+  "cases": [
+    {
+      "id": "nominal_00",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 0,
+      "initial_state": {
+        "cart_position": 0.013275441174349051,
+        "cart_velocity": 0.01332731035646752,
+        "pole_angle": 0.005017982525201983,
+        "pole_angular_velocity": -0.027751125148808533
+      },
+      "state_sha256": "b42299c6203e7f3a55ad08ced184473587c2696831ed2c726b0957182a5beb82",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22672355882565093,
+          "velocity": 1.9866716896435326,
+          "right_stopping": 0.22670135667548375,
+          "left_stopping": 0.25327444117434905
+        },
+        "requested": {
+          "position": 0.22672455882565093,
+          "velocity": 1.9866726896435325,
+          "right_stopping": 0.22670235667548375,
+          "left_stopping": 0.253275441174349
+        }
+      }
+    },
+    {
+      "id": "nominal_01",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 1,
+      "initial_state": {
+        "cart_position": 0.01974010468755839,
+        "cart_velocity": 0.012618233081269293,
+        "pole_angle": -0.00616258065089996,
+        "pole_angular_velocity": 0.03214692117712124
+      },
+      "state_sha256": "89ef7749ccce8f119d4dcf2254410153af00c6b1c4c933950540846c0461bf59",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2202588953124416,
+          "velocity": 1.987380766918731,
+          "right_stopping": 0.22023899283667994,
+          "left_stopping": 0.2597391046875584
+        },
+        "requested": {
+          "position": 0.2202598953124416,
+          "velocity": 1.9873817669187308,
+          "right_stopping": 0.22023999283667994,
+          "left_stopping": 0.25974010468755837
+        }
+      }
+    },
+    {
+      "id": "nominal_02",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 2,
+      "initial_state": {
+        "cart_position": -0.012810648668092313,
+        "cart_velocity": -0.017951922997238978,
+        "pole_angle": 0.033899657669513056,
+        "pole_angular_velocity": 0.01595186027142756
+      },
+      "state_sha256": "b9b3db4a4229fae2085c0028fbbc941d9ea1e9640297ac7a8c89748da038929c",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22718835133190768,
+          "velocity": 1.9820470770027612,
+          "right_stopping": 0.2528096486680923,
+          "left_stopping": 0.22714806738949533
+        },
+        "requested": {
+          "position": 0.22718935133190768,
+          "velocity": 1.982048077002761,
+          "right_stopping": 0.25281064866809233,
+          "left_stopping": 0.22714906738949533
+        }
+      }
+    },
+    {
+      "id": "nominal_03",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 3,
+      "initial_state": {
+        "cart_position": 0.012900178988882575,
+        "cart_velocity": -0.005974827897334674,
+        "pole_angle": -0.04229020068509226,
+        "pole_angular_velocity": 0.038198567510787956
+      },
+      "state_sha256": "ada60c01e755913a07e994a4dc4ee365c781f136cb6fe102356bf16e57dfbe98",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22709882101111742,
+          "velocity": 1.9940241721026655,
+          "right_stopping": 0.22709882101111742,
+          "left_stopping": 0.2528947166678322
+        },
+        "requested": {
+          "position": 0.22709982101111742,
+          "velocity": 1.9940251721026654,
+          "right_stopping": 0.22709982101111742,
+          "left_stopping": 0.2528957166678322
+        }
+      }
+    },
+    {
+      "id": "nominal_04",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 4,
+      "initial_state": {
+        "cart_position": -0.016401582032777386,
+        "cart_velocity": 0.0118028830074887,
+        "pole_angle": -0.030257763281803775,
+        "pole_angular_velocity": -0.019287640993143285
+      },
+      "state_sha256": "c17b36ddf0f28feed10c4deaa05bf010622019d56c80705904210b2725bac3f2",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2235974179672226,
+          "velocity": 1.9881961169925113,
+          "right_stopping": 0.2563831685268663,
+          "left_stopping": 0.2235974179672226
+        },
+        "requested": {
+          "position": 0.2235984179672226,
+          "velocity": 1.9881971169925112,
+          "right_stopping": 0.2563841685268663,
+          "left_stopping": 0.2235984179672226
+        }
+      }
+    },
+    {
+      "id": "nominal_05",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 5,
+      "initial_state": {
+        "cart_position": 0.004846475027155836,
+        "cart_velocity": 0.014005017437392204,
+        "pole_angle": 0.032842682520809394,
+        "pole_angular_velocity": 0.013553576645703752
+      },
+      "state_sha256": "70544a25f79fa11a3482e770f3243dabd8e592e6fa15083ded2fa3126ae4aca3",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23515252497284417,
+          "velocity": 1.9859939825626078,
+          "right_stopping": 0.23512800740866643,
+          "left_stopping": 0.2448454750271558
+        },
+        "requested": {
+          "position": 0.23515352497284414,
+          "velocity": 1.9859949825626078,
+          "right_stopping": 0.23512900740866644,
+          "left_stopping": 0.24484647502715584
+        }
+      }
+    },
+    {
+      "id": "nominal_06",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 6,
+      "initial_state": {
+        "cart_position": 0.010300305673440181,
+        "cart_velocity": -0.013038544392957112,
+        "pole_angle": -0.041451262696323266,
+        "pole_angular_velocity": -0.0035662547390248184
+      },
+      "state_sha256": "7c666a6ae7615f6c8137c00361af6995908902d7b22f48228081966245ef7030",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22969869432655982,
+          "velocity": 1.986960455607043,
+          "right_stopping": 0.22969869432655982,
+          "left_stopping": 0.2502780552184543
+        },
+        "requested": {
+          "position": 0.22969969432655982,
+          "velocity": 1.986961455607043,
+          "right_stopping": 0.22969969432655982,
+          "left_stopping": 0.2502790552184543
+        }
+      }
+    },
+    {
+      "id": "nominal_07",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 7,
+      "initial_state": {
+        "cart_position": -0.014877604428665233,
+        "cart_velocity": -0.010690798829776877,
+        "pole_angle": -0.03631437706166051,
+        "pole_angular_velocity": 0.0026191523789987348
+      },
+      "state_sha256": "8bd061e05a485da8de8c0b749a425b337b830e062fd3296c238e01d26eda8809",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22512139557133476,
+          "velocity": 1.9893082011702232,
+          "right_stopping": 0.2548766044286652,
+          "left_stopping": 0.22510710892388242
+        },
+        "requested": {
+          "position": 0.22512239557133476,
+          "velocity": 1.9893092011702231,
+          "right_stopping": 0.25487760442866525,
+          "left_stopping": 0.22510810892388242
+        }
+      }
+    },
+    {
+      "id": "nominal_08",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 8,
+      "initial_state": {
+        "cart_position": -0.0005037589387773198,
+        "cart_velocity": 0.013248926244550863,
+        "pole_angle": -0.043995046339734424,
+        "pole_angular_velocity": 0.015358009137380418
+      },
+      "state_sha256": "d1e382efd84be77623f6bcaa5e5d31a059a1872bc3d3b022b3b53946ee80e6ac",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23949524106122266,
+          "velocity": 1.9867500737554493,
+          "right_stopping": 0.24048081718294811,
+          "left_stopping": 0.23949524106122266
+        },
+        "requested": {
+          "position": 0.23949624106122266,
+          "velocity": 1.9867510737554492,
+          "right_stopping": 0.24048181718294812,
+          "left_stopping": 0.23949624106122266
+        }
+      }
+    },
+    {
+      "id": "nominal_09",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 9,
+      "initial_state": {
+        "cart_position": 0.017207495309633964,
+        "cart_velocity": -0.019367477805477644,
+        "pole_angle": -0.022976184076275975,
+        "pole_angular_velocity": -0.04486279873464998
+      },
+      "state_sha256": "1d92a10c5f23c854d1e587f30c94874d96988fa26abaeb901b4358e8274ec543",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22279150469036602,
+          "velocity": 1.9806315221945225,
+          "right_stopping": 0.22279150469036602,
+          "left_stopping": 0.25715960791006576
+        },
+        "requested": {
+          "position": 0.22279250469036602,
+          "velocity": 1.9806325221945225,
+          "right_stopping": 0.22279250469036602,
+          "left_stopping": 0.25716060791006573
+        }
+      }
+    },
+    {
+      "id": "nominal_10",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 10,
+      "initial_state": {
+        "cart_position": 0.008835435625015656,
+        "cart_velocity": -0.019931426878422673,
+        "pole_angle": 0.010394128112955002,
+        "pole_angular_velocity": 0.03284592721038519
+      },
+      "state_sha256": "19f682b9e496c6b9ce13ba0900d1f33e7ed5346b6cd909d641bbc280f148dd25",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23116356437498434,
+          "velocity": 1.9800675731215773,
+          "right_stopping": 0.23116356437498434,
+          "left_stopping": 0.2487847779028394
+        },
+        "requested": {
+          "position": 0.23116456437498434,
+          "velocity": 1.9800685731215772,
+          "right_stopping": 0.23116456437498434,
+          "left_stopping": 0.2487857779028394
+        }
+      }
+    },
+    {
+      "id": "nominal_11",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 11,
+      "initial_state": {
+        "cart_position": 0.013946236999538095,
+        "cart_velocity": -0.001838683674361942,
+        "pole_angle": -0.02524352737278677,
+        "pole_angular_velocity": 0.0012012406959534122
+      },
+      "state_sha256": "aefc2d041b833f5519b624df2b3aa13dd6fa55d6097ef1df49d0f468171ddc4f",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2260527630004619,
+          "velocity": 1.998160316325638,
+          "right_stopping": 0.2260527630004619,
+          "left_stopping": 0.2539448144048313
+        },
+        "requested": {
+          "position": 0.2260537630004619,
+          "velocity": 1.998161316325638,
+          "right_stopping": 0.2260537630004619,
+          "left_stopping": 0.25394581440483127
+        }
+      }
+    },
+    {
+      "id": "nominal_12",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 12,
+      "initial_state": {
+        "cart_position": -0.007889304806180567,
+        "cart_velocity": -0.011008950473942245,
+        "pole_angle": -0.043583156367014986,
+        "pole_angular_velocity": -0.02337331638044872
+      },
+      "state_sha256": "40ea0dc43ee0aece4272ab1bdeb6e6b4d2cebf14f3e0d2cecac5865b14bd8019",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2321096951938194,
+          "velocity": 1.9889900495260577,
+          "right_stopping": 0.24788830480618057,
+          "left_stopping": 0.2320945455700022
+        },
+        "requested": {
+          "position": 0.23211069519381944,
+          "velocity": 1.9889910495260577,
+          "right_stopping": 0.24788930480618054,
+          "left_stopping": 0.2320955455700022
+        }
+      }
+    },
+    {
+      "id": "nominal_13",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 13,
+      "initial_state": {
+        "cart_position": -0.004373550865050323,
+        "cart_velocity": 0.014785291951110082,
+        "pole_angle": -0.03782836332279127,
+        "pole_angular_velocity": 0.04695344926922902
+      },
+      "state_sha256": "a2cd90652b347bf67378b09a105104f0671520564044e182620aa6532ccc0615",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23562544913494968,
+          "velocity": 1.98521370804889,
+          "right_stopping": 0.24434522525779037,
+          "left_stopping": 0.23562544913494968
+        },
+        "requested": {
+          "position": 0.23562644913494968,
+          "velocity": 1.98521470804889,
+          "right_stopping": 0.24434622525779037,
+          "left_stopping": 0.23562644913494968
+        }
+      }
+    },
+    {
+      "id": "nominal_14",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 14,
+      "initial_state": {
+        "cart_position": -0.008009838840469944,
+        "cart_velocity": -0.0129443594954218,
+        "pole_angle": 0.04900901771849642,
+        "pole_angular_velocity": 0.030449215276563413
+      },
+      "state_sha256": "0786f0dde88b04575acc71cf301955c3e271246985d3684d34518b36242135da",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23198916115953006,
+          "velocity": 1.9870546405045784,
+          "right_stopping": 0.24800883884046993,
+          "left_stopping": 0.2319682166041867
+        },
+        "requested": {
+          "position": 0.23199016115953006,
+          "velocity": 1.9870556405045783,
+          "right_stopping": 0.24800983884046993,
+          "left_stopping": 0.2319692166041867
+        }
+      }
+    },
+    {
+      "id": "nominal_15",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 15,
+      "initial_state": {
+        "cart_position": -0.01580111030699765,
+        "cart_velocity": 0.012309730756626402,
+        "pole_angle": 0.023845108068799498,
+        "pole_angular_velocity": -0.0025657209956209473
+      },
+      "state_sha256": "c450d26ded8c17c5f4c067f3b89c558ca6009f55eb94fd4758b7c2e1c7517d38",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22419788969300233,
+          "velocity": 1.9876892692433736,
+          "right_stopping": 0.2557811691230851,
+          "left_stopping": 0.22419788969300233
+        },
+        "requested": {
+          "position": 0.22419888969300233,
+          "velocity": 1.9876902692433736,
+          "right_stopping": 0.25578216912308505,
+          "left_stopping": 0.22419888969300233
+        }
+      }
+    },
+    {
+      "id": "nominal_16",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 16,
+      "initial_state": {
+        "cart_position": 0.00537551003941044,
+        "cart_velocity": -0.017504425382169942,
+        "pole_angle": -0.03441942340845891,
+        "pole_angular_velocity": 0.0473220592218693
+      },
+      "state_sha256": "318936a5028b41dc8d151342b465ffe6370050fc3be173255a496775621c88a9",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23462348996058954,
+          "velocity": 1.9824945746178302,
+          "right_stopping": 0.23462348996058954,
+          "left_stopping": 0.24533620942591544
+        },
+        "requested": {
+          "position": 0.23462448996058954,
+          "velocity": 1.98249557461783,
+          "right_stopping": 0.23462448996058954,
+          "left_stopping": 0.24533720942591544
+        }
+      }
+    },
+    {
+      "id": "nominal_17",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 17,
+      "initial_state": {
+        "cart_position": 0.019405739073737775,
+        "cart_velocity": 0.01600978692752825,
+        "pole_angle": -0.03493863263287507,
+        "pole_angular_velocity": -0.03814979042939503
+      },
+      "state_sha256": "f9d729514b498b622368d78113443cb071ab0a8af2b63b2549c123a7c376257b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.22059326092626222,
+          "velocity": 1.983989213072472,
+          "right_stopping": 0.2205612217665791,
+          "left_stopping": 0.2594047390737378
+        },
+        "requested": {
+          "position": 0.22059426092626222,
+          "velocity": 1.9839902130724718,
+          "right_stopping": 0.2205622217665791,
+          "left_stopping": 0.25940573907373776
+        }
+      }
+    },
+    {
+      "id": "nominal_18",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 18,
+      "initial_state": {
+        "cart_position": -0.0170241553534509,
+        "cart_velocity": 0.018207783393445674,
+        "pole_angle": -0.04663553691223365,
+        "pole_angular_velocity": 0.04670043335546693
+      },
+      "state_sha256": "88b0e1729a4c9f17596db5859d24359652e4d024fec58ed3df6f1a2821127bc5",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2229748446465491,
+          "velocity": 1.9817912166065543,
+          "right_stopping": 0.25698171493143807,
+          "left_stopping": 0.2229748446465491
+        },
+        "requested": {
+          "position": 0.2229758446465491,
+          "velocity": 1.9817922166065542,
+          "right_stopping": 0.25698271493143804,
+          "left_stopping": 0.2229758446465491
+        }
+      }
+    },
+    {
+      "id": "nominal_19",
+      "subset": "nominal",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 19,
+      "initial_state": {
+        "cart_position": -0.01845410249215411,
+        "cart_velocity": 0.00845846759412043,
+        "pole_angle": -0.018635342887961197,
+        "pole_angular_velocity": 0.002756945533486578
+      },
+      "state_sha256": "a4bc2e4309cec400a26d50b45e3e8b9b6b6b78f77afa4191d9dc734cfe13d50a",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2215448975078459,
+          "velocity": 1.9915405324058797,
+          "right_stopping": 0.258444159282899,
+          "left_stopping": 0.2215448975078459
+        },
+        "requested": {
+          "position": 0.22154589750784587,
+          "velocity": 1.9915415324058796,
+          "right_stopping": 0.258445159282899,
+          "left_stopping": 0.22154589750784587
+        }
+      }
+    },
+    {
+      "id": "position_00",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 0,
+      "initial_state": {
+        "cart_position": -0.02,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "c9a1c4be03bb030c2fa0ed5351216ccdf194c01b4db40ef07ae58bf8dad71a1d",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.219999,
+          "velocity": 1.999999,
+          "right_stopping": 0.259999,
+          "left_stopping": 0.219999
+        },
+        "requested": {
+          "position": 0.22,
+          "velocity": 2.0,
+          "right_stopping": 0.26,
+          "left_stopping": 0.22
+        }
+      }
+    },
+    {
+      "id": "position_01",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 1,
+      "initial_state": {
+        "cart_position": 0.02,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "720b9c71b429ee2481710a46247fbc9126f961fc5dba2c04583a7f3e2ee6361d",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.219999,
+          "velocity": 1.999999,
+          "right_stopping": 0.219999,
+          "left_stopping": 0.259999
+        },
+        "requested": {
+          "position": 0.22,
+          "velocity": 2.0,
+          "right_stopping": 0.22,
+          "left_stopping": 0.26
+        }
+      }
+    },
+    {
+      "id": "position_02",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 2,
+      "initial_state": {
+        "cart_position": -0.04,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "e3d60908872689b272fd51a43f192d11e0238dddcbf9b3e9b26821277ea38805",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.19999899999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.279999,
+          "left_stopping": 0.19999899999999998
+        },
+        "requested": {
+          "position": 0.19999999999999998,
+          "velocity": 2.0,
+          "right_stopping": 0.27999999999999997,
+          "left_stopping": 0.19999999999999998
+        }
+      }
+    },
+    {
+      "id": "position_03",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 3,
+      "initial_state": {
+        "cart_position": 0.04,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "ba2f9a2803652068f3a9fb50c5dd7177c0ec6684b14aa38c518ac79c957050e7",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.19999899999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.19999899999999998,
+          "left_stopping": 0.279999
+        },
+        "requested": {
+          "position": 0.19999999999999998,
+          "velocity": 2.0,
+          "right_stopping": 0.19999999999999998,
+          "left_stopping": 0.27999999999999997
+        }
+      }
+    },
+    {
+      "id": "position_04",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 4,
+      "initial_state": {
+        "cart_position": -0.06,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "4d6a9277c4980dac798193a2336056b76c83c84e64b9c4bf3d1c991894abfde0",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.179999,
+          "velocity": 1.999999,
+          "right_stopping": 0.299999,
+          "left_stopping": 0.179999
+        },
+        "requested": {
+          "position": 0.18,
+          "velocity": 2.0,
+          "right_stopping": 0.3,
+          "left_stopping": 0.18
+        }
+      }
+    },
+    {
+      "id": "position_05",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 5,
+      "initial_state": {
+        "cart_position": 0.06,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "c31451f4adfd55f24b986b70d7eb235da84ed7f25a5abfb2184af6ae6fcf004b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.179999,
+          "velocity": 1.999999,
+          "right_stopping": 0.179999,
+          "left_stopping": 0.299999
+        },
+        "requested": {
+          "position": 0.18,
+          "velocity": 2.0,
+          "right_stopping": 0.18,
+          "left_stopping": 0.3
+        }
+      }
+    },
+    {
+      "id": "position_06",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 6,
+      "initial_state": {
+        "cart_position": -0.08,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "040ba0e779fd92a0ccff26d5defe0ce9ed030ecf059985915d6368591ccfab1f",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.159999,
+          "velocity": 1.999999,
+          "right_stopping": 0.319999,
+          "left_stopping": 0.159999
+        },
+        "requested": {
+          "position": 0.15999999999999998,
+          "velocity": 2.0,
+          "right_stopping": 0.32,
+          "left_stopping": 0.15999999999999998
+        }
+      }
+    },
+    {
+      "id": "position_07",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 7,
+      "initial_state": {
+        "cart_position": 0.08,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "c695994b939f6982bfd30f3ed26218c17656c83878f9744ae074db7bf2da4a4b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.159999,
+          "velocity": 1.999999,
+          "right_stopping": 0.159999,
+          "left_stopping": 0.319999
+        },
+        "requested": {
+          "position": 0.15999999999999998,
+          "velocity": 2.0,
+          "right_stopping": 0.15999999999999998,
+          "left_stopping": 0.32
+        }
+      }
+    },
+    {
+      "id": "position_08",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 8,
+      "initial_state": {
+        "cart_position": -0.1,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "255580462d00dcee12a80d8cc0e5be83120d1f3ac37dfda2567b3716fdef837b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.13999899999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.339999,
+          "left_stopping": 0.13999899999999998
+        },
+        "requested": {
+          "position": 0.13999999999999999,
+          "velocity": 2.0,
+          "right_stopping": 0.33999999999999997,
+          "left_stopping": 0.13999999999999999
+        }
+      }
+    },
+    {
+      "id": "position_09",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 9,
+      "initial_state": {
+        "cart_position": 0.1,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "eb770050b26707ff19ec6b1e1f18bdc669e51bb1e273364f16fce2b6b71b8da8",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.13999899999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.13999899999999998,
+          "left_stopping": 0.339999
+        },
+        "requested": {
+          "position": 0.13999999999999999,
+          "velocity": 2.0,
+          "right_stopping": 0.13999999999999999,
+          "left_stopping": 0.33999999999999997
+        }
+      }
+    },
+    {
+      "id": "position_10",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 10,
+      "initial_state": {
+        "cart_position": -0.12,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "20cdb1696c446be8b5f1e26dddaa0811df9584d0a9b82d945acdcfe16670c819",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.119999,
+          "velocity": 1.999999,
+          "right_stopping": 0.35999899999999996,
+          "left_stopping": 0.119999
+        },
+        "requested": {
+          "position": 0.12,
+          "velocity": 2.0,
+          "right_stopping": 0.36,
+          "left_stopping": 0.12
+        }
+      }
+    },
+    {
+      "id": "position_11",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 11,
+      "initial_state": {
+        "cart_position": 0.12,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "7d3efaaa20813dca206ba9103d25a620ebc5722dfa8de193ba548c02134ed0f2",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.119999,
+          "velocity": 1.999999,
+          "right_stopping": 0.119999,
+          "left_stopping": 0.35999899999999996
+        },
+        "requested": {
+          "position": 0.12,
+          "velocity": 2.0,
+          "right_stopping": 0.12,
+          "left_stopping": 0.36
+        }
+      }
+    },
+    {
+      "id": "position_12",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 12,
+      "initial_state": {
+        "cart_position": -0.15,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "8f9e03e89211feb1bac76b81a8950267d205772af97604caeaaac978f5a7a882",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.089999,
+          "velocity": 1.999999,
+          "right_stopping": 0.389999,
+          "left_stopping": 0.089999
+        },
+        "requested": {
+          "position": 0.09,
+          "velocity": 2.0,
+          "right_stopping": 0.39,
+          "left_stopping": 0.09
+        }
+      }
+    },
+    {
+      "id": "position_13",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 13,
+      "initial_state": {
+        "cart_position": 0.15,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "85be50e9fac6a9bc095c484720cd1c9440cf21681192007714db27d7200e8b13",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.089999,
+          "velocity": 1.999999,
+          "right_stopping": 0.089999,
+          "left_stopping": 0.389999
+        },
+        "requested": {
+          "position": 0.09,
+          "velocity": 2.0,
+          "right_stopping": 0.09,
+          "left_stopping": 0.39
+        }
+      }
+    },
+    {
+      "id": "position_14",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 14,
+      "initial_state": {
+        "cart_position": -0.18,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "629506ed6860f3b35244bdcf50a2568185580a32db491764eb291f0bf920a598",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.059999,
+          "velocity": 1.999999,
+          "right_stopping": 0.419999,
+          "left_stopping": 0.059999
+        },
+        "requested": {
+          "position": 0.06,
+          "velocity": 2.0,
+          "right_stopping": 0.42,
+          "left_stopping": 0.06
+        }
+      }
+    },
+    {
+      "id": "position_15",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 15,
+      "initial_state": {
+        "cart_position": 0.18,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "800a3960c7545b430efdf9408ac77b11dc63aa04e093ce2e43592a60233c0e99",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.059999,
+          "velocity": 1.999999,
+          "right_stopping": 0.059999,
+          "left_stopping": 0.419999
+        },
+        "requested": {
+          "position": 0.06,
+          "velocity": 2.0,
+          "right_stopping": 0.06,
+          "left_stopping": 0.42
+        }
+      }
+    },
+    {
+      "id": "position_16",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 16,
+      "initial_state": {
+        "cart_position": -0.21,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "67b86f0f794db229ce96909356fdb2fd049c47c2bb99cd1f0e31d46378927568",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.029998999999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.449999,
+          "left_stopping": 0.029998999999999998
+        },
+        "requested": {
+          "position": 0.03,
+          "velocity": 2.0,
+          "right_stopping": 0.44999999999999996,
+          "left_stopping": 0.03
+        }
+      }
+    },
+    {
+      "id": "position_17",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 17,
+      "initial_state": {
+        "cart_position": 0.21,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "37f594bf928ffc1bdbaaa8d3a005daee10cd86d4a5ce762c246311d21ff68484",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.029998999999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.029998999999999998,
+          "left_stopping": 0.449999
+        },
+        "requested": {
+          "position": 0.03,
+          "velocity": 2.0,
+          "right_stopping": 0.03,
+          "left_stopping": 0.44999999999999996
+        }
+      }
+    },
+    {
+      "id": "position_18",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 18,
+      "initial_state": {
+        "cart_position": -0.23,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "d12e6fbf7f417cb85e602c490f582659ffa72057148e9026647f0573e465d2c4",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.469999,
+          "left_stopping": 0.00999899999999998
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 2.0,
+          "right_stopping": 0.47,
+          "left_stopping": 0.009999999999999981
+        }
+      }
+    },
+    {
+      "id": "position_19",
+      "subset": "position",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 19,
+      "initial_state": {
+        "cart_position": 0.23,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "8e6f6e1005342a6523b2ba6fc3450f1a8ffe308608055f51989f0e0bf9da7f34",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.999999,
+          "right_stopping": 0.00999899999999998,
+          "left_stopping": 0.469999
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 2.0,
+          "right_stopping": 0.009999999999999981,
+          "left_stopping": 0.47
+        }
+      }
+    },
+    {
+      "id": "velocity_00",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 0,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -0.13163558713357112,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "211495b5c40c8f0ad518379a9d6bb0afec7d9a97d056e2d11d78530fe22617b1",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.868363412866429,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.237833009025
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.868364412866429,
+          "right_stopping": 0.24,
+          "left_stopping": 0.237834009025
+        }
+      }
+    },
+    {
+      "id": "velocity_01",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 1,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.13163558713357112,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "e3a3bf89f2ab097d55dbb373378980cb4af3283218da48c23dc1f5eb798ae2f9",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.868363412866429,
+          "right_stopping": 0.237833009025,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.868364412866429,
+          "right_stopping": 0.237834009025,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_02",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 2,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -0.26327117426714225,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "b7e1539c5eab4c2882469f1f64292be5a51cc422281e3f784cdc52bb9a5ebc4d",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.7367278257328578,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.2313350361
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.7367288257328577,
+          "right_stopping": 0.24,
+          "left_stopping": 0.2313360361
+        }
+      }
+    },
+    {
+      "id": "velocity_03",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 3,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.26327117426714225,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "99bb29c9fc72d9677fa1521703ae574c2d7dee6feef4da55bcc77e37f109bda4",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.7367278257328578,
+          "right_stopping": 0.2313350361,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.7367288257328577,
+          "right_stopping": 0.2313360361,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_04",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 4,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -0.39490676140071335,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "9a3e0c8f86385ab3a57b8c1fe43bc8704682ec83fab42c7996545045aa9b6550",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.6050922385992867,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.220505081225
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.6050932385992867,
+          "right_stopping": 0.24,
+          "left_stopping": 0.220506081225
+        }
+      }
+    },
+    {
+      "id": "velocity_05",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 5,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.39490676140071335,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "0d06fd6d63c23a419cf52cb111b4b4e5afe972d1be1e52bbab77a476e30eb44d",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.6050922385992867,
+          "right_stopping": 0.220505081225,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.6050932385992867,
+          "right_stopping": 0.220506081225,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_06",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 6,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -0.5265423485342845,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "52f9082fbff94940ec7fed9fc4c2ad8df1128e222974682ce2e606d9d629d0bd",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.4734566514657157,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.2053431444
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.4734576514657154,
+          "right_stopping": 0.24,
+          "left_stopping": 0.2053441444
+        }
+      }
+    },
+    {
+      "id": "velocity_07",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 7,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.5265423485342845,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "ecaed2c9880f33609e7ddf3dd9eb9c1b0c8ec6aa3ade8706cf5e099506dbfcef",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.4734566514657157,
+          "right_stopping": 0.2053431444,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.4734576514657154,
+          "right_stopping": 0.2053441444,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_08",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 8,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -0.6581779356678557,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "b8e49faba79bd208d7ad29fa2958d2169d1a31a19ccd20c9480674db11dd596b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.3418210643321444,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.185849225625
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.3418220643321443,
+          "right_stopping": 0.24,
+          "left_stopping": 0.185850225625
+        }
+      }
+    },
+    {
+      "id": "velocity_09",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 9,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.6581779356678557,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "6cc0c494338fe34b4ad6b9f176d8d0d610962888dc9ce8c37fa59f58ab3272d6",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.3418210643321444,
+          "right_stopping": 0.185849225625,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.3418220643321443,
+          "right_stopping": 0.185850225625,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_10",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 10,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -0.7898135228014267,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "4518cc26ea59d425aa65fb743ed0397f30c91cd2572bcb875233a8f1a3bd8dfd",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.2101854771985734,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.16202332490000002
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.2101864771985733,
+          "right_stopping": 0.24,
+          "left_stopping": 0.16202432490000002
+        }
+      }
+    },
+    {
+      "id": "velocity_11",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 11,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.7898135228014267,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "f8a0a0cc984894e784f613551355db4887e7d93dfac464f3440302aa725c2fc3",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.2101854771985734,
+          "right_stopping": 0.16202332490000002,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.2101864771985733,
+          "right_stopping": 0.16202432490000002,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_12",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 12,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -0.9214491099349978,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "ffd0a899334199ad64de23e895d62588190567734172a8a46fc0713f984677ed",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.0785498900650023,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.13386544222500002
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.078550890065002,
+          "right_stopping": 0.24,
+          "left_stopping": 0.13386644222500002
+        }
+      }
+    },
+    {
+      "id": "velocity_13",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 13,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.9214491099349978,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "48049cf3aab2cc96897efd50ad0aad46ba459274d771e07113e97ba40dec6e55",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.0785498900650023,
+          "right_stopping": 0.13386544222500002,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 1.078550890065002,
+          "right_stopping": 0.13386644222500002,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_14",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 14,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -1.053084697068569,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "3cf605627484069ce3fa928c8ffc58663695dba80a004714dab72a845b01bbba",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 0.9469143029314311,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.10137557760000003
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 0.946915302931431,
+          "right_stopping": 0.24,
+          "left_stopping": 0.10137657760000003
+        }
+      }
+    },
+    {
+      "id": "velocity_15",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 15,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 1.053084697068569,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "6c5a9c591cffd3ad5fffd2de48d83e453bd645e58e42a870f8d1f885ecf2cf86",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 0.9469143029314311,
+          "right_stopping": 0.10137557760000003,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 0.946915302931431,
+          "right_stopping": 0.10137657760000003,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_16",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 16,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -1.18472028420214,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "21c9028309dfd03d084bc026b3bc0c869909f06be1f3adf951fb96820c994b10",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 0.81527871579786,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.06455373102500006
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 0.81527971579786,
+          "right_stopping": 0.24,
+          "left_stopping": 0.06455473102500006
+        }
+      }
+    },
+    {
+      "id": "velocity_17",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 17,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 1.18472028420214,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "b85b5bba1213d6cac76ff80d47bb57d3ee85a1a28ab19994c829b2ee44839884",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 0.81527871579786,
+          "right_stopping": 0.06455373102500006,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 0.81527971579786,
+          "right_stopping": 0.06455473102500006,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "velocity_18",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 18,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": -1.3163558713357113,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "57f208c0c8ba41e8ff2408d7f38a44925f602b416bf55074340f8e4f8d9a5401",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 0.6836431286642888,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.023399902500000024
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 0.6836441286642887,
+          "right_stopping": 0.24,
+          "left_stopping": 0.023400902500000025
+        }
+      }
+    },
+    {
+      "id": "velocity_19",
+      "subset": "velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 19,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 1.3163558713357113,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "a7e52b85f54d0637af406f6dad8d0f5231c19e82385315a5e2b9f2312912c305",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 0.6836431286642888,
+          "right_stopping": 0.023399902500000024,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 0.6836441286642887,
+          "right_stopping": 0.023400902500000025,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_00",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 0,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -0.28559933214452665,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "0926c990f12bdb320c8cc01eac315086f0ce19c4374c1ee3b09b30476abb24ee",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_01",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 1,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.28559933214452665,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "3575026f7c89447adb5c92bfb6d1eace795230f1076dd852d0f81455f9a20321",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_02",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 2,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -0.5711986642890533,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "32ecfe7fa29ed2d2cd9ece7c2ef97c2dc4f7fed25a652102d52df3e03230c759",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_03",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 3,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.5711986642890533,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "b7e3bbd89a22586871e2cb579130505cf65a6371b176b9969bda6c6d0215952b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_04",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 4,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -0.8567979964335799,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "5c099125dff695886afb040190247894c30cc5be55aeadc9cdd6a25822bd2a98",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_05",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 5,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.8567979964335799,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "f23ee7cc0686668a48b9d2263d8db36a44f3c3736cdaa7ce103863b7c4fcf468",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_06",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 6,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -1.1423973285781066,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "2b1282469424b2d07e15319b148520beb5840b2d086b32d36926a6f4f38e5160",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_07",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 7,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 1.1423973285781066,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "2647828ab67aaa246142ed26206e66ff5d6fe8dd892a2263e6fc21467036b48c",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_08",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 8,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -1.4279966607226333,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "5bcaed36d389504799356af55c1b94e76690491c65ce6891a6cc95928fdbded7",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_09",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 9,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 1.4279966607226333,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "2db97ca9e3e9cb0944d6a0a2a84270bccb44caf4908cf86ddbd82de7c1aae760",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_10",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 10,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -1.7135959928671598,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "3d4ec2d2ebd91e82f53cc3e4d0d79974f7af5b38fe16307af3446915b6aebfb7",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_11",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 11,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 1.7135959928671598,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "77f1fd16c84d889f78c928eea1b9f7226de45f33a8613c0b26eb1ed52c613111",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_12",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 12,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -1.9991953250116865,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "2280664bfed2c36c523e13d72298c7d5f0c3aa665eb3117dd7a70000188585df",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_13",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 13,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 1.9991953250116865,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "d8e6fdb8e0a97498dd9b5f9ed0f83d7bf9873276283980d4d42dbb2e3856b3e1",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_14",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 14,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -2.284794657156213,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "0017f0dd4bb1365a2527f457b40e988981468d6d1523d34974785b5d194d8570",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_15",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 15,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 2.284794657156213,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "314a7cf3cfdc6976205de89727b6531cdf08e53868d02be0fe63c15b0e480b08",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_16",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 16,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -2.5703939893007397,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "f89ba7ec50cbeed3e2d30c4d11a3200fbb9e3f2c0bddb79735238700ddbd71b9",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_17",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 17,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 2.5703939893007397,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "de2f595f574c074a5b3de48f4d2dc8e5aabfd284c92845d75c01c2899bc4bea8",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_18",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 18,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -2.8559933214452666,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "d712e098d69ca5f75a737436d3445bc9cdb0fd6edfdc209588df103f04ba8131",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angle_19",
+      "subset": "angle",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 19,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 2.8559933214452666,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "b6b283372c62f551934e04bbef5f7c1eb3e474aec402f93ce00619984f002c61",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_00",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 0,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -0.7378647873726218
+      },
+      "state_sha256": "feb6b99ae07937ab2bc4a389924bf4e75eec28fb496b14d54dbcb84cd3d0132b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_01",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 1,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.7378647873726218
+      },
+      "state_sha256": "b205e7f59b90843f3d62c7d118e9698f3d1abdcf294a84d94aceace4fbbd1d4b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_02",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 2,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -1.4757295747452437
+      },
+      "state_sha256": "2a06bae7963ae9be8aa59203a58d9520dfc5b6b1634505b889bb57a742c0643b",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_03",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 3,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 1.4757295747452437
+      },
+      "state_sha256": "ce48f0f3462a8dfb079d4315b70da5c80c5f13819c7b29750c3b4e46d14bc962",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_04",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 4,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -2.2135943621178655
+      },
+      "state_sha256": "43ac9276283fb796d370b80b536691ca459cc6097f8e973eedb40a0db968871a",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_05",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 5,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 2.2135943621178655
+      },
+      "state_sha256": "11b3f53b250dd8579c5272a2b3ea76e40dec3025b409845bf488090a842fef20",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_06",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 6,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -2.9514591494904874
+      },
+      "state_sha256": "4958a645d0503d4880ad3e9a3cb0bb5f530ac054d63e76479781aebcda00a752",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_07",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 7,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 2.9514591494904874
+      },
+      "state_sha256": "c72bce3c4575acc42021198afc47544e6f5ba99e9ace689cd94133af5e44d468",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_08",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 8,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -3.689323936863109
+      },
+      "state_sha256": "fb51947c4a9639d655744ef124e5ab75c14b52c00b21b2ec30dfa4de5100e148",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_09",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 9,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 3.689323936863109
+      },
+      "state_sha256": "f33edef6a27cdcfaf529f2c56239624d520159f0048d075ccbfe88c324f98e75",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_10",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 10,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -4.427188724235731
+      },
+      "state_sha256": "45337948b040faa8b1543c246fabad40d551b20c9957916acc90419afd3327b4",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_11",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 11,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 4.427188724235731
+      },
+      "state_sha256": "bd678e67a3d2d45c1da11767acbba0c9c639830075057df0ff71c91fd77021ba",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_12",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 12,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -5.1650535116083525
+      },
+      "state_sha256": "e6f6681387cfda5e0e3fab1929b507b6e943db4667e2f9df26bd7c0a12017924",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_13",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 13,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 5.1650535116083525
+      },
+      "state_sha256": "059f0bef61a7d76991f472f237e24e8b08cb6689202357577a278ca117d4611a",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_14",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 14,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -5.902918298980975
+      },
+      "state_sha256": "af6264ea9cabf8183c66613c0dd61ca1009e5c3c2ae008db8a6ea8127d7714e2",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_15",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 15,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 5.902918298980975
+      },
+      "state_sha256": "cf231b4fc95a5113670a7f8adfc614221d208dc4781a8d6049b60b19910414bc",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_16",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 16,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -6.640783086353597
+      },
+      "state_sha256": "f0d8c0d2e08ab96c4c676c3e6151a459da24c3826b29df9ecd93c669918815a1",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_17",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 17,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 6.640783086353597
+      },
+      "state_sha256": "f00b0c9870fac376803cd659a87298dc401ffb4542b4c2c13a909a505010a48a",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_18",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 18,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": -7.378647873726218
+      },
+      "state_sha256": "e795aa62f86226504371feb5c99362de53d02122fa99b1b61a44ecba46aad008",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "angular_velocity_19",
+      "subset": "angular_velocity",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 19,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 7.378647873726218
+      },
+      "state_sha256": "862bb2c046d8bfa9f0f84328a1173875cf0566c0bd9087e5b20fb1c86b2c7f31",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.239999,
+          "velocity": 1.999999,
+          "right_stopping": 0.239999,
+          "left_stopping": 0.239999
+        },
+        "requested": {
+          "position": 0.24,
+          "velocity": 2.0,
+          "right_stopping": 0.24,
+          "left_stopping": 0.24
+        }
+      }
+    },
+    {
+      "id": "boundary_00",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 0,
+      "initial_state": {
+        "cart_position": -0.2,
+        "cart_velocity": -0.14141958845930783,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "666748fd5c89c30022561a60911a86bd119fb3bc3253f69ce607eedc5548b43e",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.8585794115406922,
+          "right_stopping": 0.43999900000000003,
+          "left_stopping": 0.03749906249999998
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.858580411540692,
+          "right_stopping": 0.44,
+          "left_stopping": 0.03750006249999998
+        }
+      }
+    },
+    {
+      "id": "boundary_01",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 1,
+      "initial_state": {
+        "cart_position": 0.2,
+        "cart_velocity": 0.14141958845930783,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "ba170105b9c1e31b4a1a6d6b76e52cace78730e979da9ec300d983450ac965ed",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.8585794115406922,
+          "right_stopping": 0.03749906249999998,
+          "left_stopping": 0.43999900000000003
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.858580411540692,
+          "right_stopping": 0.03750006249999998,
+          "left_stopping": 0.44
+        }
+      }
+    },
+    {
+      "id": "boundary_02",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 2,
+      "initial_state": {
+        "cart_position": -0.2,
+        "cart_velocity": -0.28283917691861565,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "91f297b1d726b3d9818c8a61f59435b740c43f29034fcb1eb529e27e65ebf5de",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.7171598230813845,
+          "right_stopping": 0.43999900000000003,
+          "left_stopping": 0.029999249999999984
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.7171608230813844,
+          "right_stopping": 0.44,
+          "left_stopping": 0.030000249999999985
+        }
+      }
+    },
+    {
+      "id": "boundary_03",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 3,
+      "initial_state": {
+        "cart_position": 0.2,
+        "cart_velocity": 0.28283917691861565,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "50fb0409ba9472fe420b52db944300c30c3733de090453a385e3f70128aafae5",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.7171598230813845,
+          "right_stopping": 0.029999249999999984,
+          "left_stopping": 0.43999900000000003
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.7171608230813844,
+          "right_stopping": 0.030000249999999985,
+          "left_stopping": 0.44
+        }
+      }
+    },
+    {
+      "id": "boundary_04",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 4,
+      "initial_state": {
+        "cart_position": -0.2,
+        "cart_velocity": -0.4242587653779235,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "e7b99190f0607ac6154a38b3a7a72fb37da3c7589e623ce2a88387941d83f2fc",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.5757402346220766,
+          "right_stopping": 0.43999900000000003,
+          "left_stopping": 0.017499562499999986
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.5757412346220765,
+          "right_stopping": 0.44,
+          "left_stopping": 0.017500562499999987
+        }
+      }
+    },
+    {
+      "id": "boundary_05",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 5,
+      "initial_state": {
+        "cart_position": 0.2,
+        "cart_velocity": 0.4242587653779235,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "73e74a197ac810c5f38ea3201c0daac290b46f045e13f72013ac7930c5bd9e72",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.5757402346220766,
+          "right_stopping": 0.017499562499999986,
+          "left_stopping": 0.43999900000000003
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.5757412346220765,
+          "right_stopping": 0.017500562499999987,
+          "left_stopping": 0.44
+        }
+      }
+    },
+    {
+      "id": "boundary_06",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 6,
+      "initial_state": {
+        "cart_position": -0.2,
+        "cart_velocity": -0.5091105184535082,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "19a60a011c2180254e0f683f4838a35c6b17933203b4f600342691b3b718e698",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.490888481546492,
+          "right_stopping": 0.43999900000000003,
+          "left_stopping": 0.007599809999999992
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.4908894815464917,
+          "right_stopping": 0.44,
+          "left_stopping": 0.007600809999999993
+        }
+      }
+    },
+    {
+      "id": "boundary_07",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 7,
+      "initial_state": {
+        "cart_position": 0.2,
+        "cart_velocity": 0.5091105184535082,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "723a0b0de1c74be11c6782124cdde0f0a245fad212e4675d1b912a8cd9b16456",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.490888481546492,
+          "right_stopping": 0.007599809999999992,
+          "left_stopping": 0.43999900000000003
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.4908894815464917,
+          "right_stopping": 0.007600809999999993,
+          "left_stopping": 0.44
+        }
+      }
+    },
+    {
+      "id": "boundary_08",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 8,
+      "initial_state": {
+        "cart_position": -0.2,
+        "cart_velocity": -0.560021570298859,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "ab0177e56c90b5a55051315124be55281215a7867212a7bf0938135146d50c27",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.4399774297011412,
+          "right_stopping": 0.43999900000000003,
+          "left_stopping": 0.0007959800999999925
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.4399784297011409,
+          "right_stopping": 0.44,
+          "left_stopping": 0.0007969800999999935
+        }
+      }
+    },
+    {
+      "id": "boundary_09",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 9,
+      "initial_state": {
+        "cart_position": 0.2,
+        "cart_velocity": 0.560021570298859,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "cfcc33ba1b5aa26f39e23807108f555fbb89e79fcdcab9a5ad5ba360d5130f32",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.03999899999999998,
+          "velocity": 1.4399774297011412,
+          "right_stopping": 0.0007959800999999925,
+          "left_stopping": 0.43999900000000003
+        },
+        "requested": {
+          "position": 0.03999999999999998,
+          "velocity": 1.4399784297011409,
+          "right_stopping": 0.0007969800999999935,
+          "left_stopping": 0.44
+        }
+      }
+    },
+    {
+      "id": "boundary_10",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 10,
+      "initial_state": {
+        "cart_position": -0.23,
+        "cart_velocity": -0.07070714249635598,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "468ef7a952662c6f99bc15281ba1ba35091b3e0cebb14a6e64407914c605af94",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.9292918575036442,
+          "right_stopping": 0.469999,
+          "left_stopping": 0.009374062499999981
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.929292857503644,
+          "right_stopping": 0.47,
+          "left_stopping": 0.009375062499999982
+        }
+      }
+    },
+    {
+      "id": "boundary_11",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 11,
+      "initial_state": {
+        "cart_position": 0.23,
+        "cart_velocity": 0.07070714249635598,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "314f8116f931fe781b28b4a2af74399a4472e19709b8dd99c8232139c62fe7f5",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.9292918575036442,
+          "right_stopping": 0.009374062499999981,
+          "left_stopping": 0.469999
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.929292857503644,
+          "right_stopping": 0.009375062499999982,
+          "left_stopping": 0.47
+        }
+      }
+    },
+    {
+      "id": "boundary_12",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 12,
+      "initial_state": {
+        "cart_position": -0.23,
+        "cart_velocity": -0.14141428499271197,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "89158f63618243196bd7347128d809eb42af50ae5ba2ae3d33191b3a9e8e7ee6",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.858584715007288,
+          "right_stopping": 0.469999,
+          "left_stopping": 0.007499249999999985
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.858585715007288,
+          "right_stopping": 0.47,
+          "left_stopping": 0.007500249999999986
+        }
+      }
+    },
+    {
+      "id": "boundary_13",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 13,
+      "initial_state": {
+        "cart_position": 0.23,
+        "cart_velocity": 0.14141428499271197,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "30c52c5e3d499f332cf13076edd5d8e564f0cf409a61e632a613e046e6235a01",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.858584715007288,
+          "right_stopping": 0.007499249999999985,
+          "left_stopping": 0.469999
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.858585715007288,
+          "right_stopping": 0.007500249999999986,
+          "left_stopping": 0.47
+        }
+      }
+    },
+    {
+      "id": "boundary_14",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 14,
+      "initial_state": {
+        "cart_position": -0.23,
+        "cart_velocity": -0.21212142748906795,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "f6b629309cfc8b17f5cdea5fa49fbc84ef9178aa70b8ab377975ed8dce74ac64",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.7878775725109322,
+          "right_stopping": 0.469999,
+          "left_stopping": 0.004374562499999991
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.787878572510932,
+          "right_stopping": 0.47,
+          "left_stopping": 0.004375562499999992
+        }
+      }
+    },
+    {
+      "id": "boundary_15",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 15,
+      "initial_state": {
+        "cart_position": 0.23,
+        "cart_velocity": 0.21212142748906795,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "9bf14a91909cf4ff57f5d40551039d21158944775fdd3f71beb5b91136567b23",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.7878775725109322,
+          "right_stopping": 0.004374562499999991,
+          "left_stopping": 0.469999
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.787878572510932,
+          "right_stopping": 0.004375562499999992,
+          "left_stopping": 0.47
+        }
+      }
+    },
+    {
+      "id": "boundary_16",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 16,
+      "initial_state": {
+        "cart_position": -0.23,
+        "cart_velocity": -0.25454571298688156,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "5d0d307b0489e96ad03fa6ead9bf95fe39cc5a407cbdcf91647bdc09c7b630fe",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.7454532870131185,
+          "right_stopping": 0.469999,
+          "left_stopping": 0.0018998099999999948
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.7454542870131184,
+          "right_stopping": 0.47,
+          "left_stopping": 0.0019008099999999958
+        }
+      }
+    },
+    {
+      "id": "boundary_17",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 17,
+      "initial_state": {
+        "cart_position": 0.23,
+        "cart_velocity": 0.25454571298688156,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "b8979a5491594c862d662adbc563fb003a3630bab295ac18169e81e0dbdc564f",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.7454532870131185,
+          "right_stopping": 0.0018998099999999948,
+          "left_stopping": 0.469999
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.7454542870131184,
+          "right_stopping": 0.0019008099999999958,
+          "left_stopping": 0.47
+        }
+      }
+    },
+    {
+      "id": "boundary_18",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 18,
+      "initial_state": {
+        "cart_position": -0.23,
+        "cart_velocity": -0.2800002842855697,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "af7c73a50dcdec4ffa3bc26d4cd8985d58a44aab06358adc181d4ba366f4d9b3",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.7199987157144303,
+          "right_stopping": 0.469999,
+          "left_stopping": 0.00019898009999999724
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.7199997157144302,
+          "right_stopping": 0.47,
+          "left_stopping": 0.00019998009999999824
+        }
+      }
+    },
+    {
+      "id": "boundary_19",
+      "subset": "boundary",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 19,
+      "initial_state": {
+        "cart_position": 0.23,
+        "cart_velocity": 0.2800002842855697,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      },
+      "state_sha256": "f412f35fb27e985b83529efb6473e400c268209c425de5a0eae36a2a3a87df60",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.00999899999999998,
+          "velocity": 1.7199987157144303,
+          "right_stopping": 0.00019898009999999724,
+          "left_stopping": 0.469999
+        },
+        "requested": {
+          "position": 0.009999999999999981,
+          "velocity": 1.7199997157144302,
+          "right_stopping": 0.00019998009999999824,
+          "left_stopping": 0.47
+        }
+      }
+    },
+    {
+      "id": "joint_00",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 0,
+      "initial_state": {
+        "cart_position": -0.008693465563882657,
+        "cart_velocity": 0.05742086567469088,
+        "pole_angle": 0.04540003992542374,
+        "pole_angular_velocity": -0.38337141885204945
+      },
+      "state_sha256": "1db40825c103438ba50ffd816cfd33098943c0242799aacb4534a4956880514a",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23130553443611734,
+          "velocity": 1.9425781343253092,
+          "right_stopping": 0.24828032108702877,
+          "left_stopping": 0.23130553443611734
+        },
+        "requested": {
+          "position": 0.23130653443611734,
+          "velocity": 1.9425791343253092,
+          "right_stopping": 0.24828132108702877,
+          "left_stopping": 0.23130653443611734
+        }
+      }
+    },
+    {
+      "id": "joint_01",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 1,
+      "initial_state": {
+        "cart_position": 0.008693465563882657,
+        "cart_velocity": -0.05742086567469088,
+        "pole_angle": -0.04540003992542374,
+        "pole_angular_velocity": 0.38337141885204945
+      },
+      "state_sha256": "e3c42229caa02a96b31386f7949f5b0aec4cd11e4cd5c8122e1b143c65d153ea",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23130553443611734,
+          "velocity": 1.9425781343253092,
+          "right_stopping": 0.23130553443611734,
+          "left_stopping": 0.24828032108702877
+        },
+        "requested": {
+          "position": 0.23130653443611734,
+          "velocity": 1.9425791343253092,
+          "right_stopping": 0.23130653443611734,
+          "left_stopping": 0.24828132108702877
+        }
+      }
+    },
+    {
+      "id": "joint_02",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 2,
+      "initial_state": {
+        "cart_position": 0.004614027044742736,
+        "cart_velocity": -0.041715927460710026,
+        "pole_angle": 0.20487956264764567,
+        "pole_angular_velocity": 1.0643630893745992
+      },
+      "state_sha256": "895e7d3722b9905b6429fc455cf133969ebd448d112913a560ee141d46f998db",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23538497295525726,
+          "velocity": 1.9582830725392901,
+          "right_stopping": 0.23538497295525726,
+          "left_stopping": 0.2443954997192543
+        },
+        "requested": {
+          "position": 0.23538597295525726,
+          "velocity": 1.95828407253929,
+          "right_stopping": 0.23538597295525726,
+          "left_stopping": 0.2443964997192543
+        }
+      }
+    },
+    {
+      "id": "joint_03",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 3,
+      "initial_state": {
+        "cart_position": -0.004614027044742736,
+        "cart_velocity": 0.041715927460710026,
+        "pole_angle": -0.20487956264764567,
+        "pole_angular_velocity": -1.0643630893745992
+      },
+      "state_sha256": "f50f308f83f4f61a5dbe079a7a17daad2b752eb6cdbdee73a6a79e3476a18856",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23538497295525726,
+          "velocity": 1.9582830725392901,
+          "right_stopping": 0.2443954997192543,
+          "left_stopping": 0.23538497295525726
+        },
+        "requested": {
+          "position": 0.23538597295525726,
+          "velocity": 1.95828407253929,
+          "right_stopping": 0.2443964997192543,
+          "left_stopping": 0.23538597295525726
+        }
+      }
+    },
+    {
+      "id": "joint_04",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 4,
+      "initial_state": {
+        "cart_position": 0.006934554185728676,
+        "cart_velocity": -0.1667389220335573,
+        "pole_angle": 0.20820273566706385,
+        "pole_angular_velocity": -1.4393767531381574
+      },
+      "state_sha256": "fb9bb8950d37d92c375f0339032a56c78f86f37d625412d7bb79037e641f071c",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23306444581427133,
+          "velocity": 1.8332600779664427,
+          "right_stopping": 0.23306444581427133,
+          "left_stopping": 0.24345832067061457
+        },
+        "requested": {
+          "position": 0.23306544581427133,
+          "velocity": 1.8332610779664427,
+          "right_stopping": 0.23306544581427133,
+          "left_stopping": 0.24345932067061457
+        }
+      }
+    },
+    {
+      "id": "joint_05",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 5,
+      "initial_state": {
+        "cart_position": -0.006934554185728676,
+        "cart_velocity": 0.1667389220335573,
+        "pole_angle": -0.20820273566706385,
+        "pole_angular_velocity": 1.4393767531381574
+      },
+      "state_sha256": "c32616b2a23e598ca98f6a72a30d5a1125b8034d10f068526bf178e31e6e3453",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23306444581427133,
+          "velocity": 1.8332600779664427,
+          "right_stopping": 0.24345832067061457,
+          "left_stopping": 0.23306444581427133
+        },
+        "requested": {
+          "position": 0.23306544581427133,
+          "velocity": 1.8332610779664427,
+          "right_stopping": 0.24345932067061457,
+          "left_stopping": 0.23306544581427133
+        }
+      }
+    },
+    {
+      "id": "joint_06",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 6,
+      "initial_state": {
+        "cart_position": -0.007408343140487666,
+        "cart_velocity": -0.07648425438278451,
+        "pole_angle": -0.2883821253791168,
+        "pole_angular_velocity": 0.06947454253805713
+      },
+      "state_sha256": "2e1711381cc22ea27c7bf7627f89234908b64b19205c647ebb5e18487e177931",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23259065685951233,
+          "velocity": 1.9235147456172155,
+          "right_stopping": 0.24740734314048765,
+          "left_stopping": 0.231859426713451
+        },
+        "requested": {
+          "position": 0.23259165685951233,
+          "velocity": 1.9235157456172154,
+          "right_stopping": 0.24740834314048765,
+          "left_stopping": 0.231860426713451
+        }
+      }
+    },
+    {
+      "id": "joint_07",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 7,
+      "initial_state": {
+        "cart_position": 0.007408343140487666,
+        "cart_velocity": 0.07648425438278451,
+        "pole_angle": 0.2883821253791168,
+        "pole_angular_velocity": -0.06947454253805713
+      },
+      "state_sha256": "108ff474527ec3a11673ec3910b04f87c06329ffbe5b6fa148b9cb98e94435ea",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.23259065685951233,
+          "velocity": 1.9235147456172155,
+          "right_stopping": 0.231859426713451,
+          "left_stopping": 0.24740734314048765
+        },
+        "requested": {
+          "position": 0.23259165685951233,
+          "velocity": 1.9235157456172154,
+          "right_stopping": 0.231860426713451,
+          "left_stopping": 0.24740834314048765
+        }
+      }
+    },
+    {
+      "id": "joint_08",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 8,
+      "initial_state": {
+        "cart_position": -0.0336497063185276,
+        "cart_velocity": 0.014359039732975054,
+        "pole_angle": -0.3139739718089933,
+        "pole_angular_velocity": 0.616553781764552
+      },
+      "state_sha256": "6d68f4fcae31dbcf1c7920c80102b1afe763597831ceca839748aefb72e000ff",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2063492936814724,
+          "velocity": 1.985639960267025,
+          "right_stopping": 0.27362293356577094,
+          "left_stopping": 0.2063492936814724
+        },
+        "requested": {
+          "position": 0.2063502936814724,
+          "velocity": 1.9856409602670249,
+          "right_stopping": 0.27362393356577097,
+          "left_stopping": 0.2063502936814724
+        }
+      }
+    },
+    {
+      "id": "joint_09",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 9,
+      "initial_state": {
+        "cart_position": 0.0336497063185276,
+        "cart_velocity": -0.014359039732975054,
+        "pole_angle": 0.3139739718089933,
+        "pole_angular_velocity": -0.616553781764552
+      },
+      "state_sha256": "7f1346ac82a329a745d64e9c6600fbebc9c631fd6aa2a13396bee5da0a980a1c",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2063492936814724,
+          "velocity": 1.985639960267025,
+          "right_stopping": 0.2063492936814724,
+          "left_stopping": 0.27362293356577094
+        },
+        "requested": {
+          "position": 0.2063502936814724,
+          "velocity": 1.9856409602670249,
+          "right_stopping": 0.2063502936814724,
+          "left_stopping": 0.27362393356577097
+        }
+      }
+    },
+    {
+      "id": "joint_10",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 10,
+      "initial_state": {
+        "cart_position": -0.09243399672688506,
+        "cart_velocity": 0.17261079832093057,
+        "pole_angle": -0.19759109225306948,
+        "pole_angular_velocity": -0.3855622245303669
+      },
+      "state_sha256": "68fe5aab9bcb681eda9729c44933383d430e38a8315e94d71f81a2d3af317cb8",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.14756500327311495,
+          "velocity": 1.8273882016790695,
+          "right_stopping": 0.3287086857647614,
+          "left_stopping": 0.14756500327311495
+        },
+        "requested": {
+          "position": 0.14756600327311492,
+          "velocity": 1.8273892016790694,
+          "right_stopping": 0.32870968576476145,
+          "left_stopping": 0.14756600327311492
+        }
+      }
+    },
+    {
+      "id": "joint_11",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 11,
+      "initial_state": {
+        "cart_position": 0.09243399672688506,
+        "cart_velocity": -0.17261079832093057,
+        "pole_angle": 0.19759109225306948,
+        "pole_angular_velocity": 0.3855622245303669
+      },
+      "state_sha256": "f1735e60ce822b0ac53e6cc9ae3b8edadc5071a2b5bdd0fec953fc491faaf7e4",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.14756500327311495,
+          "velocity": 1.8273882016790695,
+          "right_stopping": 0.14756500327311495,
+          "left_stopping": 0.3287086857647614
+        },
+        "requested": {
+          "position": 0.14756600327311492,
+          "velocity": 1.8273892016790694,
+          "right_stopping": 0.14756600327311492,
+          "left_stopping": 0.32870968576476145
+        }
+      }
+    },
+    {
+      "id": "joint_12",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 12,
+      "initial_state": {
+        "cart_position": -0.012826328955948785,
+        "cart_velocity": 0.26351684565982936,
+        "pole_angle": 1.2498997500771276,
+        "pole_angular_velocity": -2.1212588303941873
+      },
+      "state_sha256": "1d0368174d70094e7c558c1da2e2ce283b1a52e6a71998a9e8672d1954bd085c",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2271726710440512,
+          "velocity": 1.7364821543401707,
+          "right_stopping": 0.24414518796263548,
+          "left_stopping": 0.2271726710440512
+        },
+        "requested": {
+          "position": 0.2271736710440512,
+          "velocity": 1.7364831543401706,
+          "right_stopping": 0.24414618796263549,
+          "left_stopping": 0.2271736710440512
+        }
+      }
+    },
+    {
+      "id": "joint_13",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 13,
+      "initial_state": {
+        "cart_position": 0.012826328955948785,
+        "cart_velocity": -0.26351684565982936,
+        "pole_angle": -1.2498997500771276,
+        "pole_angular_velocity": 2.1212588303941873
+      },
+      "state_sha256": "f13a0d842d8b839e37f82bea0854293e81f38dd6dce69bbfb4906e800daa751f",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.2271726710440512,
+          "velocity": 1.7364821543401707,
+          "right_stopping": 0.2271726710440512,
+          "left_stopping": 0.24414518796263548
+        },
+        "requested": {
+          "position": 0.2271736710440512,
+          "velocity": 1.7364831543401706,
+          "right_stopping": 0.2271736710440512,
+          "left_stopping": 0.24414618796263549
+        }
+      }
+    },
+    {
+      "id": "joint_14",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 14,
+      "initial_state": {
+        "cart_position": -0.021549292927158646,
+        "cart_velocity": 0.4488423344249729,
+        "pole_angle": 1.985866069063579,
+        "pole_angular_velocity": 0.9795145272595424
+      },
+      "state_sha256": "9760c6b054bc77d6efb04f179dec72f41ba912f06a9934e73cbde3d33bef0206",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.21844970707284134,
+          "velocity": 1.5511566655750273,
+          "right_stopping": 0.23636586278065125,
+          "left_stopping": 0.21844970707284134
+        },
+        "requested": {
+          "position": 0.21845070707284134,
+          "velocity": 1.551157665575027,
+          "right_stopping": 0.23636686278065125,
+          "left_stopping": 0.21845070707284134
+        }
+      }
+    },
+    {
+      "id": "joint_15",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 15,
+      "initial_state": {
+        "cart_position": 0.021549292927158646,
+        "cart_velocity": -0.4488423344249729,
+        "pole_angle": -1.985866069063579,
+        "pole_angular_velocity": -0.9795145272595424
+      },
+      "state_sha256": "2ec7f532270520a791525abbebf767e0e4717a5de4c2181f22cbf3a2334296e1",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.21844970707284134,
+          "velocity": 1.5511566655750273,
+          "right_stopping": 0.21844970707284134,
+          "left_stopping": 0.23636586278065125
+        },
+        "requested": {
+          "position": 0.21845070707284134,
+          "velocity": 1.551157665575027,
+          "right_stopping": 0.21845070707284134,
+          "left_stopping": 0.23636686278065125
+        }
+      }
+    },
+    {
+      "id": "joint_16",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 16,
+      "initial_state": {
+        "cart_position": -0.04642011838464437,
+        "cart_velocity": 0.10709149657487563,
+        "pole_angle": -0.1424294495441303,
+        "pole_angular_velocity": 3.70662744946749
+      },
+      "state_sha256": "debc938a884ef7f59da5c2cc75cfff18efa00a84cec5d5ddbf766cf93f708e66",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.19357888161535564,
+          "velocity": 1.8929075034251244,
+          "right_stopping": 0.28498554480481353,
+          "left_stopping": 0.19357888161535564
+        },
+        "requested": {
+          "position": 0.1935798816153556,
+          "velocity": 1.8929085034251243,
+          "right_stopping": 0.28498654480481356,
+          "left_stopping": 0.1935798816153556
+        }
+      }
+    },
+    {
+      "id": "joint_17",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 17,
+      "initial_state": {
+        "cart_position": 0.04642011838464437,
+        "cart_velocity": -0.10709149657487563,
+        "pole_angle": 0.1424294495441303,
+        "pole_angular_velocity": -3.70662744946749
+      },
+      "state_sha256": "b7835553978488a2621bcca90bbdc4ef802a836043eeb4d9e9aa6ce795c48080",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.19357888161535564,
+          "velocity": 1.8929075034251244,
+          "right_stopping": 0.19357888161535564,
+          "left_stopping": 0.28498554480481353
+        },
+        "requested": {
+          "position": 0.1935798816153556,
+          "velocity": 1.8929085034251243,
+          "right_stopping": 0.1935798816153556,
+          "left_stopping": 0.28498654480481356
+        }
+      }
+    },
+    {
+      "id": "joint_18",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 18,
+      "initial_state": {
+        "cart_position": 0.06542492878645054,
+        "cart_velocity": -0.22886210112666064,
+        "pole_angle": -1.203643835528042,
+        "pole_angular_velocity": 4.144270148774704
+      },
+      "state_sha256": "d24a72b18d24818d44d1830a30c9c58eba9ce813a78c7378bfa64269aa1a7cff",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.17457407121354945,
+          "velocity": 1.7711368988733394,
+          "right_stopping": 0.17457407121354945,
+          "left_stopping": 0.2988766961199368
+        },
+        "requested": {
+          "position": 0.17457507121354945,
+          "velocity": 1.7711378988733393,
+          "right_stopping": 0.17457507121354945,
+          "left_stopping": 0.2988776961199368
+        }
+      }
+    },
+    {
+      "id": "joint_19",
+      "subset": "joint",
+      "seed": null,
+      "generator_seed": 2026091601,
+      "generation_index": 19,
+      "initial_state": {
+        "cart_position": -0.06542492878645054,
+        "cart_velocity": 0.22886210112666064,
+        "pole_angle": 1.203643835528042,
+        "pole_angular_velocity": -4.144270148774704
+      },
+      "state_sha256": "badb03bf5c1c9bb0cec4eec03558bdbf23e0014fae605f30e5c2ee3bebb510f9",
+      "admission": {
+        "admissible": true,
+        "viable_at_requested_limits": true,
+        "reasons": [],
+        "inner": {
+          "position": 0.17457407121354945,
+          "velocity": 1.7711368988733394,
+          "right_stopping": 0.2988766961199368,
+          "left_stopping": 0.17457407121354945
+        },
+        "requested": {
+          "position": 0.17457507121354945,
+          "velocity": 1.7711378988733393,
+          "right_stopping": 0.2988776961199368,
+          "left_stopping": 0.17457507121354945
+        }
+      }
+    }
+  ],
+  "case_count": 140,
+  "final": false
+}

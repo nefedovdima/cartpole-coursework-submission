@@ -1,0 +1,23 @@
+{
+  "inputs": {
+    "learning_curves.json": "d99d08d2851c1adf31b0feefd794fa5cf7d8caaf32effd84f43e5f574709caac",
+    "seeds_0_5.json": "675b36020bd88d672fd08d3406a9c4711f2c70c546353f0b0b9aff35f942b396",
+    "training_bins.json": "96175066da94e3580fd2d031461b009522162b8bf1cc2691d553d88e9bc7cf99"
+  },
+  "figures": [
+    "best_to_last_seeds_0_5.pdf",
+    "best_to_last_seeds_0_5.png",
+    "best_to_last_seeds_0_5.svg",
+    "sampled_learning_diagnostics.pdf",
+    "sampled_learning_diagnostics.png",
+    "sampled_learning_diagnostics.svg",
+    "training_coverage_and_requests.pdf",
+    "training_coverage_and_requests.png",
+    "training_coverage_and_requests.svg",
+    "validation_learning_curves.pdf",
+    "validation_learning_curves.png",
+    "validation_learning_curves.svg"
+  ],
+  "matplotlib": "3.11.2",
+  "fresh_policy_calls": 0
+}

@@ -1,0 +1,83 @@
+{
+  "version": "development-stage1-v1",
+  "stage": 1,
+  "transitions": 100000,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "variants": [
+    "ddpg_on_warmup5000",
+    "ddpg_on_lr1e4",
+    "sac_off_warmup5000",
+    "sac_off_lr1e4"
+  ],
+  "training_jobs": [
+    {
+      "id": "train_ddpg_on_warmup5000_seed0",
+      "variant": "ddpg_on_warmup5000",
+      "seed": 0
+    },
+    {
+      "id": "train_ddpg_on_warmup5000_seed1",
+      "variant": "ddpg_on_warmup5000",
+      "seed": 1
+    },
+    {
+      "id": "train_ddpg_on_warmup5000_seed2",
+      "variant": "ddpg_on_warmup5000",
+      "seed": 2
+    },
+    {
+      "id": "train_ddpg_on_lr1e4_seed0",
+      "variant": "ddpg_on_lr1e4",
+      "seed": 0
+    },
+    {
+      "id": "train_ddpg_on_lr1e4_seed1",
+      "variant": "ddpg_on_lr1e4",
+      "seed": 1
+    },
+    {
+      "id": "train_ddpg_on_lr1e4_seed2",
+      "variant": "ddpg_on_lr1e4",
+      "seed": 2
+    },
+    {
+      "id": "train_sac_off_warmup5000_seed0",
+      "variant": "sac_off_warmup5000",
+      "seed": 0
+    },
+    {
+      "id": "train_sac_off_warmup5000_seed1",
+      "variant": "sac_off_warmup5000",
+      "seed": 1
+    },
+    {
+      "id": "train_sac_off_warmup5000_seed2",
+      "variant": "sac_off_warmup5000",
+      "seed": 2
+    },
+    {
+      "id": "train_sac_off_lr1e4_seed0",
+      "variant": "sac_off_lr1e4",
+      "seed": 0
+    },
+    {
+      "id": "train_sac_off_lr1e4_seed1",
+      "variant": "sac_off_lr1e4",
+      "seed": 1
+    },
+    {
+      "id": "train_sac_off_lr1e4_seed2",
+      "variant": "sac_off_lr1e4",
+      "seed": 2
+    }
+  ],
+  "max_new_trainings": 12,
+  "baseline_retraining": false,
+  "confirmation_authorized": false,
+  "final5000": false,
+  "selection": "per method/mode: minimum validation success, mean validation success, minimum final hold, mean final hold, mean longest hold; all3seeds; strict improvement over baseline; ties retain baseline"
+}

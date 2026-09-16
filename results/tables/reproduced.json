@@ -1,0 +1,188 @@
+{
+  "main": {
+    "SAC_on": {
+      "best": [
+        20,
+        20,
+        20
+      ],
+      "last": [
+        20,
+        20,
+        20
+      ]
+    },
+    "TQC_on": {
+      "best": [
+        20,
+        20,
+        20
+      ],
+      "last": [
+        20,
+        20,
+        20
+      ]
+    },
+    "DDPG_on": {
+      "best": [
+        20,
+        0,
+        0
+      ],
+      "last": [
+        20,
+        0,
+        0
+      ]
+    },
+    "DQN_on": {
+      "best": [
+        20,
+        14,
+        20
+      ],
+      "last": [
+        11,
+        14,
+        20
+      ]
+    },
+    "SAC_off": {
+      "best": [
+        0,
+        0,
+        0
+      ],
+      "last": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "stage1": {
+    "ddpg_on_warmup5000": {
+      "best": [
+        0,
+        20,
+        20
+      ],
+      "evaluation_mode": "training mode"
+    },
+    "ddpg_on_lr1e4": {
+      "best": [
+        0,
+        13,
+        0
+      ],
+      "evaluation_mode": "training mode"
+    },
+    "sac_off_warmup5000": {
+      "best": [
+        20,
+        0,
+        0
+      ],
+      "evaluation_mode": "training mode"
+    },
+    "sac_off_lr1e4": {
+      "best": [
+        0,
+        0,
+        0
+      ],
+      "evaluation_mode": "training mode"
+    }
+  },
+  "confirmation": {
+    "ddpg_on_warmup5000": {
+      "best": [
+        4,
+        0,
+        20
+      ],
+      "last": [
+        0,
+        0,
+        0
+      ],
+      "confirmed": false,
+      "subset": "validation",
+      "evaluation_mode": "training mode"
+    },
+    "sac_off_warmup5000": {
+      "best": [
+        0,
+        0,
+        0
+      ],
+      "last": [
+        0,
+        0,
+        0
+      ],
+      "confirmed": false,
+      "subset": "validation",
+      "evaluation_mode": "training mode"
+    }
+  },
+  "selection": {
+    "DDPG_on": {
+      "keys": {
+        "ddpg_on_baseline": [
+          0.0,
+          0.3333333333333333,
+          0.0,
+          2.3385000000000002,
+          2.3385000000000002
+        ],
+        "ddpg_on_warmup5000": [
+          0.0,
+          0.6666666666666666,
+          0.0,
+          4.705,
+          4.705
+        ],
+        "ddpg_on_lr1e4": [
+          0.0,
+          0.21666666666666667,
+          0.0,
+          0.9248333333333333,
+          0.9271666666666666
+        ]
+      },
+      "winner": "ddpg_on_warmup5000",
+      "subset": "validation",
+      "named_excluded": true
+    },
+    "SAC_off": {
+      "keys": {
+        "sac_off_baseline": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0736666666666667
+        ],
+        "sac_off_warmup5000": [
+          0.0,
+          0.3333333333333333,
+          0.0,
+          2.0113333333333334,
+          2.1261666666666668
+        ],
+        "sac_off_lr1e4": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0013333333333333346
+        ]
+      },
+      "winner": "sac_off_warmup5000",
+      "subset": "validation",
+      "named_excluded": true
+    }
+  }
+}

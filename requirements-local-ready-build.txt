@@ -1,0 +1,4 @@
+# Pip from the working CPU stack; poetry-core from installed cartpole WHEEL Generator.
+# Used only in the explicitly new environment, never the original/shared environment.
+pip==26.2.1
+poetry-core==2.4.1

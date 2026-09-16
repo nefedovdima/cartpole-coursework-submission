@@ -1,0 +1,276 @@
+{
+  "distribution": {
+    "cart_position": [
+      -0.02,
+      0.02
+    ],
+    "cart_velocity": [
+      -0.02,
+      0.02
+    ],
+    "pole_angle": [
+      -0.05,
+      0.05
+    ],
+    "pole_angular_velocity": [
+      -0.05,
+      0.05
+    ],
+    "sampling": "independent uniform; local Gymnasium seeded generator"
+  },
+  "cases": [
+    {
+      "id": "validation_1000",
+      "subset": "validation",
+      "seed": 1000,
+      "initial_state": {
+        "cart_position": 0.0008554295190025089,
+        "cart_velocity": 0.004153673880253183,
+        "pole_angle": -0.0029058202677746045,
+        "pole_angular_velocity": -0.02967520574553212
+      }
+    },
+    {
+      "id": "validation_1001",
+      "subset": "validation",
+      "seed": 1001,
+      "initial_state": {
+        "cart_position": 0.004503797142798038,
+        "cart_velocity": -0.01937198128718674,
+        "pole_angle": -0.031231042311807036,
+        "pole_angular_velocity": 0.035789006454112496
+      }
+    },
+    {
+      "id": "validation_1002",
+      "subset": "validation",
+      "seed": 1002,
+      "initial_state": {
+        "cart_position": -0.004767153620675363,
+        "cart_velocity": -0.005712426493162122,
+        "pole_angle": 0.024761231706819112,
+        "pole_angular_velocity": -0.011050808089508847
+      }
+    },
+    {
+      "id": "validation_1003",
+      "subset": "validation",
+      "seed": 1003,
+      "initial_state": {
+        "cart_position": -0.012489705269254664,
+        "cart_velocity": -0.009731767591247116,
+        "pole_angle": -0.0005320672811148647,
+        "pole_angular_velocity": 0.016079155748418533
+      }
+    },
+    {
+      "id": "validation_1004",
+      "subset": "validation",
+      "seed": 1004,
+      "initial_state": {
+        "cart_position": -0.0199647818903714,
+        "cart_velocity": -0.014793947514894743,
+        "pole_angle": -0.03615226347014087,
+        "pole_angular_velocity": -0.011934536305276258
+      }
+    },
+    {
+      "id": "validation_1005",
+      "subset": "validation",
+      "seed": 1005,
+      "initial_state": {
+        "cart_position": -0.01671123307728425,
+        "cart_velocity": 0.017222481695544144,
+        "pole_angle": -0.021271597163222956,
+        "pole_angular_velocity": 0.013855804862049861
+      }
+    },
+    {
+      "id": "validation_1006",
+      "subset": "validation",
+      "seed": 1006,
+      "initial_state": {
+        "cart_position": -0.006523142657087023,
+        "cart_velocity": 0.004034277751986191,
+        "pole_angle": -0.02021687005908245,
+        "pole_angular_velocity": -0.026242755530442686
+      }
+    },
+    {
+      "id": "validation_1007",
+      "subset": "validation",
+      "seed": 1007,
+      "initial_state": {
+        "cart_position": -0.01715100250156457,
+        "cart_velocity": 0.012639213807117734,
+        "pole_angle": 0.014292851291865721,
+        "pole_angular_velocity": -0.030340475517235156
+      }
+    },
+    {
+      "id": "validation_1008",
+      "subset": "validation",
+      "seed": 1008,
+      "initial_state": {
+        "cart_position": -0.013309890037815252,
+        "cart_velocity": 0.012522029909151165,
+        "pole_angle": -0.028256717078575824,
+        "pole_angular_velocity": 0.048376945454886064
+      }
+    },
+    {
+      "id": "validation_1009",
+      "subset": "validation",
+      "seed": 1009,
+      "initial_state": {
+        "cart_position": -0.01773998151786243,
+        "cart_velocity": -0.006923376493085529,
+        "pole_angle": -0.04501485379268018,
+        "pole_angular_velocity": -0.021867358157367425
+      }
+    },
+    {
+      "id": "validation_1010",
+      "subset": "validation",
+      "seed": 1010,
+      "initial_state": {
+        "cart_position": -0.01620030868153711,
+        "cart_velocity": 0.0014322292494737439,
+        "pole_angle": 0.04176767331134608,
+        "pole_angular_velocity": 0.04814658488888031
+      }
+    },
+    {
+      "id": "validation_1011",
+      "subset": "validation",
+      "seed": 1011,
+      "initial_state": {
+        "cart_position": -0.008635006385982536,
+        "cart_velocity": 0.0025329414203758213,
+        "pole_angle": -0.028739986534601025,
+        "pole_angular_velocity": -0.04179610191783328
+      }
+    },
+    {
+      "id": "validation_1012",
+      "subset": "validation",
+      "seed": 1012,
+      "initial_state": {
+        "cart_position": -0.007747180669174441,
+        "cart_velocity": 0.011225867375119693,
+        "pole_angle": -0.026156358044632434,
+        "pole_angular_velocity": 0.03604006784670388
+      }
+    },
+    {
+      "id": "validation_1013",
+      "subset": "validation",
+      "seed": 1013,
+      "initial_state": {
+        "cart_position": 0.011779716612247516,
+        "cart_velocity": -0.016840821137029754,
+        "pole_angle": 0.01726595912967692,
+        "pole_angular_velocity": -0.005243149261669376
+      }
+    },
+    {
+      "id": "validation_1014",
+      "subset": "validation",
+      "seed": 1014,
+      "initial_state": {
+        "cart_position": -0.002579039935088002,
+        "cart_velocity": 0.003428092212016582,
+        "pole_angle": 0.039796480698504,
+        "pole_angular_velocity": 0.04925806404171905
+      }
+    },
+    {
+      "id": "validation_1015",
+      "subset": "validation",
+      "seed": 1015,
+      "initial_state": {
+        "cart_position": -0.005603882590637675,
+        "cart_velocity": 0.0042827131442946115,
+        "pole_angle": 0.014130511981777921,
+        "pole_angular_velocity": -0.04070646955210677
+      }
+    },
+    {
+      "id": "validation_1016",
+      "subset": "validation",
+      "seed": 1016,
+      "initial_state": {
+        "cart_position": -0.010880336131512585,
+        "cart_velocity": -0.002292240356227545,
+        "pole_angle": -0.014637604611527223,
+        "pole_angular_velocity": 0.007970766962118944
+      }
+    },
+    {
+      "id": "validation_1017",
+      "subset": "validation",
+      "seed": 1017,
+      "initial_state": {
+        "cart_position": 0.016734070172411044,
+        "cart_velocity": 0.01285327494535259,
+        "pole_angle": 0.04725793920771014,
+        "pole_angular_velocity": 0.009962173273835327
+      }
+    },
+    {
+      "id": "validation_1018",
+      "subset": "validation",
+      "seed": 1018,
+      "initial_state": {
+        "cart_position": 0.0037590179675475698,
+        "cart_velocity": -0.0018016369721956492,
+        "pole_angle": 0.03715138877530265,
+        "pole_angular_velocity": 0.03143883875486497
+      }
+    },
+    {
+      "id": "validation_1019",
+      "subset": "validation",
+      "seed": 1019,
+      "initial_state": {
+        "cart_position": -0.011322925655736338,
+        "cart_velocity": -0.004160198084251082,
+        "pole_angle": -0.0033115835749119235,
+        "pole_angular_velocity": 0.03287519478664287
+      }
+    },
+    {
+      "id": "bottom",
+      "subset": "named",
+      "seed": null,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.0,
+        "pole_angular_velocity": 0.0
+      }
+    },
+    {
+      "id": "plus_002",
+      "subset": "named",
+      "seed": null,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": 0.02,
+        "pole_angular_velocity": 0.0
+      }
+    },
+    {
+      "id": "minus_002",
+      "subset": "named",
+      "seed": null,
+      "initial_state": {
+        "cart_position": 0.0,
+        "cart_velocity": 0.0,
+        "pole_angle": -0.02,
+        "pole_angular_velocity": 0.0
+      }
+    }
+  ]
+}

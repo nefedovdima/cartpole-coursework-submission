@@ -1,0 +1,64 @@
+{
+  "main": {
+    "snapshot": "main_series_audit_1789491164457590414",
+    "prior_audit_report_sha256": "ac6fabcfb884000c67924e1d9dca4ada94e2478079c267030d2f1f73407493ad",
+    "archives": {
+      "review": {
+        "sha256": "aaeec1856adb142cd7971b4c100f2c951039e91683fd753fb3396413fd22323c",
+        "archive_bytes": 537341,
+        "files": 10,
+        "extracted_bytes": 8044304,
+        "extraction_seconds": 0.040589684002043214
+      },
+      "recovery": {
+        "sha256": "3505417bba5bb8f56087af93f8b9f2929b7daf9f7e200b1c90c65a1ad7705d5d",
+        "archive_bytes": 2340183578,
+        "files": 29026,
+        "extracted_bytes": 2812100313,
+        "extraction_seconds": 38.08040883599824
+      }
+    }
+  },
+  "stage1": {
+    "snapshot": "development_stage1_audit_1789507643733003657",
+    "prior_audit_report_sha256": "75721e1a3c0fd64f458d4ae28239709869fa51a7aa9603ff1fd6caebd47abc1b",
+    "archives": {
+      "review": {
+        "sha256": "154e10dcde34ec337d10ee97f6e16119d9ef1d6ab61d996d8c50c6840f6ac3c7",
+        "archive_bytes": 408266,
+        "files": 9,
+        "extracted_bytes": 6015190,
+        "extraction_seconds": 0.24670405600045342
+      },
+      "recovery": {
+        "sha256": "619b1fb6791bbd85e8158478353fb22dcd9138677cd0b1166b1600e8012b74ca",
+        "archive_bytes": 1738758622,
+        "files": 21594,
+        "extracted_bytes": 2060783062,
+        "extraction_seconds": 52.54914462200395
+      }
+    }
+  },
+  "confirmation": {
+    "snapshot": "confirmation_audit_1789515957912724921",
+    "prior_audit_report_sha256": "cbd0700c86b4380166cf3a2b6ebb10ca5de970ce8f94d33f07112ce700c1ac22",
+    "archives": {
+      "review": {
+        "sha256": "f72f4f0732f99e8b1ba3e6d70447ba6015583763eb3d793e71407e1f327f4956",
+        "archive_bytes": 332521,
+        "files": 8,
+        "extracted_bytes": 4837893,
+        "seconds": 0.3000332910014549,
+        "all_paths_preflighted_before_extraction": true
+      },
+      "recovery": {
+        "sha256": "b7bd57a0bc5d21c1a80a36a138e884872d1dc9ec0ba65a1d7b948d1d154a8c71",
+        "archive_bytes": 861211666,
+        "files": 10883,
+        "extracted_bytes": 1037238348,
+        "seconds": 80.49276716500026,
+        "all_paths_preflighted_before_extraction": true
+      }
+    }
+  }
+}
