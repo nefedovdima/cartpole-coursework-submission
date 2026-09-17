@@ -1,0 +1,124 @@
+{
+  "date": "2026-09-16",
+  "kind": "independent saved-trajectory audit; no new rollouts",
+  "archives": [
+    {
+      "name": "robustness-review-1789558151385076965.tar.gz",
+      "sha256": "0c3b3685612f35da89332f8b36b165e96fd76d0056f12bf647a34e5d57f019e3"
+    },
+    {
+      "name": "robustness-recovery-1789558163887525846.tar.gz",
+      "sha256": "b2390e4f695ce45b2549423a2a591bf65e0ba0c5351771182e042bbb09496f18"
+    },
+    {
+      "name": "robustness-recovery-1789556097798014866.tar.gz",
+      "sha256": "9df3c8e0faa6620e56f6c2e08c8c5ec1d5f45619dad8ca8d4d5298cd25bdef3a"
+    }
+  ],
+  "manifests": [
+    {
+      "archive": "main_compact",
+      "files": 4,
+      "manifest_sha256": "abe8680481bdc760b53460d1d23b1233890fc3b7bf6433e05e79c0f9561e3149",
+      "package_sha256": "12525feaa20a65fdabcbbbcef87eb7318c3b0c2106fef82d254ab6dbb92b0225"
+    },
+    {
+      "archive": "main_full",
+      "files": 8931,
+      "manifest_sha256": "790232bd74f27b68890c78fa85aa2cce05cfa84a887eef5a54ad442ea50ed461",
+      "package_sha256": "12525feaa20a65fdabcbbbcef87eb7318c3b0c2106fef82d254ab6dbb92b0225"
+    },
+    {
+      "archive": "timing_full",
+      "files": 195,
+      "manifest_sha256": "07d83574f3b5c510a104223d5beda59615589b456495985b229425fbfe660ba5",
+      "package_sha256": "12525feaa20a65fdabcbbbcef87eb7318c3b0c2106fef82d254ab6dbb92b0225"
+    }
+  ],
+  "integrity": {
+    "jobs": 100,
+    "episodes": 2000,
+    "technical_errors": 0,
+    "duplicate_attempts": 0,
+    "all_receipts_verified": true,
+    "metric_discrepancies": 0,
+    "maximum_float_comparison_difference": 0.0,
+    "seconds": 162.67326912799945,
+    "max_endpoint_x_residual": 8.042178034628478e-15,
+    "max_endpoint_v_residual": 4.2500725161431774e-14,
+    "max_reward_residual": 1.4432899320127035e-15
+  },
+  "compact_full_differences": [
+    {
+      "path": "/status/session/elapsed_session_seconds",
+      "compact": 1766.5998284816742,
+      "full": 1777.7944073677063
+    },
+    {
+      "path": "/status/session/seconds_before_save_reserve",
+      "compact": 1533.4001715183258,
+      "full": 1522.2055926322937
+    }
+  ],
+  "observation_labels": "Journal uses symbolic X,V,g,l; specification uses .25,2,9.8,.18. Both labels and physical scales checked explicitly; labels are not byte-identical.",
+  "historical_protocol_sha256": "4b0c7fc94cf6a7d94c54fe7023796aad7791a434d3096024b9d6b45c064f7ebc",
+  "source_code_commit": "96332cf7a15ada8f65ef1efb5203f630b084ef0d",
+  "data_files": {
+    "results/tables/robustness/main_episodes.json": "d0ce15f93d7bf8a6b56781216c3a31dc19dbe636c2a97cfc3f2250bcfde3bdc5",
+    "results/tables/robustness/timing_episodes.json": "a786151a32e9f8866565d99635d04d2f00af8491f599535902329cb95eeab078",
+    "results/tables/robustness/trajectories/SAC_seed1_joint_15_off_commands.csv": "0f0b84b451aa473e47ab76fd10daf2b983550e5b35a5c6e0661542a4bf3cd2c7",
+    "results/tables/robustness/trajectories/SAC_seed1_joint_15_off_states.csv": "b03228d8507c7515aeea2279d3221798a78950953ed77df492d5f7db1cb917ae",
+    "results/tables/robustness/trajectories/SAC_seed1_joint_15_on_commands.csv": "84e66a2eb16d03d45caa5387163329d24ca304675f1513803cdb00dfc2095f81",
+    "results/tables/robustness/trajectories/SAC_seed1_joint_15_on_states.csv": "684cbf3fe4e3709afee1e8ecaa02c56c7a6bf8e248b867140cb6928de80fde63",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_18_off_commands.csv": "f7793b4970c6fedf4b34c30510c203dada5ac36d69efc1ca1ae87ae5ad5d3699",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_18_off_states.csv": "82e96719936f813f5d21f81441492f5d9ce566a822bce8ba23f8e92cf7ae28bf",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_18_on_commands.csv": "5cef48d22e83d9fea0cfa4f91f7de4fd18c49d3932c07a0f8fc7145491777197",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_18_on_states.csv": "7bfebd295039db5aa0162badefe84d057967fd56a0bb7ca43e8c6a04af385a95",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_19_off_commands.csv": "e3cf9703dd7221cf29596b8dfedb08d4cdfd7d3fa7948f314bb8e9ee19a012b8",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_19_off_states.csv": "31ab52669eeb88eff5752956881f8dcbc115c632778ef7b001d7973712192e64",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_19_on_commands.csv": "0d8a273295c45d70d977b46a71adb685148fb180c20c20516784df96f58aea83",
+    "results/tables/robustness/trajectories/TQC_seed1_boundary_19_on_states.csv": "f3563c6ca17f9ff51dc38081ced635e4d289cc31fb47318f58acf761e89817dc",
+    "results/tables/robustness/trajectories/TQC_seed1_nominal_03_off_commands.csv": "3e1a856a315ed86cbaffc0cfabe35d12a4320efac20e45ea9cb5ac28ceae5330",
+    "results/tables/robustness/trajectories/TQC_seed1_nominal_03_off_states.csv": "a3e430819ab2362486466c1fa8c6faf682ef1c7b35687d62135a033f2a7e8524",
+    "results/tables/robustness/trajectories/TQC_seed1_nominal_03_on_commands.csv": "b820fee6395a0a52a543cbda35f116c7f01be51338f891faebab34baf90d96ea",
+    "results/tables/robustness/trajectories/TQC_seed1_nominal_03_on_states.csv": "b5ff09e8777334c9b82b226e51c4c9bb69f9ae63245bca37631dd187975b6804",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_18_off_commands.csv": "e52d0a62524baed7247cf47235e48374667a8b80bf2b2fa60c322ed3c452956c",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_18_off_states.csv": "b401cb4081484946e79988518f304618e8a38fe750cd4bf10013f8eba3075e89",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_18_on_commands.csv": "88c2e8b2bb176108e77d6d114dfb205d3cb700935b4d7743eaded19debea01d5",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_18_on_states.csv": "dd3736147a19742f0f8b8a83999c792dc4d03f82ebd747c8e12f4dc368694cf2",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_19_off_commands.csv": "84e38c628c9820316cd0767a1a1a86cc61fdaa31e7913481927a2e0028f90e2a",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_19_off_states.csv": "a08db563cbd9858eb9eb71f6c72fc4bd2541c1df77c9145b62e3e81ae45e3d93",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_19_on_commands.csv": "af4ad191be47901b6706512b1619e6d1da134ebafc39c6eb090a70cccebc96b8",
+    "results/tables/robustness/trajectories/TQC_seed2_boundary_19_on_states.csv": "7b1316819d68bc8419bbd02bd80ace6f7265d63c07306f5feeafaa54a36b5c78",
+    "results/tables/robustness/trajectories/classical_boundary_18_off_commands.csv": "e9fd468b086dad4f57e5c1f8fb72db589b416cfc56b9df2ee5bce1da8c7048f6",
+    "results/tables/robustness/trajectories/classical_boundary_18_off_states.csv": "4a9cad8300d5becdf01d8408fcd7f75d3c758f5444cfb324bdb1d1d2e295d2d9",
+    "results/tables/robustness/trajectories/classical_boundary_18_on_commands.csv": "d3f23dab08cf810fe5b91267af3b6ba4729d2f03a7de30655ee76ce6d44b47b0",
+    "results/tables/robustness/trajectories/classical_boundary_18_on_states.csv": "4a9cad8300d5becdf01d8408fcd7f75d3c758f5444cfb324bdb1d1d2e295d2d9",
+    "results/tables/robustness/trajectories/classical_boundary_19_off_commands.csv": "89c94aeaa817d1038b740090e7c313e5dce5c5bdbe45e913351affd6779617e4",
+    "results/tables/robustness/trajectories/classical_boundary_19_off_states.csv": "73e5afbeea9432679125b146bf6b739e64ce2f9bba894f0966a80471fc18fc89",
+    "results/tables/robustness/trajectories/classical_boundary_19_on_commands.csv": "a98e06d2d065ddc04072eda58f8733a8bf63e688459460a6c9efd85502383d6d",
+    "results/tables/robustness/trajectories/classical_boundary_19_on_states.csv": "76de4a3c0daeb16afd86f7c369ae08ad0b0f9fd4d7809a6e5593b65c8e3daeb9",
+    "results/tables/robustness/trajectories.json": "50babc629dd2c567b871cc9f55a3c21154c7360b3d3aec988d072f0a168e93e3"
+  },
+  "backup": {
+    "old_main_recovery_sha256": "3505417bba5bb8f56087af93f8b9f2929b7daf9f7e200b1c90c65a1ad7705d5d",
+    "six_checkpoint_manifests_and_30_payloads": "present locally; all SHA verified; weights not deserialized"
+  },
+  "scope": "Episode rows were independently recalculated from full logs. Compact reproduction cannot repeat all raw-log checks without the external recovery. Sixteen CSV trace projections retain all saved samples and commands, not full log payloads.",
+  "audit_method": {
+    "prior_source_sha256": "7d3c26a00c4e9c712bf2a299c5073bef5b7d78f91c7b76b24e6fb592c3afbebe",
+    "method": "physical_metrics AST function copied unchanged; independent sampled hold, reward, extrema; no policy or dynamics recomputation",
+    "numeric_comparison": {
+      "rtol": 1e-10,
+      "atol": 1e-09
+    },
+    "event_tolerance": 1e-12,
+    "desired_position_threshold": 0.24,
+    "resolved_exceedance_threshold": 0.240000000001
+  },
+  "audit_scripts_sha256": {
+    "audit.py": "e526cc1a12462dd9480574db575214a8c8134e0414366cd60b28e206ad9f8463",
+    "physical_metrics_reused.py": "b28c3b1434cec581ad0fa013afc4d12a6345d0b0958b3feb50bbcf6a49f649a6",
+    "metadata_check.py": "1533b0dbf12a3bd20c2eb5fd272e7892846d5aa874742c88c20af6b7d48dfe8c"
+  }
+}

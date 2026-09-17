@@ -4,8 +4,7 @@ title: "Управление перевёрнутым маятником мет�
 authors:
   - family-names: "Нефедов"
     given-names: "Дмитрий"
-version: "intermediate-2026-09-16"
-date-released: "2026-09-16"
+version: "submission-candidate-2026-09-17"
 references:
   - type: software
     title: "robotics-laboratory/cart-pole"

@@ -1,0 +1,16 @@
+scope,id,pair_count,both_success,on_only_success,off_only_success,neither_success,paired_success_gain,off_success_with_resolved_exceedance,off_only_success_with_resolved_exceedance
+overall,all,980,434,362,7,177,0.3622448979591837,47,7
+controller,SAC_seed0,140,83,52,2,3,0.35714285714285715,7,2
+controller,SAC_seed1,140,70,59,1,10,0.4142857142857143,7,1
+controller,SAC_seed2,140,121,7,2,10,0.03571428571428571,11,2
+controller,TQC_seed0,140,21,106,0,13,0.7571428571428571,7,0
+controller,TQC_seed1,140,6,87,0,47,0.6214285714285714,1,0
+controller,TQC_seed2,140,73,26,1,40,0.17857142857142858,4,1
+controller,classical,140,60,25,1,54,0.17142857142857143,10,1
+group,nominal,140,69,70,0,1,0.5,6,0
+group,position,140,63,59,0,18,0.42142857142857143,3,0
+group,velocity,140,52,57,1,30,0.4,3,1
+group,angle,140,70,32,3,35,0.20714285714285716,7,3
+group,angular_velocity,140,66,45,2,27,0.30714285714285716,12,2
+group,boundary,140,48,49,0,43,0.35,9,0
+group,joint,140,66,50,1,23,0.35,7,1

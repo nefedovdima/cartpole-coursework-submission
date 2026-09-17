@@ -1,0 +1,3998 @@
+{
+  "schema": "saved-robustness-video-v2",
+  "source_git_head": "f56284de5709d762d8ea525a1bac54b1cd6da3a9",
+  "code_sha256": {
+    "cartpole/experiments/robustness_video.py": "1dade3f3978ce411094250042e6e694809cff8e2fc465f343c05f46c57f82bee",
+    "cartpole/experiments/robustness_analysis.py": "aaaacc76a2732f912119371e9d76eaaa65fe3e92b8878f248e138cb8af22fe83"
+  },
+  "font_sha256": {
+    "DejaVuSans.ttf": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280",
+    "DejaVuSans-Bold.ttf": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "pillow": "12.3.0",
+    "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers"
+  },
+  "build_command": ".venv-cloud-check/bin/python -B -m cartpole.experiments.robustness_video --review artifacts/robustness-20260916/robustness-review-1789558151385076965.tar.gz --recovery artifacts/robustness-20260916/robustness-recovery-1789558163887525846.tar.gz --historical-media ../cartpole-coursework-submission/media --historical-episodes ../cartpole-intermediate-report-20260916/sources/episodes --confirmation-analysis verification/confirmation_audit_1789515957912724921/analysis --output reports/research-report-20260917/media --verify-repeat",
+  "encoding": {
+    "codec": "libx264",
+    "preset": "veryfast",
+    "crf": 18,
+    "threads": 4,
+    "pixel_format": "yuv420p",
+    "audio": false,
+    "faststart": true
+  },
+  "input_aliases": {
+    "main_review": "robustness-review-1789558151385076965.tar.gz",
+    "main_recovery": "robustness-recovery-1789558163887525846.tar.gz",
+    "historical_media": "historical_media",
+    "historical_episodes": "historical_episodes",
+    "confirmation_analysis": "confirmation_analysis"
+  },
+  "evidence": {
+    "scientific_sha256": "c1cac3775426748520db67957e988fb7cf3706148d1cc515eca26e88118fb63b",
+    "selection": {
+      "rescue_candidates": 402,
+      "rescue_pair": [
+        "SAC_seed0",
+        "angle_01"
+      ],
+      "tradeoff_candidates": 7,
+      "tradeoff_pairs": [
+        [
+          "SAC_seed0",
+          "angle_16"
+        ],
+        [
+          "SAC_seed0",
+          "velocity_15"
+        ],
+        [
+          "SAC_seed1",
+          "joint_15"
+        ],
+        [
+          "SAC_seed2",
+          "angular_velocity_09"
+        ],
+        [
+          "SAC_seed2",
+          "angular_velocity_10"
+        ],
+        [
+          "TQC_seed2",
+          "angle_12"
+        ],
+        [
+          "classical",
+          "angle_07"
+        ]
+      ]
+    },
+    "main_review": {
+      "archive_sha256": "0c3b3685612f35da89332f8b36b165e96fd76d0056f12bf647a34e5d57f019e3",
+      "expected_archive_sha_verified": true,
+      "manifest_files": 4,
+      "export_manifest_sha256": "abe8680481bdc760b53460d1d23b1233890fc3b7bf6433e05e79c0f9561e3149"
+    },
+    "main_recovery": {
+      "archive_sha256": "b2390e4f695ce45b2549423a2a591bf65e0ba0c5351771182e042bbb09496f18",
+      "expected_archive_sha_verified": true,
+      "manifest_files": 8931,
+      "export_manifest_sha256": "790232bd74f27b68890c78fa85aa2cce05cfa84a887eef5a54ad442ea50ed461"
+    },
+    "historical_videos": [
+      {
+        "id": "classical_success",
+        "phase": "main",
+        "job": "evaluate_classical",
+        "mode": "classical_on",
+        "seed": null,
+        "case_id": "bottom",
+        "initial_state": {
+          "cart_position": 0.0,
+          "cart_velocity": 0.0,
+          "pole_angle": 0.0,
+          "pole_angular_velocity": 0.0
+        },
+        "model_sha256": null,
+        "checkpoint": "фиксированный контроллер",
+        "transitions": null,
+        "log_sha256": "38cbfd46c460b01a4ce1fd54d4f71d75f76b4f7a507c116b0ecf5080880fe769",
+        "old_video": "classical_success.mp4",
+        "old_video_sha256": "3fb38d6822e5ec25cd4e1273f2426cc02f4a404e8cfc3f693103718a3365f6c6",
+        "receipt_sha256": "b553264454e11689538d793096f0258cc44468d0d27638d6562a447237fb58a1"
+      },
+      {
+        "id": "sac_on_success",
+        "phase": "main",
+        "job": "evaluate_train_SAC_on_seed1",
+        "mode": "best_on",
+        "seed": 1,
+        "case_id": "bottom",
+        "initial_state": {
+          "cart_position": 0.0,
+          "cart_velocity": 0.0,
+          "pole_angle": 0.0,
+          "pole_angular_velocity": 0.0
+        },
+        "model_sha256": "2e2e9946e948f0c651c6f71cbbe3c822888061dc4d2b6ca64b94b48cad160bed",
+        "checkpoint": "best",
+        "transitions": 50000,
+        "log_sha256": "fd448a47a419d0ae0f01b41cee3f14d3ba277010237dbb169cb0b8a186d30b07",
+        "old_video": "sac_on_success.mp4",
+        "old_video_sha256": "8d1c8d5cd9a05f0a7f226ebf5da73f6879a7341224f558f5b3cb9972562c059c",
+        "receipt_sha256": "41c07d6a8f30a2306acb0479317f6a82dafe58c63137673a03750b815acecdaf"
+      },
+      {
+        "id": "tqc_on_success",
+        "phase": "main",
+        "job": "evaluate_train_TQC_on_seed0",
+        "mode": "best_on",
+        "seed": 0,
+        "case_id": "bottom",
+        "initial_state": {
+          "cart_position": 0.0,
+          "cart_velocity": 0.0,
+          "pole_angle": 0.0,
+          "pole_angular_velocity": 0.0
+        },
+        "model_sha256": "cf343633e258b3db84cd8d52e6483be9f9f521ac272c63e733db48f791552976",
+        "checkpoint": "best",
+        "transitions": 80000,
+        "log_sha256": "9ae5e868520069cc7cceec3224e9d15aa083a71f3b5173bf3102c7c02ccd3690",
+        "old_video": "tqc_on_success.mp4",
+        "old_video_sha256": "430d28310bcf4ec79d1b05c762c13d525aeb949e0ea61b7941eb437cb89526bc",
+        "receipt_sha256": "1a36886dfd863b2d4af90dc607a36b632a843f235a2c59580d99d04c55fbb6f0"
+      },
+      {
+        "id": "ddpg_confirmation_best",
+        "phase": "confirmation",
+        "job": "evaluate_train_confirm_ddpg_on_warmup5000_seed5",
+        "mode": "best_on",
+        "seed": 5,
+        "case_id": "validation_1000",
+        "initial_state": {
+          "cart_position": 0.0008554295190025089,
+          "cart_velocity": 0.004153673880253183,
+          "pole_angle": -0.0029058202677746045,
+          "pole_angular_velocity": -0.02967520574553212
+        },
+        "model_sha256": "7a237631c8e9b6dbfcf89437ced3eaab5354477aba80f748f866947e1922b842",
+        "checkpoint": "best",
+        "transitions": 90000,
+        "log_sha256": "a9a781c25ab73427e861ffdae23e0759076a6bd3ba59fddf08f67632e282cf30",
+        "old_video": "ddpg_failure_or_degradation.mp4",
+        "old_video_sha256": "e486b6e13712af6f761b68cd91b180820ee3e57b70f2c7cf61e8a403f7901b78",
+        "receipt_sha256": "c1c1a96738d433e78045a2896e683ba555a43a60f131eb5dbd96676bf0d1ffdc",
+        "checkpoint_manifest_sha256": "e1d7e5a4b47123a0c4759867d9a3229ccc30c9e12731f5e8a8f5065853cffc42"
+      },
+      {
+        "id": "ddpg_confirmation_last",
+        "phase": "confirmation",
+        "job": "evaluate_train_confirm_ddpg_on_warmup5000_seed5",
+        "mode": "last_on",
+        "seed": 5,
+        "case_id": "validation_1000",
+        "initial_state": {
+          "cart_position": 0.0008554295190025089,
+          "cart_velocity": 0.004153673880253183,
+          "pole_angle": -0.0029058202677746045,
+          "pole_angular_velocity": -0.02967520574553212
+        },
+        "model_sha256": "9eaca84c67911ca9d6167eb85586aac9408f7967c53657f43b0f871fbf101acd",
+        "checkpoint": "last",
+        "transitions": 100000,
+        "log_sha256": "4231a65facdf2da86f692c35fe461f783a2c82db99f423ff3d9817740067fa00",
+        "old_video": "ddpg_failure_or_degradation.mp4",
+        "old_video_sha256": "e486b6e13712af6f761b68cd91b180820ee3e57b70f2c7cf61e8a403f7901b78",
+        "receipt_sha256": "112105c364d330eb17d820637f7f1d8c1afdb75b500eaef93f6d0e362299bed1",
+        "checkpoint_manifest_sha256": "ff4ead3cdb93092b94fa4fc4d405c96fb58e52511b2151c3d015321b0a5318cf"
+      }
+    ],
+    "selected_unique_main_logs": 19,
+    "verification": {
+      "archive_integrity": "passed",
+      "compact_consistency": "passed",
+      "selected_log_binding": "passed",
+      "full_raw_metric_recomputation": "not_run",
+      "models_loaded": false,
+      "rollouts": 0
+    },
+    "classical_caveat": "Specification has SAC-like environment contract; actual saved classical logs use CourseworkCartPole-v0 without training contract. Rendering uses actual saved coordinates."
+  },
+  "auxiliary_sha256": {
+    "manifest.json": "ba7550f7d500f5f8ae4e4a2a604bbdae75ce1161a5df8b30105100e77c208dc4",
+    "episodes.csv": "78e6f8d4e8cf63dfe165264ef239491034b8a5eb42b8fa5042ceec3455e1667c",
+    "selected_checkpoints.json": "b5a287ab7a1e0754466f53ef3a997336a2e55923be3cbd4b199babaef6d2df5e",
+    "classical_success.json.gz": "38cbfd46c460b01a4ce1fd54d4f71d75f76b4f7a507c116b0ecf5080880fe769",
+    "classical_success_receipt.json": "b553264454e11689538d793096f0258cc44468d0d27638d6562a447237fb58a1",
+    "ddpg_confirmation_best.json.gz": "a9a781c25ab73427e861ffdae23e0759076a6bd3ba59fddf08f67632e282cf30",
+    "ddpg_confirmation_best_receipt.json": "c1c1a96738d433e78045a2896e683ba555a43a60f131eb5dbd96676bf0d1ffdc",
+    "ddpg_confirmation_last.json.gz": "4231a65facdf2da86f692c35fe461f783a2c82db99f423ff3d9817740067fa00",
+    "ddpg_confirmation_last_receipt.json": "112105c364d330eb17d820637f7f1d8c1afdb75b500eaef93f6d0e362299bed1",
+    "sac_on_success.json.gz": "fd448a47a419d0ae0f01b41cee3f14d3ba277010237dbb169cb0b8a186d30b07",
+    "sac_on_success_receipt.json": "41c07d6a8f30a2306acb0479317f6a82dafe58c63137673a03750b815acecdaf",
+    "tqc_on_success.json.gz": "9ae5e868520069cc7cceec3224e9d15aa083a71f3b5173bf3102c7c02ccd3690",
+    "tqc_on_success_receipt.json": "1a36886dfd863b2d4af90dc607a36b632a843f235a2c59580d99d04c55fbb6f0",
+    "classical_success.mp4": "3fb38d6822e5ec25cd4e1273f2426cc02f4a404e8cfc3f693103718a3365f6c6",
+    "ddpg_failure_or_degradation.mp4": "e486b6e13712af6f761b68cd91b180820ee3e57b70f2c7cf61e8a403f7901b78",
+    "sac_on_success.mp4": "8d1c8d5cd9a05f0a7f226ebf5da73f6879a7341224f558f5b3cb9972562c059c",
+    "tqc_on_success.mp4": "430d28310bcf4ec79d1b05c762c13d525aeb949e0ea61b7941eb437cb89526bc"
+  },
+  "input_unchanged": true,
+  "videos": [
+    {
+      "file": "01_nominal_controllers.mp4",
+      "purpose": "Подъём и удержание",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "frames": 360,
+      "duration": 12.0,
+      "bytes": 462370,
+      "sha256": "96a1b0f6c1a3799855c3f2e76e0507d8ea59029c3c9c45d3276b9210bcc3ce73",
+      "full_decode": "passed",
+      "faststart": true,
+      "rgb_frames_sha256": "1ecb9945552e4768d35489b80a44f9c99f48ababbe1889b1b1c1cdeb367680c6",
+      "repeat_bit_identical": true,
+      "episodes": [
+        {
+          "controller": "classical",
+          "model_id": "classical",
+          "seed": null,
+          "filter": "on",
+          "group": "nominal",
+          "case_id": "nominal_00",
+          "initial_state": {
+            "cart_position": 0.013275441174349051,
+            "cart_velocity": 0.01332731035646752,
+            "pole_angle": 0.005017982525201983,
+            "pole_angular_velocity": -0.027751125148808533
+          },
+          "model_sha256": "c7d118eee902cbbc852d4a9a156d90827134913f5bd25a515ae929667658814f",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 1.1879262626024456e-05,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 1.2235870060953801e-05,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.0001076887678372154,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0001108715828718319,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 7.83,
+          "hold_longest": 7.83,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 0.39,
+              "end": 0.4
+            },
+            {
+              "start": 0.4,
+              "end": 0.41000000000000003
+            },
+            {
+              "start": 0.41000000000000003,
+              "end": 0.42
+            },
+            {
+              "start": 0.42,
+              "end": 0.43
+            },
+            {
+              "start": 0.43,
+              "end": 0.44
+            },
+            {
+              "start": 0.44,
+              "end": 0.45
+            },
+            {
+              "start": 0.45,
+              "end": 0.46
+            },
+            {
+              "start": 0.46,
+              "end": 0.47000000000000003
+            },
+            {
+              "start": 0.47000000000000003,
+              "end": 0.48
+            },
+            {
+              "start": 0.48,
+              "end": 0.49
+            },
+            {
+              "start": 0.49,
+              "end": 0.5
+            },
+            {
+              "start": 0.5,
+              "end": 0.51
+            },
+            {
+              "start": 0.51,
+              "end": 0.52
+            },
+            {
+              "start": 0.52,
+              "end": 0.53
+            },
+            {
+              "start": 0.53,
+              "end": 0.54
+            },
+            {
+              "start": 0.54,
+              "end": 0.55
+            },
+            {
+              "start": 0.96,
+              "end": 0.97
+            },
+            {
+              "start": 0.97,
+              "end": 0.98
+            },
+            {
+              "start": 0.98,
+              "end": 0.99
+            },
+            {
+              "start": 0.99,
+              "end": 1.0
+            },
+            {
+              "start": 1.0,
+              "end": 1.01
+            },
+            {
+              "start": 1.01,
+              "end": 1.02
+            },
+            {
+              "start": 1.02,
+              "end": 1.03
+            },
+            {
+              "start": 1.03,
+              "end": 1.04
+            },
+            {
+              "start": 1.04,
+              "end": 1.05
+            },
+            {
+              "start": 1.05,
+              "end": 1.06
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/classical_on_nominal/evaluation/cases/nominal_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/classical_on_nominal/evaluation/cases/nominal_00/attempt_00000/receipt.json",
+            "receipt_sha256": "f039c32e9a8fe723f02c9db4c65bce726374d307c675c0e70ada6edaaec91b36",
+            "specification": "queue/jobs/classical_on_nominal/evaluation/specification.json",
+            "specification_sha256": "850bb0c6d30c8ef7de85bdc2460c7de0c24af7133f4693799ad4b2187de88606"
+          },
+          "log_sha256": "d30a6ea3b614d2879e94700fd9355bba7253a0527984b0108fad208ed2a761a9"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "nominal",
+          "case_id": "nominal_00",
+          "initial_state": {
+            "cart_position": 0.013275441174349051,
+            "cart_velocity": 0.01332731035646752,
+            "pole_angle": 0.005017982525201983,
+            "pole_angular_velocity": -0.027751125148808533
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.0006452259152616158,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.00026421770611154155,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.051757938278752164,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.001412882533625437,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.4399999999999995,
+          "hold_longest": 6.4399999999999995,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_nominal/evaluation/cases/nominal_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_nominal/evaluation/cases/nominal_00/attempt_00000/receipt.json",
+            "receipt_sha256": "3615673725c8fc7859dd6132a718fe7f01dd93af31de796cf59c7098a205fe37",
+            "specification": "queue/jobs/SAC_seed0_on_nominal/evaluation/specification.json",
+            "specification_sha256": "54394913975175fb3f04b977e9a992e2cf87306f89c00a0860bbe822a078cbb4"
+          },
+          "log_sha256": "ddd40cd9ac1d979a226c98c6b777c55ff3e546847c721a1614fbd62bcfa4f752"
+        },
+        {
+          "controller": "TQC",
+          "model_id": "TQC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "nominal",
+          "case_id": "nominal_00",
+          "initial_state": {
+            "cart_position": 0.013275441174349051,
+            "cart_velocity": 0.01332731035646752,
+            "pole_angle": 0.005017982525201983,
+            "pole_angular_velocity": -0.027751125148808533
+          },
+          "model_sha256": "cf343633e258b3db84cd8d52e6483be9f9f521ac272c63e733db48f791552976",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 2.836411095039558e-05,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.00023415753070849955,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.0787827015328273,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.00036572443232992235,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.8,
+          "hold_longest": 6.8,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 0.29,
+              "end": 0.3
+            },
+            {
+              "start": 0.3,
+              "end": 0.31
+            },
+            {
+              "start": 0.31,
+              "end": 0.32
+            },
+            {
+              "start": 0.32,
+              "end": 0.33
+            },
+            {
+              "start": 0.33,
+              "end": 0.34
+            },
+            {
+              "start": 0.34,
+              "end": 0.35000000000000003
+            },
+            {
+              "start": 0.35000000000000003,
+              "end": 0.36
+            },
+            {
+              "start": 0.36,
+              "end": 0.37
+            },
+            {
+              "start": 0.37,
+              "end": 0.38
+            },
+            {
+              "start": 0.38,
+              "end": 0.39
+            },
+            {
+              "start": 0.39,
+              "end": 0.4
+            },
+            {
+              "start": 0.4,
+              "end": 0.41000000000000003
+            },
+            {
+              "start": 0.41000000000000003,
+              "end": 0.42
+            },
+            {
+              "start": 0.42,
+              "end": 0.43
+            },
+            {
+              "start": 0.43,
+              "end": 0.44
+            },
+            {
+              "start": 0.44,
+              "end": 0.45
+            },
+            {
+              "start": 0.45,
+              "end": 0.46
+            },
+            {
+              "start": 0.46,
+              "end": 0.47000000000000003
+            },
+            {
+              "start": 0.47000000000000003,
+              "end": 0.48
+            },
+            {
+              "start": 0.48,
+              "end": 0.49
+            },
+            {
+              "start": 0.49,
+              "end": 0.5
+            },
+            {
+              "start": 0.5,
+              "end": 0.51
+            },
+            {
+              "start": 0.51,
+              "end": 0.52
+            },
+            {
+              "start": 1.1,
+              "end": 1.11
+            },
+            {
+              "start": 1.11,
+              "end": 1.12
+            },
+            {
+              "start": 1.12,
+              "end": 1.1300000000000001
+            },
+            {
+              "start": 1.1300000000000001,
+              "end": 1.1400000000000001
+            },
+            {
+              "start": 1.1400000000000001,
+              "end": 1.1500000000000001
+            },
+            {
+              "start": 1.1500000000000001,
+              "end": 1.16
+            },
+            {
+              "start": 1.16,
+              "end": 1.17
+            },
+            {
+              "start": 1.17,
+              "end": 1.18
+            },
+            {
+              "start": 1.18,
+              "end": 1.19
+            },
+            {
+              "start": 1.19,
+              "end": 1.2
+            },
+            {
+              "start": 1.2,
+              "end": 1.21
+            },
+            {
+              "start": 1.21,
+              "end": 1.22
+            },
+            {
+              "start": 1.22,
+              "end": 1.23
+            },
+            {
+              "start": 1.23,
+              "end": 1.24
+            },
+            {
+              "start": 1.24,
+              "end": 1.25
+            },
+            {
+              "start": 1.25,
+              "end": 1.26
+            },
+            {
+              "start": 1.26,
+              "end": 1.27
+            },
+            {
+              "start": 1.28,
+              "end": 1.29
+            },
+            {
+              "start": 1.29,
+              "end": 1.3
+            },
+            {
+              "start": 1.31,
+              "end": 1.32
+            },
+            {
+              "start": 1.32,
+              "end": 1.33
+            },
+            {
+              "start": 1.33,
+              "end": 1.34
+            },
+            {
+              "start": 1.34,
+              "end": 1.35
+            },
+            {
+              "start": 1.36,
+              "end": 1.37
+            },
+            {
+              "start": 1.37,
+              "end": 1.3800000000000001
+            },
+            {
+              "start": 1.3800000000000001,
+              "end": 1.3900000000000001
+            },
+            {
+              "start": 1.3900000000000001,
+              "end": 1.4000000000000001
+            },
+            {
+              "start": 1.41,
+              "end": 1.42
+            },
+            {
+              "start": 1.42,
+              "end": 1.43
+            },
+            {
+              "start": 1.44,
+              "end": 1.45
+            },
+            {
+              "start": 1.45,
+              "end": 1.46
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/TQC_seed0_on_nominal/evaluation/cases/nominal_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/TQC_seed0_on_nominal/evaluation/cases/nominal_00/attempt_00000/receipt.json",
+            "receipt_sha256": "afaad641a4b966bde61ced8eee36cee787babe09357700de8421f07f94b9eaa4",
+            "specification": "queue/jobs/TQC_seed0_on_nominal/evaluation/specification.json",
+            "specification_sha256": "a8191b693ab74cf6f851ab54c8c6cc93e928d6e4c5ae15c1255aad6c4d71404e"
+          },
+          "log_sha256": "6ecd23f38db0ff11984252b3c5ac23590f92ed9110bddcd27e5c26a573e65e25"
+        }
+      ],
+      "poster": "posters/01_nominal_controllers.png",
+      "screen_order": [
+        {
+          "panel": 0,
+          "row": 0,
+          "column": 0,
+          "fragment": null,
+          "model_id": "classical",
+          "filter": "on",
+          "case_id": "nominal_00",
+          "model_sha256": "c7d118eee902cbbc852d4a9a156d90827134913f5bd25a515ae929667658814f",
+          "log_sha256": "d30a6ea3b614d2879e94700fd9355bba7253a0527984b0108fad208ed2a761a9",
+          "color": "#94743d"
+        },
+        {
+          "panel": 1,
+          "row": 0,
+          "column": 1,
+          "fragment": null,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "nominal_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "ddd40cd9ac1d979a226c98c6b777c55ff3e546847c721a1614fbd62bcfa4f752",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 2,
+          "row": 0,
+          "column": 2,
+          "fragment": null,
+          "model_id": "TQC_seed0",
+          "filter": "on",
+          "case_id": "nominal_00",
+          "model_sha256": "cf343633e258b3db84cd8d52e6483be9f9f521ac272c63e733db48f791552976",
+          "log_sha256": "6ecd23f38db0ff11984252b3c5ac23590f92ed9110bddcd27e5c26a573e65e25",
+          "color": "#418374"
+        }
+      ],
+      "renderer_version": "saved-robustness-video-v2",
+      "renderer_sha256": "1dade3f3978ce411094250042e6e694809cff8e2fc465f343c05f46c57f82bee",
+      "build_command": ".venv-cloud-check/bin/python -B -m cartpole.experiments.robustness_video --review artifacts/robustness-20260916/robustness-review-1789558151385076965.tar.gz --recovery artifacts/robustness-20260916/robustness-recovery-1789558163887525846.tar.gz --historical-media ../cartpole-coursework-submission/media --historical-episodes ../cartpole-intermediate-report-20260916/sources/episodes --confirmation-analysis verification/confirmation_audit_1789515957912724921/analysis --output reports/research-report-20260917/media --verify-repeat",
+      "timeline": [
+        {
+          "start": 0,
+          "frames": 360,
+          "kind": "motion",
+          "title": null
+        }
+      ],
+      "poster_sha256": "5f0bcee7f7ac74b2d44a32fd56b6c097351a7dbbe9184f7d7b6eaf616398267c"
+    },
+    {
+      "file": "02_ddpg_best_vs_last.mp4",
+      "purpose": "DDPG: лучшие и последние веса",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "frames": 360,
+      "duration": 12.0,
+      "bytes": 393490,
+      "sha256": "d55fea77c7b927a0607291a1991fec0a26cf158716d4aa27a139ac37009daf41",
+      "full_decode": "passed",
+      "faststart": true,
+      "rgb_frames_sha256": "3d65193374781f31a2cb9ce3d9a79118c7dd8391fcfd203b3cdcec933cca6e67",
+      "repeat_bit_identical": true,
+      "episodes": [
+        {
+          "controller": "DDPG",
+          "model_id": "DDPG_seed5",
+          "seed": 5,
+          "filter": "on",
+          "group": "validation",
+          "case_id": "validation_1000",
+          "initial_state": {
+            "cart_position": 0.0008554295190025089,
+            "cart_velocity": 0.004153673880253183,
+            "pole_angle": -0.0029058202677746045,
+            "pole_angular_velocity": -0.02967520574553212
+          },
+          "model_sha256": "7a237631c8e9b6dbfcf89437ced3eaab5354477aba80f748f866947e1922b842",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 6.020968035283027e-05,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.00296753483139391,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.0886103904821618,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.018712386896456067,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 7.9,
+          "hold_longest": 7.9,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 0.52,
+              "end": 0.53
+            },
+            {
+              "start": 0.53,
+              "end": 0.54
+            },
+            {
+              "start": 0.54,
+              "end": 0.55
+            },
+            {
+              "start": 0.55,
+              "end": 0.56
+            },
+            {
+              "start": 0.56,
+              "end": 0.5700000000000001
+            },
+            {
+              "start": 0.5700000000000001,
+              "end": 0.58
+            },
+            {
+              "start": 0.58,
+              "end": 0.59
+            },
+            {
+              "start": 0.59,
+              "end": 0.6
+            },
+            {
+              "start": 0.6,
+              "end": 0.61
+            },
+            {
+              "start": 0.61,
+              "end": 0.62
+            },
+            {
+              "start": 0.62,
+              "end": 0.63
+            },
+            {
+              "start": 0.63,
+              "end": 0.64
+            },
+            {
+              "start": 0.64,
+              "end": 0.65
+            },
+            {
+              "start": 0.65,
+              "end": 0.66
+            },
+            {
+              "start": 0.66,
+              "end": 0.67
+            },
+            {
+              "start": 0.67,
+              "end": 0.68
+            },
+            {
+              "start": 0.68,
+              "end": 0.6900000000000001
+            },
+            {
+              "start": 0.6900000000000001,
+              "end": 0.7000000000000001
+            }
+          ],
+          "evidence": {
+            "log": "historical_episodes/ddpg_confirmation_best.json.gz",
+            "receipt": "historical_episodes/ddpg_confirmation_best_receipt.json",
+            "receipt_sha256": "c1c1a96738d433e78045a2896e683ba555a43a60f131eb5dbd96676bf0d1ffdc",
+            "audit": "confirmation_analysis/episodes.csv",
+            "audit_log_source": "main-session/queue/jobs/evaluate_train_confirm_ddpg_on_warmup5000_seed5/best_on/cases/validation_1000/attempt_00000/episode.json.gz",
+            "model_sha256": "7a237631c8e9b6dbfcf89437ced3eaab5354477aba80f748f866947e1922b842",
+            "checkpoint_manifest_sha256": "e1d7e5a4b47123a0c4759867d9a3229ccc30c9e12731f5e8a8f5065853cffc42",
+            "checkpoint_label": "best",
+            "training_transitions": 90000
+          },
+          "log_sha256": "a9a781c25ab73427e861ffdae23e0759076a6bd3ba59fddf08f67632e282cf30"
+        },
+        {
+          "controller": "DDPG",
+          "model_id": "DDPG_seed5",
+          "seed": 5,
+          "filter": "on",
+          "group": "validation",
+          "case_id": "validation_1000",
+          "initial_state": {
+            "cart_position": 0.0008554295190025089,
+            "cart_velocity": 0.004153673880253183,
+            "pole_angle": -0.0029058202677746045,
+            "pole_angular_velocity": -0.02967520574553212
+          },
+          "model_sha256": "9eaca84c67911ca9d6167eb85586aac9408f7967c53657f43b0f871fbf101acd",
+          "outcome": "Удержание не выполнено",
+          "success": false,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание не выполнено",
+              "role": "hold"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            },
+            {
+              "text": "Скорость тележки выше порога",
+              "role": "warning"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.0028523340007717835,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.04785569791025789,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.02044925072211034,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.24357904491649754,
+              "threshold": 0.2,
+              "exceeds": true
+            }
+          },
+          "hold_final": 0.0,
+          "hold_longest": 1.1600000000000001,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 0.24,
+              "end": 0.25
+            },
+            {
+              "start": 0.25,
+              "end": 0.26
+            },
+            {
+              "start": 0.26,
+              "end": 0.27
+            },
+            {
+              "start": 0.27,
+              "end": 0.28
+            },
+            {
+              "start": 0.28,
+              "end": 0.29
+            },
+            {
+              "start": 0.29,
+              "end": 0.3
+            },
+            {
+              "start": 0.3,
+              "end": 0.31
+            },
+            {
+              "start": 0.31,
+              "end": 0.32
+            },
+            {
+              "start": 0.32,
+              "end": 0.33
+            },
+            {
+              "start": 0.33,
+              "end": 0.34
+            },
+            {
+              "start": 0.34,
+              "end": 0.35000000000000003
+            },
+            {
+              "start": 0.35000000000000003,
+              "end": 0.36
+            },
+            {
+              "start": 0.36,
+              "end": 0.37
+            },
+            {
+              "start": 0.37,
+              "end": 0.38
+            },
+            {
+              "start": 0.38,
+              "end": 0.39
+            },
+            {
+              "start": 0.39,
+              "end": 0.4
+            },
+            {
+              "start": 0.4,
+              "end": 0.41000000000000003
+            }
+          ],
+          "evidence": {
+            "log": "historical_episodes/ddpg_confirmation_last.json.gz",
+            "receipt": "historical_episodes/ddpg_confirmation_last_receipt.json",
+            "receipt_sha256": "112105c364d330eb17d820637f7f1d8c1afdb75b500eaef93f6d0e362299bed1",
+            "audit": "confirmation_analysis/episodes.csv",
+            "audit_log_source": "main-session/queue/jobs/evaluate_train_confirm_ddpg_on_warmup5000_seed5/last_on/cases/validation_1000/attempt_00000/episode.json.gz",
+            "model_sha256": "9eaca84c67911ca9d6167eb85586aac9408f7967c53657f43b0f871fbf101acd",
+            "checkpoint_manifest_sha256": "ff4ead3cdb93092b94fa4fc4d405c96fb58e52511b2151c3d015321b0a5318cf",
+            "checkpoint_label": "last",
+            "training_transitions": 100000
+          },
+          "log_sha256": "4231a65facdf2da86f692c35fe461f783a2c82db99f423ff3d9817740067fa00"
+        }
+      ],
+      "poster": "posters/02_ddpg_best_vs_last.png",
+      "screen_order": [
+        {
+          "panel": 0,
+          "row": 0,
+          "column": 0,
+          "fragment": null,
+          "model_id": "DDPG_seed5",
+          "filter": "on",
+          "case_id": "validation_1000",
+          "model_sha256": "7a237631c8e9b6dbfcf89437ced3eaab5354477aba80f748f866947e1922b842",
+          "log_sha256": "a9a781c25ab73427e861ffdae23e0759076a6bd3ba59fddf08f67632e282cf30",
+          "color": "#986a87"
+        },
+        {
+          "panel": 1,
+          "row": 0,
+          "column": 1,
+          "fragment": null,
+          "model_id": "DDPG_seed5",
+          "filter": "on",
+          "case_id": "validation_1000",
+          "model_sha256": "9eaca84c67911ca9d6167eb85586aac9408f7967c53657f43b0f871fbf101acd",
+          "log_sha256": "4231a65facdf2da86f692c35fe461f783a2c82db99f423ff3d9817740067fa00",
+          "color": "#986a87"
+        }
+      ],
+      "renderer_version": "saved-robustness-video-v2",
+      "renderer_sha256": "1dade3f3978ce411094250042e6e694809cff8e2fc465f343c05f46c57f82bee",
+      "build_command": ".venv-cloud-check/bin/python -B -m cartpole.experiments.robustness_video --review artifacts/robustness-20260916/robustness-review-1789558151385076965.tar.gz --recovery artifacts/robustness-20260916/robustness-recovery-1789558163887525846.tar.gz --historical-media ../cartpole-coursework-submission/media --historical-episodes ../cartpole-intermediate-report-20260916/sources/episodes --confirmation-analysis verification/confirmation_audit_1789515957912724921/analysis --output reports/research-report-20260917/media --verify-repeat",
+      "timeline": [
+        {
+          "start": 0,
+          "frames": 360,
+          "kind": "motion",
+          "title": null
+        }
+      ],
+      "poster_sha256": "fd506dc3789c9d84b5ce2465180a63f3286ea71cfc1ac8ada786007b266c5b01"
+    },
+    {
+      "file": "03_filter_safety_rescue.mp4",
+      "purpose": "Вмешательство фильтра",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "frames": 360,
+      "duration": 12.0,
+      "bytes": 320950,
+      "sha256": "75770cb40649126306f6089d044e645a5748c34af1ef7a6d5019307e824d3d33",
+      "full_decode": "passed",
+      "faststart": true,
+      "rgb_frames_sha256": "066706b8f6a031f1d5c9f4df601331dd597f718afc9b1971c295e6a0a3b1e055",
+      "repeat_bit_identical": true,
+      "episodes": [
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "off",
+          "group": "angle",
+          "case_id": "angle_01",
+          "initial_state": {
+            "cart_position": 0.0,
+            "cart_velocity": 0.0,
+            "pole_angle": 0.28559933214452665,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Остановка: предел 0,25 м",
+          "success": false,
+          "completion": {
+            "reason": "terminal",
+            "terminated": true,
+            "truncated": false,
+            "time": 1.5993993288077566,
+            "transition_count": 160,
+            "stop_reasons": [
+              "position_limit"
+            ]
+          },
+          "final_status": [
+            {
+              "text": "Остановка: предел 0,25 м",
+              "role": "warning"
+            },
+            {
+              "text": "Граница нарушена",
+              "role": "warning"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 2.7154705261776475,
+              "threshold": 0.17453292519943295,
+              "exceeds": true
+            },
+            "angular_velocity": {
+              "value": 11.035021262885664,
+              "threshold": 0.5,
+              "exceeds": true
+            },
+            "position": {
+              "value": 0.25,
+              "threshold": 0.2,
+              "exceeds": true
+            },
+            "velocity": {
+              "value": 0.4527025955584149,
+              "threshold": 0.2,
+              "exceeds": true
+            }
+          },
+          "hold_final": 0.0,
+          "hold_longest": 0.0,
+          "exceeds_024_resolved": true,
+          "saved_states": 161,
+          "saved_transitions": 160,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_off_angle/evaluation/cases/angle_01/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_off_angle/evaluation/cases/angle_01/attempt_00000/receipt.json",
+            "receipt_sha256": "142aa938853095e04db1c203b20a429b2380191133845409ce26807498e71df3",
+            "specification": "queue/jobs/SAC_seed0_off_angle/evaluation/specification.json",
+            "specification_sha256": "533b7c6e6972156af8ebacb9c098b84454250d9d66ce5cdb1bfed0707ac9aee6"
+          },
+          "log_sha256": "16f6402d93292cad38750907a003817b6053530d56dc1e1a5850d7f7fe015059"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "angle",
+          "case_id": "angle_01",
+          "initial_state": {
+            "cart_position": 0.0,
+            "cart_velocity": 0.0,
+            "pole_angle": 0.28559933214452665,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.0008945458494193696,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.00040706274093526456,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.05217718321032673,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0018652822035758155,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.32,
+          "hold_longest": 6.32,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 1.47,
+              "end": 1.48
+            },
+            {
+              "start": 1.48,
+              "end": 1.49
+            },
+            {
+              "start": 1.49,
+              "end": 1.5
+            },
+            {
+              "start": 1.5,
+              "end": 1.51
+            },
+            {
+              "start": 1.51,
+              "end": 1.52
+            },
+            {
+              "start": 1.52,
+              "end": 1.53
+            },
+            {
+              "start": 1.53,
+              "end": 1.54
+            },
+            {
+              "start": 1.54,
+              "end": 1.55
+            },
+            {
+              "start": 1.55,
+              "end": 1.56
+            },
+            {
+              "start": 1.56,
+              "end": 1.57
+            },
+            {
+              "start": 1.57,
+              "end": 1.58
+            },
+            {
+              "start": 1.58,
+              "end": 1.59
+            },
+            {
+              "start": 1.59,
+              "end": 1.6
+            },
+            {
+              "start": 1.6,
+              "end": 1.61
+            },
+            {
+              "start": 1.61,
+              "end": 1.62
+            },
+            {
+              "start": 1.62,
+              "end": 1.6300000000000001
+            },
+            {
+              "start": 1.6300000000000001,
+              "end": 1.6400000000000001
+            },
+            {
+              "start": 1.6400000000000001,
+              "end": 1.6500000000000001
+            },
+            {
+              "start": 1.6500000000000001,
+              "end": 1.6600000000000001
+            },
+            {
+              "start": 1.6600000000000001,
+              "end": 1.67
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_angle/evaluation/cases/angle_01/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_angle/evaluation/cases/angle_01/attempt_00000/receipt.json",
+            "receipt_sha256": "f1c8fcbbbed5060947705d547242baf5230682813db4d00eb72b5f17274fff58",
+            "specification": "queue/jobs/SAC_seed0_on_angle/evaluation/specification.json",
+            "specification_sha256": "efe4543504f08d410dab03aa388da290fed5031c2463a4e634c7685f66a63600"
+          },
+          "log_sha256": "ac58f8a0617792903bd1e468bd6ffe7ab603c8d3c70c338f63d62e731d60a60e"
+        }
+      ],
+      "poster": "posters/03_filter_safety_rescue.png",
+      "screen_order": [
+        {
+          "panel": 0,
+          "row": 0,
+          "column": 0,
+          "fragment": null,
+          "model_id": "SAC_seed0",
+          "filter": "off",
+          "case_id": "angle_01",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "16f6402d93292cad38750907a003817b6053530d56dc1e1a5850d7f7fe015059",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 1,
+          "row": 0,
+          "column": 1,
+          "fragment": null,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "angle_01",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "ac58f8a0617792903bd1e468bd6ffe7ab603c8d3c70c338f63d62e731d60a60e",
+          "color": "#297e9b"
+        }
+      ],
+      "renderer_version": "saved-robustness-video-v2",
+      "renderer_sha256": "1dade3f3978ce411094250042e6e694809cff8e2fc465f343c05f46c57f82bee",
+      "build_command": ".venv-cloud-check/bin/python -B -m cartpole.experiments.robustness_video --review artifacts/robustness-20260916/robustness-review-1789558151385076965.tar.gz --recovery artifacts/robustness-20260916/robustness-recovery-1789558163887525846.tar.gz --historical-media ../cartpole-coursework-submission/media --historical-episodes ../cartpole-intermediate-report-20260916/sources/episodes --confirmation-analysis verification/confirmation_audit_1789515957912724921/analysis --output reports/research-report-20260917/media --verify-repeat",
+      "timeline": [
+        {
+          "start": 0,
+          "frames": 360,
+          "kind": "motion",
+          "title": null
+        }
+      ],
+      "poster_sha256": "60056d03e4830d2097c9c7f003e4d6940dc54bb5df3a77e730467474466ae047"
+    },
+    {
+      "file": "04_success_vs_safety.mp4",
+      "purpose": "Удержание и безопасность",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "frames": 360,
+      "duration": 12.0,
+      "bytes": 580549,
+      "sha256": "8020f36672a50527fcfb20ef023ec458cacfb7c9a12b0243d14863c32db328b4",
+      "full_decode": "passed",
+      "faststart": true,
+      "rgb_frames_sha256": "fe4e2260dc308d44b9712f30a531695c722ad6c89e770d449b5feea4d374f95b",
+      "repeat_bit_identical": true,
+      "episodes": [
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "off",
+          "group": "angle",
+          "case_id": "angle_16",
+          "initial_state": {
+            "cart_position": 0.0,
+            "cart_velocity": 0.0,
+            "pole_angle": -2.5703939893007397,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "hold"
+            },
+            {
+              "text": "Граница нарушена",
+              "role": "warning"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.000134093091098908,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.00031871432843391944,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.05070304830074449,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0011500358581542692,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 7.63,
+          "hold_longest": 7.63,
+          "exceeds_024_resolved": true,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_off_angle/evaluation/cases/angle_16/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_off_angle/evaluation/cases/angle_16/attempt_00000/receipt.json",
+            "receipt_sha256": "4dbc5d503ca7d2e25a1bcfa1a7b47c4ec88a5c0bd0e05ea1d4679ce0de52e36f",
+            "specification": "queue/jobs/SAC_seed0_off_angle/evaluation/specification.json",
+            "specification_sha256": "533b7c6e6972156af8ebacb9c098b84454250d9d66ce5cdb1bfed0707ac9aee6"
+          },
+          "log_sha256": "36756e1f19eb2f62d3aab6e4f5cd81fe0ef24304b817b8702957e649bdadc591"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "angle",
+          "case_id": "angle_16",
+          "initial_state": {
+            "cart_position": 0.0,
+            "cart_velocity": 0.0,
+            "pole_angle": -2.5703939893007397,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание не выполнено",
+          "success": false,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание не выполнено",
+              "role": "hold"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 2.2546721777990544,
+              "threshold": 0.17453292519943295,
+              "exceeds": true
+            },
+            "angular_velocity": {
+              "value": 14.820540714683277,
+              "threshold": 0.5,
+              "exceeds": true
+            },
+            "position": {
+              "value": 0.031220628877561475,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.04272091173353293,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 0.0,
+          "hold_longest": 0.0,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 1.2,
+              "end": 1.21
+            },
+            {
+              "start": 1.21,
+              "end": 1.22
+            },
+            {
+              "start": 1.22,
+              "end": 1.23
+            },
+            {
+              "start": 1.23,
+              "end": 1.24
+            },
+            {
+              "start": 1.24,
+              "end": 1.25
+            },
+            {
+              "start": 1.25,
+              "end": 1.26
+            },
+            {
+              "start": 1.26,
+              "end": 1.27
+            },
+            {
+              "start": 1.28,
+              "end": 1.29
+            },
+            {
+              "start": 1.29,
+              "end": 1.3
+            },
+            {
+              "start": 1.31,
+              "end": 1.32
+            },
+            {
+              "start": 1.32,
+              "end": 1.33
+            },
+            {
+              "start": 1.33,
+              "end": 1.34
+            },
+            {
+              "start": 1.35,
+              "end": 1.36
+            },
+            {
+              "start": 1.36,
+              "end": 1.37
+            },
+            {
+              "start": 1.37,
+              "end": 1.3800000000000001
+            },
+            {
+              "start": 1.3800000000000001,
+              "end": 1.3900000000000001
+            },
+            {
+              "start": 1.4000000000000001,
+              "end": 1.41
+            },
+            {
+              "start": 1.41,
+              "end": 1.42
+            },
+            {
+              "start": 1.42,
+              "end": 1.43
+            },
+            {
+              "start": 1.43,
+              "end": 1.44
+            },
+            {
+              "start": 1.45,
+              "end": 1.46
+            },
+            {
+              "start": 1.46,
+              "end": 1.47
+            },
+            {
+              "start": 1.47,
+              "end": 1.48
+            },
+            {
+              "start": 1.48,
+              "end": 1.49
+            },
+            {
+              "start": 1.5,
+              "end": 1.51
+            },
+            {
+              "start": 1.51,
+              "end": 1.52
+            },
+            {
+              "start": 1.53,
+              "end": 1.54
+            },
+            {
+              "start": 1.54,
+              "end": 1.55
+            },
+            {
+              "start": 1.56,
+              "end": 1.57
+            },
+            {
+              "start": 1.57,
+              "end": 1.58
+            },
+            {
+              "start": 1.59,
+              "end": 1.6
+            },
+            {
+              "start": 1.6,
+              "end": 1.61
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_angle/evaluation/cases/angle_16/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_angle/evaluation/cases/angle_16/attempt_00000/receipt.json",
+            "receipt_sha256": "f84b7bbd11a7f0e3abcc83a3051fe044713d61150798dcb1985ce9f07fcae3ba",
+            "specification": "queue/jobs/SAC_seed0_on_angle/evaluation/specification.json",
+            "specification_sha256": "efe4543504f08d410dab03aa388da290fed5031c2463a4e634c7685f66a63600"
+          },
+          "log_sha256": "284ee489a4ea2c7b2210c2d06d2d6ba252132ef8e7e074052a7dc79205e78f64"
+        }
+      ],
+      "poster": "posters/04_success_vs_safety.png",
+      "screen_order": [
+        {
+          "panel": 0,
+          "row": 0,
+          "column": 0,
+          "fragment": null,
+          "model_id": "SAC_seed0",
+          "filter": "off",
+          "case_id": "angle_16",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "36756e1f19eb2f62d3aab6e4f5cd81fe0ef24304b817b8702957e649bdadc591",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 1,
+          "row": 0,
+          "column": 1,
+          "fragment": null,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "angle_16",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "284ee489a4ea2c7b2210c2d06d2d6ba252132ef8e7e074052a7dc79205e78f64",
+          "color": "#297e9b"
+        }
+      ],
+      "renderer_version": "saved-robustness-video-v2",
+      "renderer_sha256": "1dade3f3978ce411094250042e6e694809cff8e2fc465f343c05f46c57f82bee",
+      "build_command": ".venv-cloud-check/bin/python -B -m cartpole.experiments.robustness_video --review artifacts/robustness-20260916/robustness-review-1789558151385076965.tar.gz --recovery artifacts/robustness-20260916/robustness-recovery-1789558163887525846.tar.gz --historical-media ../cartpole-coursework-submission/media --historical-episodes ../cartpole-intermediate-report-20260916/sources/episodes --confirmation-analysis verification/confirmation_audit_1789515957912724921/analysis --output reports/research-report-20260917/media --verify-repeat",
+      "timeline": [
+        {
+          "start": 0,
+          "frames": 360,
+          "kind": "motion",
+          "title": null
+        }
+      ],
+      "poster_sha256": "2b517b81c4379fadd914860e3e842647e343a734c670822cbe52f41b6ac374d3"
+    },
+    {
+      "file": "05_robustness_groups.mp4",
+      "purpose": "Примеры SAC для семи групп начальных условий",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "frames": 2730,
+      "duration": 91.0,
+      "bytes": 1825187,
+      "sha256": "cb08f1411168b04909f685673a7fb827d5578ec92b519447a64f004fa1015031",
+      "full_decode": "passed",
+      "faststart": true,
+      "rgb_frames_sha256": "9d7509bcb37020c700306973ab02d4bb805284a0db06b0f54f0f4bae3db98ab2",
+      "repeat_bit_identical": true,
+      "episodes": [
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "nominal",
+          "case_id": "nominal_00",
+          "initial_state": {
+            "cart_position": 0.013275441174349051,
+            "cart_velocity": 0.01332731035646752,
+            "pole_angle": 0.005017982525201983,
+            "pole_angular_velocity": -0.027751125148808533
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.0006452259152616158,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.00026421770611154155,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.051757938278752164,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.001412882533625437,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.4399999999999995,
+          "hold_longest": 6.4399999999999995,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_nominal/evaluation/cases/nominal_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_nominal/evaluation/cases/nominal_00/attempt_00000/receipt.json",
+            "receipt_sha256": "3615673725c8fc7859dd6132a718fe7f01dd93af31de796cf59c7098a205fe37",
+            "specification": "queue/jobs/SAC_seed0_on_nominal/evaluation/specification.json",
+            "specification_sha256": "54394913975175fb3f04b977e9a992e2cf87306f89c00a0860bbe822a078cbb4"
+          },
+          "log_sha256": "ddd40cd9ac1d979a226c98c6b777c55ff3e546847c721a1614fbd62bcfa4f752"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "position",
+          "case_id": "position_00",
+          "initial_state": {
+            "cart_position": -0.02,
+            "cart_velocity": 0.0,
+            "pole_angle": 0.0,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.0006562240290159949,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.0012946035232024732,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.05246717263509777,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0009154582023013062,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.63,
+          "hold_longest": 6.63,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_position/evaluation/cases/position_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_position/evaluation/cases/position_00/attempt_00000/receipt.json",
+            "receipt_sha256": "dc4e57a553543b46b7df402e4dfb18765fb8e6c337b0a99ba701d0557ecc4c43",
+            "specification": "queue/jobs/SAC_seed0_on_position/evaluation/specification.json",
+            "specification_sha256": "b7e95467d7815501f745ae406a08819061fbb9e88db7b1e1698056c3e1b60cd0"
+          },
+          "log_sha256": "b2a0558fe024ca847be717e35b1a54c52ea645fbab6da1f3b9bcd538ae4e341d"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "velocity",
+          "case_id": "velocity_00",
+          "initial_state": {
+            "cart_position": 0.0,
+            "cart_velocity": -0.13163558713357112,
+            "pole_angle": 0.0,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 1.912342512635569e-05,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.0014322356956605084,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.05168525633089147,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0033431650025772175,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.01,
+          "hold_longest": 6.01,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_velocity/evaluation/cases/velocity_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_velocity/evaluation/cases/velocity_00/attempt_00000/receipt.json",
+            "receipt_sha256": "4d0390e30197d0a15e085858d2989272cc0b07ef50374773d5d76234da0c21f7",
+            "specification": "queue/jobs/SAC_seed0_on_velocity/evaluation/specification.json",
+            "specification_sha256": "8e7b798ff9a16524eb07202594d14cda8a7fd815bff77725165f45634058935c"
+          },
+          "log_sha256": "971db5f68783699e0c5e4446257b65b9ba087ad5e87de977d4b0ac547a779c73"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "angle",
+          "case_id": "angle_00",
+          "initial_state": {
+            "cart_position": 0.0,
+            "cart_velocity": 0.0,
+            "pole_angle": -0.28559933214452665,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.000548175036441112,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.0017302985463128959,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.05262091557964161,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.002251868248004234,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 5.76,
+          "hold_longest": 5.76,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_angle/evaluation/cases/angle_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_angle/evaluation/cases/angle_00/attempt_00000/receipt.json",
+            "receipt_sha256": "3abe4315a78e4ae1e2fbd3fc23645b57e9eaf7820b6c3aba8df9b71d526d337e",
+            "specification": "queue/jobs/SAC_seed0_on_angle/evaluation/specification.json",
+            "specification_sha256": "efe4543504f08d410dab03aa388da290fed5031c2463a4e634c7685f66a63600"
+          },
+          "log_sha256": "1fd0e2b47cc2f4fe5e5b57e8243260a5eee15ccfdf4ad41e228585397c506b51"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "angular_velocity",
+          "case_id": "angular_velocity_00",
+          "initial_state": {
+            "cart_position": 0.0,
+            "cart_velocity": 0.0,
+            "pole_angle": 0.0,
+            "pole_angular_velocity": -0.7378647873726218
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 8.877382687024828e-05,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.0014228556055567126,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.051588682711096186,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.003539378643039383,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 5.99,
+          "hold_longest": 5.99,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_angular_velocity/evaluation/cases/angular_velocity_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_angular_velocity/evaluation/cases/angular_velocity_00/attempt_00000/receipt.json",
+            "receipt_sha256": "a5ce63009ff532a7f9a39ddedf598e93c919ca58f7492e9d2e7a17723853c34a",
+            "specification": "queue/jobs/SAC_seed0_on_angular_velocity/evaluation/specification.json",
+            "specification_sha256": "f1fc28b0da85cf16555a18ff5d98d5e58e193764525a3fc68d271f95e132756f"
+          },
+          "log_sha256": "770e4f675a36e441457252594931a3abc25bbb9a30b99572b4140586c408c1bd"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "boundary",
+          "case_id": "boundary_00",
+          "initial_state": {
+            "cart_position": -0.2,
+            "cart_velocity": -0.14141958845930783,
+            "pole_angle": 0.0,
+            "pole_angular_velocity": 0.0
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.0006573810843979226,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.001438705092909038,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.052565798569266325,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0012420530218675747,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.65,
+          "hold_longest": 6.65,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 1.33,
+              "end": 1.34
+            },
+            {
+              "start": 1.34,
+              "end": 1.35
+            },
+            {
+              "start": 1.35,
+              "end": 1.36
+            },
+            {
+              "start": 1.36,
+              "end": 1.37
+            },
+            {
+              "start": 1.37,
+              "end": 1.3800000000000001
+            },
+            {
+              "start": 1.3800000000000001,
+              "end": 1.3900000000000001
+            },
+            {
+              "start": 1.3900000000000001,
+              "end": 1.4000000000000001
+            },
+            {
+              "start": 1.4000000000000001,
+              "end": 1.41
+            },
+            {
+              "start": 1.41,
+              "end": 1.42
+            },
+            {
+              "start": 1.42,
+              "end": 1.43
+            },
+            {
+              "start": 1.43,
+              "end": 1.44
+            },
+            {
+              "start": 1.44,
+              "end": 1.45
+            },
+            {
+              "start": 1.45,
+              "end": 1.46
+            },
+            {
+              "start": 1.46,
+              "end": 1.47
+            },
+            {
+              "start": 1.47,
+              "end": 1.48
+            },
+            {
+              "start": 1.48,
+              "end": 1.49
+            },
+            {
+              "start": 1.49,
+              "end": 1.5
+            },
+            {
+              "start": 1.5,
+              "end": 1.51
+            },
+            {
+              "start": 1.51,
+              "end": 1.52
+            },
+            {
+              "start": 1.52,
+              "end": 1.53
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_boundary/evaluation/cases/boundary_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_boundary/evaluation/cases/boundary_00/attempt_00000/receipt.json",
+            "receipt_sha256": "91491e2a5a573ee20330f5f5115347dde19579a2b5183e87916e5868d0ef5a45",
+            "specification": "queue/jobs/SAC_seed0_on_boundary/evaluation/specification.json",
+            "specification_sha256": "f900fed24e3125364756d6034fb35272fd894475dca47ec534d678d8f1effa95"
+          },
+          "log_sha256": "41bb171fd623584a6bed5f70e20ff9aa2c68867fcfd958c8e49ccf82d131b177"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.000663061408560317,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.0012261776693377523,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.05242975927843738,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0007368103463176717,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.62,
+          "hold_longest": 6.62,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "8ec7dc88ed2dc09f0f1fc8d763447599300de9487138df8df13caff7e0955083",
+            "specification": "queue/jobs/SAC_seed0_on_joint/evaluation/specification.json",
+            "specification_sha256": "cff49f37a8f933a1346aaeafa5aef135ca13d28f5bbabdcff3f60c1e3dd5cc3e"
+          },
+          "log_sha256": "d79c556de61c928475696edb2f17c5bfe41aa1629f84dbb4f268c52dc6524b64"
+        }
+      ],
+      "poster": "posters/05_robustness_groups.png",
+      "screen_order": [
+        {
+          "panel": 0,
+          "row": 0,
+          "column": 0,
+          "fragment": 0,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "nominal_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "ddd40cd9ac1d979a226c98c6b777c55ff3e546847c721a1614fbd62bcfa4f752",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 1,
+          "row": 0,
+          "column": 0,
+          "fragment": 1,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "position_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "b2a0558fe024ca847be717e35b1a54c52ea645fbab6da1f3b9bcd538ae4e341d",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 2,
+          "row": 0,
+          "column": 0,
+          "fragment": 2,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "velocity_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "971db5f68783699e0c5e4446257b65b9ba087ad5e87de977d4b0ac547a779c73",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 3,
+          "row": 0,
+          "column": 0,
+          "fragment": 3,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "angle_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "1fd0e2b47cc2f4fe5e5b57e8243260a5eee15ccfdf4ad41e228585397c506b51",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 4,
+          "row": 0,
+          "column": 0,
+          "fragment": 4,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "angular_velocity_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "770e4f675a36e441457252594931a3abc25bbb9a30b99572b4140586c408c1bd",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 5,
+          "row": 0,
+          "column": 0,
+          "fragment": 5,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "boundary_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "41bb171fd623584a6bed5f70e20ff9aa2c68867fcfd958c8e49ccf82d131b177",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 6,
+          "row": 0,
+          "column": 0,
+          "fragment": 6,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "d79c556de61c928475696edb2f17c5bfe41aa1629f84dbb4f268c52dc6524b64",
+          "color": "#297e9b"
+        }
+      ],
+      "renderer_version": "saved-robustness-video-v2",
+      "renderer_sha256": "1dade3f3978ce411094250042e6e694809cff8e2fc465f343c05f46c57f82bee",
+      "build_command": ".venv-cloud-check/bin/python -B -m cartpole.experiments.robustness_video --review artifacts/robustness-20260916/robustness-review-1789558151385076965.tar.gz --recovery artifacts/robustness-20260916/robustness-recovery-1789558163887525846.tar.gz --historical-media ../cartpole-coursework-submission/media --historical-episodes ../cartpole-intermediate-report-20260916/sources/episodes --confirmation-analysis verification/confirmation_audit_1789515957912724921/analysis --output reports/research-report-20260917/media --verify-repeat",
+      "timeline": [
+        {
+          "start": 0,
+          "frames": 30,
+          "kind": "title",
+          "title": "Номинальный старт"
+        },
+        {
+          "start": 30,
+          "frames": 360,
+          "kind": "motion",
+          "title": "Номинальный старт"
+        },
+        {
+          "start": 390,
+          "frames": 30,
+          "kind": "title",
+          "title": "Смещение тележки"
+        },
+        {
+          "start": 420,
+          "frames": 360,
+          "kind": "motion",
+          "title": "Смещение тележки"
+        },
+        {
+          "start": 780,
+          "frames": 30,
+          "kind": "title",
+          "title": "Начальная скорость тележки"
+        },
+        {
+          "start": 810,
+          "frames": 360,
+          "kind": "motion",
+          "title": "Начальная скорость тележки"
+        },
+        {
+          "start": 1170,
+          "frames": 30,
+          "kind": "title",
+          "title": "Начальный угол маятника"
+        },
+        {
+          "start": 1200,
+          "frames": 360,
+          "kind": "motion",
+          "title": "Начальный угол маятника"
+        },
+        {
+          "start": 1560,
+          "frames": 30,
+          "kind": "title",
+          "title": "Начальная угловая скорость"
+        },
+        {
+          "start": 1590,
+          "frames": 360,
+          "kind": "motion",
+          "title": "Начальная угловая скорость"
+        },
+        {
+          "start": 1950,
+          "frames": 30,
+          "kind": "title",
+          "title": "Старт у границы"
+        },
+        {
+          "start": 1980,
+          "frames": 360,
+          "kind": "motion",
+          "title": "Старт у границы"
+        },
+        {
+          "start": 2340,
+          "frames": 30,
+          "kind": "title",
+          "title": "Совместные возмущения"
+        },
+        {
+          "start": 2370,
+          "frames": 360,
+          "kind": "motion",
+          "title": "Совместные возмущения"
+        }
+      ],
+      "poster_sha256": "ae05863931ebcfb5695140417665a457824a7eaba0494c46ad817211c5389443"
+    },
+    {
+      "file": "06_final_controllers.mp4",
+      "purpose": "Семь контроллеров на одном общем начальном состоянии",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "width": 1920,
+      "height": 1080,
+      "fps": 30,
+      "frames": 360,
+      "duration": 12.0,
+      "bytes": 683811,
+      "sha256": "ef6afff52f81598104ba8f2971809be355b525fa0a0ad5da7eb4af869907128e",
+      "full_decode": "passed",
+      "faststart": true,
+      "rgb_frames_sha256": "2d9e4ce52d42830dd6141076eacca811fa02b93ce70ecaf53d878ec30a685373",
+      "repeat_bit_identical": true,
+      "episodes": [
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.000663061408560317,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.0012261776693377523,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.05242975927843738,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0007368103463176717,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.62,
+          "hold_longest": 6.62,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed0_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed0_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "8ec7dc88ed2dc09f0f1fc8d763447599300de9487138df8df13caff7e0955083",
+            "specification": "queue/jobs/SAC_seed0_on_joint/evaluation/specification.json",
+            "specification_sha256": "cff49f37a8f933a1346aaeafa5aef135ca13d28f5bbabdcff3f60c1e3dd5cc3e"
+          },
+          "log_sha256": "d79c556de61c928475696edb2f17c5bfe41aa1629f84dbb4f268c52dc6524b64"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed1",
+          "seed": 1,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "2e2e9946e948f0c651c6f71cbbe3c822888061dc4d2b6ca64b94b48cad160bed",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.00048228646416628235,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.001992257364524566,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.0018846436187099913,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.0019916788430261864,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 7.21,
+          "hold_longest": 7.21,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 0.39,
+              "end": 0.4
+            },
+            {
+              "start": 0.4,
+              "end": 0.41000000000000003
+            },
+            {
+              "start": 0.41000000000000003,
+              "end": 0.42
+            },
+            {
+              "start": 0.42,
+              "end": 0.43
+            },
+            {
+              "start": 0.43,
+              "end": 0.44
+            },
+            {
+              "start": 0.44,
+              "end": 0.45
+            },
+            {
+              "start": 0.45,
+              "end": 0.46
+            },
+            {
+              "start": 0.46,
+              "end": 0.47000000000000003
+            },
+            {
+              "start": 0.47000000000000003,
+              "end": 0.48
+            },
+            {
+              "start": 0.48,
+              "end": 0.49
+            },
+            {
+              "start": 0.49,
+              "end": 0.5
+            },
+            {
+              "start": 0.5,
+              "end": 0.51
+            },
+            {
+              "start": 0.51,
+              "end": 0.52
+            },
+            {
+              "start": 0.52,
+              "end": 0.53
+            },
+            {
+              "start": 0.53,
+              "end": 0.54
+            },
+            {
+              "start": 0.54,
+              "end": 0.55
+            },
+            {
+              "start": 0.55,
+              "end": 0.56
+            },
+            {
+              "start": 0.56,
+              "end": 0.5700000000000001
+            },
+            {
+              "start": 0.5700000000000001,
+              "end": 0.58
+            },
+            {
+              "start": 0.58,
+              "end": 0.59
+            },
+            {
+              "start": 0.59,
+              "end": 0.6
+            },
+            {
+              "start": 0.6,
+              "end": 0.61
+            },
+            {
+              "start": 0.61,
+              "end": 0.62
+            },
+            {
+              "start": 0.62,
+              "end": 0.63
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed1_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed1_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "6f9d1deefc350ef50ede5a971b366e4de6e5797dfb79497720914bd11dbb82fc",
+            "specification": "queue/jobs/SAC_seed1_on_joint/evaluation/specification.json",
+            "specification_sha256": "694f7832ac235c1a4997bd1ca5cc450e5da69470b0f63f94526360aa33646af1"
+          },
+          "log_sha256": "8529e8369575206c9fedf579b3dc786d86bb18531918fb341c0a21138baaccde"
+        },
+        {
+          "controller": "SAC",
+          "model_id": "SAC_seed2",
+          "seed": 2,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "e175bb7de298b1b703329010c1a0dc2228732c9bdcd4314b4bce021dd4d665fc",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 0.0002239407323259002,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.001270577101230017,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.01189362759317347,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.004114390234309194,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.4,
+          "hold_longest": 6.4,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/SAC_seed2_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/SAC_seed2_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "83fa99a192f8c3270817d4c4c2c379dc82a10d3ba9abdc959dc417c03304b5b1",
+            "specification": "queue/jobs/SAC_seed2_on_joint/evaluation/specification.json",
+            "specification_sha256": "841721b2ab9711ee21a09716440ad5bbb1eb05187019833442a3ce1a587d8306"
+          },
+          "log_sha256": "20f67d034eac90af3f55271d11e4f5556a8100a89baef76895e46653f19de852"
+        },
+        {
+          "controller": "TQC",
+          "model_id": "TQC_seed0",
+          "seed": 0,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "cf343633e258b3db84cd8d52e6483be9f9f521ac272c63e733db48f791552976",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 2.2160853859286995e-05,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 0.0002206141702335897,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.07876935736404785,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.00036005143737015204,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 6.82,
+          "hold_longest": 6.82,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 0.28,
+              "end": 0.29
+            },
+            {
+              "start": 0.29,
+              "end": 0.3
+            },
+            {
+              "start": 0.3,
+              "end": 0.31
+            },
+            {
+              "start": 0.31,
+              "end": 0.32
+            },
+            {
+              "start": 0.32,
+              "end": 0.33
+            },
+            {
+              "start": 0.33,
+              "end": 0.34
+            },
+            {
+              "start": 0.34,
+              "end": 0.35000000000000003
+            },
+            {
+              "start": 0.35000000000000003,
+              "end": 0.36
+            },
+            {
+              "start": 0.36,
+              "end": 0.37
+            },
+            {
+              "start": 0.37,
+              "end": 0.38
+            },
+            {
+              "start": 0.38,
+              "end": 0.39
+            },
+            {
+              "start": 0.39,
+              "end": 0.4
+            },
+            {
+              "start": 0.4,
+              "end": 0.41000000000000003
+            },
+            {
+              "start": 0.41000000000000003,
+              "end": 0.42
+            },
+            {
+              "start": 0.42,
+              "end": 0.43
+            },
+            {
+              "start": 0.43,
+              "end": 0.44
+            },
+            {
+              "start": 0.44,
+              "end": 0.45
+            },
+            {
+              "start": 0.45,
+              "end": 0.46
+            },
+            {
+              "start": 0.46,
+              "end": 0.47000000000000003
+            },
+            {
+              "start": 0.47000000000000003,
+              "end": 0.48
+            },
+            {
+              "start": 0.48,
+              "end": 0.49
+            },
+            {
+              "start": 0.49,
+              "end": 0.5
+            },
+            {
+              "start": 0.5,
+              "end": 0.51
+            },
+            {
+              "start": 1.2,
+              "end": 1.21
+            },
+            {
+              "start": 1.21,
+              "end": 1.22
+            },
+            {
+              "start": 1.22,
+              "end": 1.23
+            },
+            {
+              "start": 1.23,
+              "end": 1.24
+            },
+            {
+              "start": 1.24,
+              "end": 1.25
+            },
+            {
+              "start": 1.25,
+              "end": 1.26
+            },
+            {
+              "start": 1.26,
+              "end": 1.27
+            },
+            {
+              "start": 1.27,
+              "end": 1.28
+            },
+            {
+              "start": 1.29,
+              "end": 1.3
+            },
+            {
+              "start": 1.3,
+              "end": 1.31
+            },
+            {
+              "start": 1.32,
+              "end": 1.33
+            },
+            {
+              "start": 1.33,
+              "end": 1.34
+            },
+            {
+              "start": 1.34,
+              "end": 1.35
+            },
+            {
+              "start": 1.35,
+              "end": 1.36
+            },
+            {
+              "start": 1.37,
+              "end": 1.3800000000000001
+            },
+            {
+              "start": 1.3800000000000001,
+              "end": 1.3900000000000001
+            },
+            {
+              "start": 1.4000000000000001,
+              "end": 1.41
+            },
+            {
+              "start": 1.41,
+              "end": 1.42
+            },
+            {
+              "start": 1.43,
+              "end": 1.44
+            },
+            {
+              "start": 1.44,
+              "end": 1.45
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/TQC_seed0_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/TQC_seed0_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "8adee4a6db167404eda5bb5ede82021afa635ff33aa73ce4be3440b95a7d8e7d",
+            "specification": "queue/jobs/TQC_seed0_on_joint/evaluation/specification.json",
+            "specification_sha256": "358158789f2d77812aaa20717084d174fc431b8552c88c54c3eb6897e72c7c46"
+          },
+          "log_sha256": "453a71d15b1879d131423ba63616c4a9ce24195701f8bbf531c93c0f03c7b1db"
+        },
+        {
+          "controller": "TQC",
+          "model_id": "TQC_seed1",
+          "seed": 1,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "7c391d2593938e90bbdf3b7ee3e520151f3ec172677ead5d82f5f9bc34ad8c2e",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 3.780522612295556e-06,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 1.357437354905413e-05,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.013244124945425501,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 3.420562743009309e-05,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 7.92,
+          "hold_longest": 7.92,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 0.25,
+              "end": 0.26
+            },
+            {
+              "start": 0.26,
+              "end": 0.27
+            },
+            {
+              "start": 0.27,
+              "end": 0.28
+            },
+            {
+              "start": 0.28,
+              "end": 0.29
+            },
+            {
+              "start": 0.29,
+              "end": 0.3
+            },
+            {
+              "start": 0.3,
+              "end": 0.31
+            },
+            {
+              "start": 0.31,
+              "end": 0.32
+            },
+            {
+              "start": 0.32,
+              "end": 0.33
+            },
+            {
+              "start": 0.33,
+              "end": 0.34
+            },
+            {
+              "start": 0.34,
+              "end": 0.35000000000000003
+            },
+            {
+              "start": 0.35000000000000003,
+              "end": 0.36
+            },
+            {
+              "start": 0.36,
+              "end": 0.37
+            },
+            {
+              "start": 0.37,
+              "end": 0.38
+            },
+            {
+              "start": 0.38,
+              "end": 0.39
+            },
+            {
+              "start": 0.39,
+              "end": 0.4
+            },
+            {
+              "start": 0.4,
+              "end": 0.41000000000000003
+            },
+            {
+              "start": 0.41000000000000003,
+              "end": 0.42
+            },
+            {
+              "start": 0.42,
+              "end": 0.43
+            },
+            {
+              "start": 0.43,
+              "end": 0.44
+            },
+            {
+              "start": 0.44,
+              "end": 0.45
+            },
+            {
+              "start": 0.45,
+              "end": 0.46
+            },
+            {
+              "start": 0.46,
+              "end": 0.47000000000000003
+            },
+            {
+              "start": 0.47000000000000003,
+              "end": 0.48
+            },
+            {
+              "start": 0.48,
+              "end": 0.49
+            },
+            {
+              "start": 0.49,
+              "end": 0.5
+            },
+            {
+              "start": 1.3,
+              "end": 1.31
+            },
+            {
+              "start": 1.31,
+              "end": 1.32
+            },
+            {
+              "start": 1.32,
+              "end": 1.33
+            },
+            {
+              "start": 1.33,
+              "end": 1.34
+            },
+            {
+              "start": 1.34,
+              "end": 1.35
+            },
+            {
+              "start": 1.35,
+              "end": 1.36
+            },
+            {
+              "start": 1.36,
+              "end": 1.37
+            },
+            {
+              "start": 1.37,
+              "end": 1.3800000000000001
+            },
+            {
+              "start": 1.3800000000000001,
+              "end": 1.3900000000000001
+            },
+            {
+              "start": 1.3900000000000001,
+              "end": 1.4000000000000001
+            },
+            {
+              "start": 1.4000000000000001,
+              "end": 1.41
+            },
+            {
+              "start": 1.41,
+              "end": 1.42
+            },
+            {
+              "start": 1.42,
+              "end": 1.43
+            },
+            {
+              "start": 1.43,
+              "end": 1.44
+            },
+            {
+              "start": 1.44,
+              "end": 1.45
+            },
+            {
+              "start": 1.45,
+              "end": 1.46
+            },
+            {
+              "start": 1.46,
+              "end": 1.47
+            },
+            {
+              "start": 1.47,
+              "end": 1.48
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/TQC_seed1_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/TQC_seed1_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "045c2e786b3452f247ee0bea498f3c4487c7be3000f68b0106e0ea47afcfaf4f",
+            "specification": "queue/jobs/TQC_seed1_on_joint/evaluation/specification.json",
+            "specification_sha256": "701e0d4ba94b0dc25e0ae96de414f7a5edb4b4534d45b575c8b9c7964896363c"
+          },
+          "log_sha256": "f3d77f1e6fa3f8eb4760ab4c0fc32ebc926ffb62b5899d23b327d9a41331efca"
+        },
+        {
+          "controller": "TQC",
+          "model_id": "TQC_seed2",
+          "seed": 2,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "4414f5c9ac5af4f639c957541b279df500fb28f0ff2652a38a73a12ca5c83700",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 1.7864198329498038e-06,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 5.387906154639979e-06,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.08982005111226543,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 2.9262106876385133e-06,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 7.24,
+          "hold_longest": 7.24,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/TQC_seed2_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/TQC_seed2_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "744ed2071b68c46edfe9e78c263a92e69da204db95df4aabe4ecb33e681303c5",
+            "specification": "queue/jobs/TQC_seed2_on_joint/evaluation/specification.json",
+            "specification_sha256": "47c41586f45f4ec8e261a8270f7320b82c0df90318e09f6c91584bbba02927c7"
+          },
+          "log_sha256": "04d30965c50bfb24c51db05244518a98ace8941c59a57113a425527dae49ee5c"
+        },
+        {
+          "controller": "classical",
+          "model_id": "classical",
+          "seed": null,
+          "filter": "on",
+          "group": "joint",
+          "case_id": "joint_00",
+          "initial_state": {
+            "cart_position": -0.008693465563882657,
+            "cart_velocity": 0.05742086567469088,
+            "pole_angle": 0.04540003992542374,
+            "pole_angular_velocity": -0.38337141885204945
+          },
+          "model_sha256": "c7d118eee902cbbc852d4a9a156d90827134913f5bd25a515ae929667658814f",
+          "outcome": "Удержание выполнено",
+          "success": true,
+          "completion": {
+            "reason": "horizon",
+            "terminated": false,
+            "truncated": true,
+            "time": 10.0,
+            "transition_count": 1000,
+            "stop_reasons": []
+          },
+          "final_status": [
+            {
+              "text": "Удержание выполнено",
+              "role": "good"
+            },
+            {
+              "text": "Без превышения границы",
+              "role": "good"
+            }
+          ],
+          "final_components": {
+            "angle": {
+              "value": 1.1960185647197363e-05,
+              "threshold": 0.17453292519943295,
+              "exceeds": false
+            },
+            "angular_velocity": {
+              "value": 1.2319222085487667e-05,
+              "threshold": 0.5,
+              "exceeds": false
+            },
+            "position": {
+              "value": 0.00010842235741639974,
+              "threshold": 0.2,
+              "exceeds": false
+            },
+            "velocity": {
+              "value": 0.00011162685404548564,
+              "threshold": 0.2,
+              "exceeds": false
+            }
+          },
+          "hold_final": 7.83,
+          "hold_longest": 7.83,
+          "exceeds_024_resolved": false,
+          "saved_states": 1001,
+          "saved_transitions": 1000,
+          "intervention_intervals": [
+            {
+              "start": 1.43,
+              "end": 1.44
+            },
+            {
+              "start": 1.44,
+              "end": 1.45
+            },
+            {
+              "start": 1.45,
+              "end": 1.46
+            },
+            {
+              "start": 1.46,
+              "end": 1.47
+            },
+            {
+              "start": 1.47,
+              "end": 1.48
+            },
+            {
+              "start": 1.48,
+              "end": 1.49
+            },
+            {
+              "start": 1.49,
+              "end": 1.5
+            },
+            {
+              "start": 1.5,
+              "end": 1.51
+            }
+          ],
+          "evidence": {
+            "archive": "main_recovery",
+            "log": "queue/jobs/classical_on_joint/evaluation/cases/joint_00/attempt_00000/episode.json.gz",
+            "receipt": "queue/jobs/classical_on_joint/evaluation/cases/joint_00/attempt_00000/receipt.json",
+            "receipt_sha256": "27bef69843f6535f71a6e292cca5dce8aab934507b4bde5f99d6756828d7a8d5",
+            "specification": "queue/jobs/classical_on_joint/evaluation/specification.json",
+            "specification_sha256": "6ba7b5c72a4cf74b2e6a8d14e828b7135a88b7d161dac45b568bd99e518343f5"
+          },
+          "log_sha256": "3dc13e665d7a5f6136da09ff942930e2378fce38f5c72f591239cd8202a79446"
+        }
+      ],
+      "poster": "posters/06_final_controllers.png",
+      "screen_order": [
+        {
+          "panel": 0,
+          "row": 0,
+          "column": 0,
+          "fragment": null,
+          "model_id": "SAC_seed0",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "cee63f5257c4f1638e72a15876ccbba8c7865fc65eed741243497d820b045886",
+          "log_sha256": "d79c556de61c928475696edb2f17c5bfe41aa1629f84dbb4f268c52dc6524b64",
+          "color": "#297e9b"
+        },
+        {
+          "panel": 1,
+          "row": 0,
+          "column": 1,
+          "fragment": null,
+          "model_id": "SAC_seed1",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "2e2e9946e948f0c651c6f71cbbe3c822888061dc4d2b6ca64b94b48cad160bed",
+          "log_sha256": "8529e8369575206c9fedf579b3dc786d86bb18531918fb341c0a21138baaccde",
+          "color": "#4170a0"
+        },
+        {
+          "panel": 2,
+          "row": 0,
+          "column": 2,
+          "fragment": null,
+          "model_id": "SAC_seed2",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "e175bb7de298b1b703329010c1a0dc2228732c9bdcd4314b4bce021dd4d665fc",
+          "log_sha256": "20f67d034eac90af3f55271d11e4f5556a8100a89baef76895e46653f19de852",
+          "color": "#53669a"
+        },
+        {
+          "panel": 3,
+          "row": 0,
+          "column": 3,
+          "fragment": null,
+          "model_id": "classical",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "c7d118eee902cbbc852d4a9a156d90827134913f5bd25a515ae929667658814f",
+          "log_sha256": "3dc13e665d7a5f6136da09ff942930e2378fce38f5c72f591239cd8202a79446",
+          "color": "#94743d"
+        },
+        {
+          "panel": 4,
+          "row": 1,
+          "column": 0,
+          "fragment": null,
+          "model_id": "TQC_seed0",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "cf343633e258b3db84cd8d52e6483be9f9f521ac272c63e733db48f791552976",
+          "log_sha256": "453a71d15b1879d131423ba63616c4a9ce24195701f8bbf531c93c0f03c7b1db",
+          "color": "#418374"
+        },
+        {
+          "panel": 5,
+          "row": 1,
+          "column": 1,
+          "fragment": null,
+          "model_id": "TQC_seed1",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "7c391d2593938e90bbdf3b7ee3e520151f3ec172677ead5d82f5f9bc34ad8c2e",
+          "log_sha256": "f3d77f1e6fa3f8eb4760ab4c0fc32ebc926ffb62b5899d23b327d9a41331efca",
+          "color": "#5c8571"
+        },
+        {
+          "panel": 6,
+          "row": 1,
+          "column": 2,
+          "fragment": null,
+          "model_id": "TQC_seed2",
+          "filter": "on",
+          "case_id": "joint_00",
+          "model_sha256": "4414f5c9ac5af4f639c957541b279df500fb28f0ff2652a38a73a12ca5c83700",
+          "log_sha256": "04d30965c50bfb24c51db05244518a98ace8941c59a57113a425527dae49ee5c",
+          "color": "#6c7960"
+        }
+      ],
+      "renderer_version": "saved-robustness-video-v2",
+      "renderer_sha256": "1dade3f3978ce411094250042e6e694809cff8e2fc465f343c05f46c57f82bee",
+      "build_command": ".venv-cloud-check/bin/python -B -m cartpole.experiments.robustness_video --review artifacts/robustness-20260916/robustness-review-1789558151385076965.tar.gz --recovery artifacts/robustness-20260916/robustness-recovery-1789558163887525846.tar.gz --historical-media ../cartpole-coursework-submission/media --historical-episodes ../cartpole-intermediate-report-20260916/sources/episodes --confirmation-analysis verification/confirmation_audit_1789515957912724921/analysis --output reports/research-report-20260917/media --verify-repeat",
+      "timeline": [
+        {
+          "start": 0,
+          "frames": 360,
+          "kind": "motion",
+          "title": null
+        }
+      ],
+      "poster_sha256": "ddb3001bbbccd145001e6f2ef6f56f6d3958d99eb2aca83489b1129f8badc98b"
+    }
+  ],
+  "qa_extracted_frames": {
+    "01_nominal_controllers": [
+      {
+        "frame": 0,
+        "pts": 0.0,
+        "label": "segment_0_start",
+        "file": "00000_segment_0_start.png"
+      },
+      {
+        "frame": 9,
+        "pts": 0.3,
+        "label": "intervention_0_2",
+        "file": "00009_intervention_0_2.png"
+      },
+      {
+        "frame": 12,
+        "pts": 0.4,
+        "label": "intervention_0_0",
+        "file": "00012_intervention_0_0.png"
+      },
+      {
+        "frame": 180,
+        "pts": 6.0,
+        "label": "middle",
+        "file": "00180_middle.png"
+      },
+      {
+        "frame": 359,
+        "pts": 11.966666666666667,
+        "label": "segment_0_final",
+        "file": "00359_segment_0_final.png"
+      }
+    ],
+    "02_ddpg_best_vs_last": [
+      {
+        "frame": 0,
+        "pts": 0.0,
+        "label": "segment_0_start",
+        "file": "00000_segment_0_start.png"
+      },
+      {
+        "frame": 8,
+        "pts": 0.26666666666666666,
+        "label": "intervention_0_1",
+        "file": "00008_intervention_0_1.png"
+      },
+      {
+        "frame": 16,
+        "pts": 0.5333333333333333,
+        "label": "intervention_0_0",
+        "file": "00016_intervention_0_0.png"
+      },
+      {
+        "frame": 180,
+        "pts": 6.0,
+        "label": "middle",
+        "file": "00180_middle.png"
+      },
+      {
+        "frame": 359,
+        "pts": 11.966666666666667,
+        "label": "segment_0_final",
+        "file": "00359_segment_0_final.png"
+      }
+    ],
+    "03_filter_safety_rescue": [
+      {
+        "frame": 0,
+        "pts": 0.0,
+        "label": "segment_0_start",
+        "file": "00000_segment_0_start.png"
+      },
+      {
+        "frame": 45,
+        "pts": 1.5,
+        "label": "intervention_0_1",
+        "file": "00045_intervention_0_1.png"
+      },
+      {
+        "frame": 47,
+        "pts": 1.5666666666666667,
+        "label": "preterminal_0_0",
+        "file": "00047_preterminal_0_0.png"
+      },
+      {
+        "frame": 48,
+        "pts": 1.6,
+        "label": "exceedance_0_0",
+        "file": "00048_exceedance_0_0.png"
+      },
+      {
+        "frame": 180,
+        "pts": 6.0,
+        "label": "middle",
+        "file": "00180_middle.png"
+      },
+      {
+        "frame": 359,
+        "pts": 11.966666666666667,
+        "label": "segment_0_final",
+        "file": "00359_segment_0_final.png"
+      }
+    ],
+    "04_success_vs_safety": [
+      {
+        "frame": 0,
+        "pts": 0.0,
+        "label": "segment_0_start",
+        "file": "00000_segment_0_start.png"
+      },
+      {
+        "frame": 36,
+        "pts": 1.2,
+        "label": "intervention_0_1",
+        "file": "00036_intervention_0_1.png"
+      },
+      {
+        "frame": 37,
+        "pts": 1.2333333333333334,
+        "label": "exceedance_0_0",
+        "file": "00037_exceedance_0_0.png"
+      },
+      {
+        "frame": 180,
+        "pts": 6.0,
+        "label": "middle",
+        "file": "00180_middle.png"
+      },
+      {
+        "frame": 359,
+        "pts": 11.966666666666667,
+        "label": "segment_0_final",
+        "file": "00359_segment_0_final.png"
+      }
+    ],
+    "05_robustness_groups": [
+      {
+        "frame": 0,
+        "pts": 0.0,
+        "label": "start",
+        "file": "00000_start.png"
+      },
+      {
+        "frame": 30,
+        "pts": 1.0,
+        "label": "segment_1_start",
+        "file": "00030_segment_1_start.png"
+      },
+      {
+        "frame": 389,
+        "pts": 12.966666666666667,
+        "label": "segment_1_final",
+        "file": "00389_segment_1_final.png"
+      },
+      {
+        "frame": 420,
+        "pts": 14.0,
+        "label": "segment_3_start",
+        "file": "00420_segment_3_start.png"
+      },
+      {
+        "frame": 779,
+        "pts": 25.966666666666665,
+        "label": "segment_3_final",
+        "file": "00779_segment_3_final.png"
+      },
+      {
+        "frame": 810,
+        "pts": 27.0,
+        "label": "segment_5_start",
+        "file": "00810_segment_5_start.png"
+      },
+      {
+        "frame": 1169,
+        "pts": 38.96666666666667,
+        "label": "segment_5_final",
+        "file": "01169_segment_5_final.png"
+      },
+      {
+        "frame": 1200,
+        "pts": 40.0,
+        "label": "segment_7_start",
+        "file": "01200_segment_7_start.png"
+      },
+      {
+        "frame": 1365,
+        "pts": 45.5,
+        "label": "middle",
+        "file": "01365_middle.png"
+      },
+      {
+        "frame": 1559,
+        "pts": 51.96666666666667,
+        "label": "segment_7_final",
+        "file": "01559_segment_7_final.png"
+      },
+      {
+        "frame": 1590,
+        "pts": 53.0,
+        "label": "segment_9_start",
+        "file": "01590_segment_9_start.png"
+      },
+      {
+        "frame": 1949,
+        "pts": 64.96666666666667,
+        "label": "segment_9_final",
+        "file": "01949_segment_9_final.png"
+      },
+      {
+        "frame": 1980,
+        "pts": 66.0,
+        "label": "segment_11_start",
+        "file": "01980_segment_11_start.png"
+      },
+      {
+        "frame": 2020,
+        "pts": 67.33333333333333,
+        "label": "intervention_11_0",
+        "file": "02020_intervention_11_0.png"
+      },
+      {
+        "frame": 2339,
+        "pts": 77.96666666666667,
+        "label": "segment_11_final",
+        "file": "02339_segment_11_final.png"
+      },
+      {
+        "frame": 2370,
+        "pts": 79.0,
+        "label": "segment_13_start",
+        "file": "02370_segment_13_start.png"
+      },
+      {
+        "frame": 2729,
+        "pts": 90.96666666666667,
+        "label": "segment_13_final",
+        "file": "02729_segment_13_final.png"
+      }
+    ],
+    "06_final_controllers": [
+      {
+        "frame": 0,
+        "pts": 0.0,
+        "label": "segment_0_start",
+        "file": "00000_segment_0_start.png"
+      },
+      {
+        "frame": 8,
+        "pts": 0.26666666666666666,
+        "label": "intervention_0_4",
+        "file": "00008_intervention_0_4.png"
+      },
+      {
+        "frame": 9,
+        "pts": 0.3,
+        "label": "intervention_0_3",
+        "file": "00009_intervention_0_3.png"
+      },
+      {
+        "frame": 12,
+        "pts": 0.4,
+        "label": "intervention_0_1",
+        "file": "00012_intervention_0_1.png"
+      },
+      {
+        "frame": 43,
+        "pts": 1.4333333333333333,
+        "label": "intervention_0_6",
+        "file": "00043_intervention_0_6.png"
+      },
+      {
+        "frame": 180,
+        "pts": 6.0,
+        "label": "middle",
+        "file": "00180_middle.png"
+      },
+      {
+        "frame": 359,
+        "pts": 11.966666666666667,
+        "label": "segment_0_final",
+        "file": "00359_segment_0_final.png"
+      }
+    ]
+  },
+  "previous_kit": {
+    "manifest_sha256": "78dc9f513376f4540d7ddcd2f42dd5350081c011fc0e9f41b9fab8a8ad08151f",
+    "backup_root": "verification/robustness_video_review_20260917_042213/before/",
+    "episode_bindings_unchanged": true,
+    "scientific_sha256_unchanged": true,
+    "timelines_unchanged": true
+  },
+  "verification_tests": {
+    "renderer": 41,
+    "analysis_reporting": 85,
+    "status": "passed",
+    "logs_sha256": {
+      "tests_video.log": "c13f43493af8241bd9562c480ef68157fd121080be874c2deb84cf75941cc960",
+      "tests_profiles.log": "573284f783a43aa6bc959c803b9f9967e54ad61fb826ab15d8c8945be72af225"
+    }
+  },
+  "visual_review": {
+    "status": "passed",
+    "preview_key_frames_before_encode": 5,
+    "encoded_frames_on_contact_sheets": 45,
+    "contact_sheets": 5,
+    "native_resolution_key_frames": 10,
+    "gui_player_checked": false,
+    "physical_projector_checked": false
+  },
+  "documentation_sha256": {
+    "README.md": "d4ae0400723b2681e03d8708b71f2f368f649892dcc777ece64a5e450bc20beb",
+    "QA_REPORT.md": "ead9c84ddda514f4178457860add5edbe5fd1044c6210ad3ccaf5a54c2e82ae8"
+  }
+}

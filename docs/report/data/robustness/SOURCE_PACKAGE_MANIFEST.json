@@ -1,0 +1,67 @@
+{
+  "authenticity": "SHA256 integrity manifest, not a digital authenticity signature; excludes itself.",
+  "files_sha256": {
+    "README.md": "ab0b665fa1336c116645127038a8f0d653e7887556b83a9af4d6e5d74ebdc956",
+    "analysis_summary.json": "dd2376bcccef1d2ff70adb00fbb88cbed3a5785ca8f5de2ca25cdea3cbd5ca35",
+    "intervention_rate_heatmap.png": "0758f59ae631fa37eefd9f436a702bc4e81541db831edab92ca83b9b36afa7c0",
+    "intervention_rate_heatmap.svg": "03a77217df5c5806913121d8310584ac5aa8c853163f181870d6cf299c6b4a3a",
+    "intervention_summary.csv": "c674318a7b59de64f2a48f52fc5faa42020a580e263901a8ea3e6f52f191c778",
+    "overall_success_safety.png": "be2d2ffe929037d9dc664139e76f04e9cd6478687bab40b2ebfadf5f57c9c562",
+    "overall_success_safety.svg": "81ada64dc2043e56025a4d5a41a80b8f2874f8c2e5755144625eafa1a759adc8",
+    "paired_outcomes.csv": "a483a937c39e0ff0db9509e1327cfc00e0eca9c00c5da58cdf26f22cfc6cc32f",
+    "paired_outcomes.png": "369dd6acef16a5559e21a7bb3161f0c0a8004046b21d5c8b7fe73397f07915ec",
+    "paired_outcomes.svg": "baa2644e9ba7745bdc03ee434327cd5c4850b991ededb74b20a6ff46d4117198",
+    "success_by_group.png": "e5569bf6ee48c6720854e84c041995cd1ca51c2ae300cdce41c1e2a98f9be20e",
+    "success_by_group.svg": "c93240c26ecd2ce5c1c69cd3f86966d327aed3cb51aea6da62fd5ec9567c2891",
+    "success_delta_heatmap.png": "e655f80f1e8c0da83db56a97c0f27efc3ddf087a740261b81d749d5be5e69f2b",
+    "success_delta_heatmap.svg": "175289cc4b622e4de3b5254b75a006cafbd4f67013fb9131d5f28b2a0e245b26",
+    "summary_by_controller.csv": "6859f0a02e25883b44e167afe35e5ec67a0c3463857198cf3b3d9923dddad5c9",
+    "summary_by_group.csv": "519b63ad53621efe11475469bed334f8a03558134dc2636cf7301b7525465ff4",
+    "summary_controller_group.csv": "5710309986de3e925c491fd357eb92be24b35db5ecd875b2101c32f1ce76e3b8",
+    "summary_overall.csv": "2019810c73406e3de1b145b648ed3a4c2426712fc7f5817c773bec426a1775ed"
+  },
+  "generated_from": "reporting-candidate-r2",
+  "historical_render_environment": {
+    "matplotlib": null,
+    "python": null,
+    "status": "not recorded in r2 manifest; not inferred from present environment"
+  },
+  "provenance_scope": "Byte-identical publication copy of reviewed reporting outputs, plus README; source envelope provenance preserved, source archives not reaudited; no trajectories or model execution.",
+  "reporting_commit": "6b458a9a93001366169012650467e3a2216d968e",
+  "schema": "structured-robustness-publication-package",
+  "scientific_sha256": "c1cac3775426748520db67957e988fb7cf3706148d1cc515eca26e88118fb63b",
+  "source_code_sha256": {
+    "cartpole/experiments/robustness_analysis.py": "aaaacc76a2732f912119371e9d76eaaa65fe3e92b8878f248e138cb8af22fe83",
+    "cartpole/experiments/robustness_reporting.py": "d6501a32589c4a309db1c304b2095d5a7a2c474990b0f76496acc1c54b814639"
+  },
+  "source_files_sha256": {
+    "analysis_summary.json": "dd2376bcccef1d2ff70adb00fbb88cbed3a5785ca8f5de2ca25cdea3cbd5ca35",
+    "intervention_rate_heatmap.png": "0758f59ae631fa37eefd9f436a702bc4e81541db831edab92ca83b9b36afa7c0",
+    "intervention_rate_heatmap.svg": "03a77217df5c5806913121d8310584ac5aa8c853163f181870d6cf299c6b4a3a",
+    "intervention_summary.csv": "c674318a7b59de64f2a48f52fc5faa42020a580e263901a8ea3e6f52f191c778",
+    "overall_success_safety.png": "be2d2ffe929037d9dc664139e76f04e9cd6478687bab40b2ebfadf5f57c9c562",
+    "overall_success_safety.svg": "81ada64dc2043e56025a4d5a41a80b8f2874f8c2e5755144625eafa1a759adc8",
+    "paired_outcomes.csv": "a483a937c39e0ff0db9509e1327cfc00e0eca9c00c5da58cdf26f22cfc6cc32f",
+    "paired_outcomes.png": "369dd6acef16a5559e21a7bb3161f0c0a8004046b21d5c8b7fe73397f07915ec",
+    "paired_outcomes.svg": "baa2644e9ba7745bdc03ee434327cd5c4850b991ededb74b20a6ff46d4117198",
+    "success_by_group.png": "e5569bf6ee48c6720854e84c041995cd1ca51c2ae300cdce41c1e2a98f9be20e",
+    "success_by_group.svg": "c93240c26ecd2ce5c1c69cd3f86966d327aed3cb51aea6da62fd5ec9567c2891",
+    "success_delta_heatmap.png": "e655f80f1e8c0da83db56a97c0f27efc3ddf087a740261b81d749d5be5e69f2b",
+    "success_delta_heatmap.svg": "175289cc4b622e4de3b5254b75a006cafbd4f67013fb9131d5f28b2a0e245b26",
+    "summary_by_controller.csv": "6859f0a02e25883b44e167afe35e5ec67a0c3463857198cf3b3d9923dddad5c9",
+    "summary_by_group.csv": "519b63ad53621efe11475469bed334f8a03558134dc2636cf7301b7525465ff4",
+    "summary_controller_group.csv": "5710309986de3e925c491fd357eb92be24b35db5ecd875b2101c32f1ce76e3b8",
+    "summary_overall.csv": "2019810c73406e3de1b145b648ed3a4c2426712fc7f5817c773bec426a1775ed"
+  },
+  "source_manifest_sha256": "1ddf2dc766b1c7bcbdc707b87766b8827f3e59acde592e7ffd7d0b1582b751ce",
+  "source_provenance": {
+    "review": {
+      "archive_sha256": "0c3b3685612f35da89332f8b36b165e96fd76d0056f12bf647a34e5d57f019e3",
+      "expected_archive_sha_verified": true,
+      "export_manifest_sha256": "abe8680481bdc760b53460d1d23b1233890fc3b7bf6433e05e79c0f9561e3149",
+      "manifest_files": 4
+    }
+  },
+  "timing_included": false,
+  "version": 1
+}

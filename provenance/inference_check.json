@@ -1,0 +1,217 @@
+{
+  "results": [
+    {
+      "model": "SAC_seed0",
+      "transitions": 70000,
+      "updates": 69872,
+      "payloads": 4,
+      "sha": "passed",
+      "inference": {
+        "requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "SAC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        },
+        "environment_requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "SAC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        }
+      }
+    },
+    {
+      "model": "SAC_seed1",
+      "transitions": 50000,
+      "updates": 49872,
+      "payloads": 4,
+      "sha": "passed",
+      "inference": {
+        "requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "SAC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        },
+        "environment_requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "SAC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        }
+      }
+    },
+    {
+      "model": "SAC_seed2",
+      "transitions": 80000,
+      "updates": 79872,
+      "payloads": 4,
+      "sha": "passed",
+      "inference": {
+        "requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "SAC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        },
+        "environment_requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "SAC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        }
+      }
+    },
+    {
+      "model": "TQC_seed0",
+      "transitions": 80000,
+      "updates": 79872,
+      "payloads": 4,
+      "sha": "passed",
+      "inference": {
+        "requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "TQC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        },
+        "environment_requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "TQC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        }
+      }
+    },
+    {
+      "model": "TQC_seed1",
+      "transitions": 40000,
+      "updates": 39872,
+      "payloads": 4,
+      "sha": "passed",
+      "inference": {
+        "requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "TQC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        },
+        "environment_requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "TQC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        }
+      }
+    },
+    {
+      "model": "TQC_seed2",
+      "transitions": 70000,
+      "updates": 69872,
+      "payloads": 4,
+      "sha": "passed",
+      "inference": {
+        "requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "TQC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        },
+        "environment_requests": {
+          "protocol": "inference-compatibility-v1",
+          "algorithm": "TQC",
+          "saved_device": "cpu",
+          "loaded_device": "cpu",
+          "comparisons": 23,
+          "exact_required": true,
+          "max_abs_difference": 0.0,
+          "atol": 0.0,
+          "rtol": 0.0,
+          "finite": true,
+          "units": "normalized request [-1,1]"
+        }
+      }
+    }
+  ],
+  "simulated_transitions": 0,
+  "training_updates": 0,
+  "resume_supported": false
+}

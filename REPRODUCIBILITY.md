@@ -1,112 +1,110 @@
-# Воспроизводимость
+# Уровни воспроизводимости
 
-Состояние исследования: 16.09.2026. Это отдельный submission-снимок; он не
-заменяет ранее замороженные серверные пакеты. Все25 файлов математического и
-обучающего контракта и сохранённые конфигурации перенесены побитово.
-[Источник](provenance/source.json), [пофайловые SHA](provenance/imports.json),
-[идентичности исходных архивов](provenance/archives.json).
-Исторические manifests не исправлялись для нового пути.
+Команды выполняются из корня submission. Установка — по [README](README.md).
+Имеющиеся результаты не перезаписываются: новым вычислениям задавайте отдельный output.
 
-## Проверка без экспериментов
+## 1. Просмотр без вычислений
 
-После установки из [README](README.md), из корня клона:
+[PDF](docs/report/report.pdf), [результаты](RESULTS.md), [приложения](docs/APPENDICES.md),
+[шесть видео](media/README.md). Браузер/PDF-viewer/видеоплеер достаточны.
+Копии media внутри отчёта нужны относительным PDF-ссылкам; их байты идентичны корневым.
+Git хранит одинаковые blobs один раз. PDF/LaTeX/CSV/рисунки приняты без научной правки.
 
-```bash
-export MPLBACKEND=Agg PYTHONDONTWRITEBYTECODE=1
-export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-.venv/bin/python -B -m scripts.verify_submission
-.venv/bin/python -B -m scripts.reproduce_results --check
-.venv/bin/python -B -m unittest discover -s tests -p 'test_submission.py' -v
-.venv/bin/python -B -m unittest discover -s tests -p 'test_cart_safety.py' -v
-.venv/bin/python -B -m unittest discover -s tests -p 'test_inference_compatibility.py' -v
-.venv/bin/python -m pip check
-sha256sum -c provenance/SHA256SUMS
-git diff --check
-```
-
-Фильтр проверяется аналитическими тестами без Drake-интегрирования.
-Loader-тесты используют малую искусственную модель и mocks, а не реальные
-обученные checkpoints. Проверка generation восстанавливает только уже объявленный
-development JSON. Ни обучение, ни rollout, ни final эти команды не запускают.
-Остальные включённые тесты симулятора требуют фактических переходов; их полный
-повтор при сборке submission не выполняется.
-
-`reproduce_results` пересчитывает опубликованные числа из аудированных compact
-CSV, проверяет точные правила отбора и gate. Это не повтор аудита raw episodes.
-В CSV поля `source` являются именами членов архивов, а не ссылками на файлы,
-которые обязаны присутствовать в клоне. Полные SHA checkpoints для каждого
-best/last находятся в `results/tables/*/selected_checkpoints.csv`.
-
-## Явная оценка сохранённого контроллера
-
-Сначала печать плана без вычисления траекторий:
+## 2. Компактные числа и графики — чистый клон
 
 ```bash
-.venv/bin/python -B -m scripts.evaluate --classical --filter on --output output/classical
-.venv/bin/python -B -m scripts.evaluate --checkpoint CHECKPOINT_DIRECTORY --filter on --output output/policy
+python3 -B -m scripts.verify_submission
+python3 -B -m scripts.reproduce_results --check
+python3 -B -m scripts.reproduce_robustness --check
+python3 -B -m cartpole.experiments.robustness_analysis --normalized results/robustness/normalized.json --check
+python3 -B docs/report/scripts/check_report.py
+.venv/bin/python -B -m scripts.reproduce_robustness --figures --output output-robustness
 ```
 
-Чтобы действительно выполнить оценку, добавьте `--execute`. Пример для классики:
+Первые пять команд — stdlib, без torch/Drake. Нормализованный набор проверяет
+собственные identities/envelope/scientific SHA; source provenance и raw recomputation
+заново не выполняются. Reporting независимо пересчитывает шесть CSV и пять PNG/SVG.
+Последняя команда требует Matplotlib и нового output; существующий каталог отвергается.
+Экспортные часы не влияют на научные агрегаты. README канонического пакета также
+содержит историческую команду импорта review — для неё нужен внешний архив.
+
+Main/Stage1/confirmation пересчитываются из компактных аудированных CSV:
+это не независимый raw-аудит обучения. Selection/confirmation используют только
+20 validation состояний, не три named-сценария. Исторические отчёты — снимки своего этапа.
+
+Редактируемый отчёт: [инструкция](docs/report/README.md). Для сборки нужны
+XeLaTeX либо Tectonic и шрифты; эти системные зависимости не входят в Python venv.
+Новая сборка PDF здесь не выполнялась: поставляется точная проверенная копия.
+
+## 3. Сохранённая политика
 
 ```bash
-.venv/bin/python -B -m scripts.evaluate --classical --filter on --workers 1 --output output/classical --execute
+.venv/bin/python -B -m scripts.frozen_inference --load-check
+.venv/bin/python -B -m scripts.evaluate_capsule --model SAC_seed0 --filter on
+# Следующая команда действительно запускает 23 новых эпизода по 10 с:
+.venv/bin/python -B -m scripts.evaluate_capsule --model SAC_seed0 --filter on --output output-sac0 --execute
 ```
 
-Checkpoint directory пользователь получает отдельно из проверенного recovery:
-поколение выбирается по таблице SHA, не по изменяемому указателю `best`.
-Нужны manifest.json, metadata.json, probes.json, model.zip, replay.pkl, runtime.pt.
-Loader хеширует все payloads, загружает модель и проверяет веса, версии и действия;
-replay/runtime не используются для обучения в evaluation-пути. При несовместимости
-проверка останавливается. Main-model inference допускает только известную
-registry-only миграцию, описанную в [протоколе](docs/PROTOCOL.md).
+Веса всех SAC/TQC seed0/1/2 включены, закреплены frozen bindings, metadata,
+историческими manifest и SHA. Загрузка проверяет веса, библиотеки, научные исходники
+и 23 сохранённые пробы на модель. Единственное уже проверенное исключение:
+известная пара registry-only SHA cloud_config, только в inference-пути.
+На этой подготовке проверена загрузка/probes CPU; **новые эпизоды не запускались**.
+Маршрутизация evaluation проверена mock-тестом и plan. CUDA заново не проверялась.
+Каждый execution создаёт fresh output, не поддерживает скрытый resume.
 
-Оценка всегда использует исторические20 validation и3 named, горизонт10с и
-прежнюю физику. Одинаковая команда с тем же output продолжает только недостающие
-эпизоды после проверки receipts и источников; несовместимый output отвергается.
-Это не серверная очередь и не запуск robustness. Реальное исполнение этих команд
-не проверялось при сборке: новые rollout запрещены задачей подготовки.
-
-Исходники обучающего Runner и точные конфигурации включены для исследования и
-воспроизведения протокола. Старые main/development/confirmation session receipts
-и серверные launchers исключены; запуск полной очереди из submission не заявляется
-проверенным. Отдельный новый training запуск требует самостоятельного ограниченного
-протокола и time-only session; старые weights не являются его инициализацией.
-
-## Результаты и графики
-
-- Main:15 обучений, seeds0/1/2;100000 transitions/99872 updates.
-- Stage1:12 обучений; warmup5000:95000 updates, lr1e4:99872 updates.
-- Confirmation:6 обучений, seeds3/4/5;100000/95000; обе конфигурации не подтверждены.
-- Внешняя оценка: best/last × off/on ×23; named не влияет на выбор.
-
-Таблицы, исходные графики аудитов и четыре готовых MP4 скопированы с проверкой
-SHA. [Медиа-manifest](media/manifest.json) связывает видео с моделью, эпизодом и
-хешем полного журнала. Полных журналов в этом клоне нет: воспроизведение анимации
-из raw потребует соответствующий архив. Само видео автономно и не запускает код.
-
-## Сборка PDF
-
-Готовый PDF включён. Исходник LaTeX адаптирован из промежуточного отчёта:
-обновлены относительные ссылки и статус уже подготовленного robustness,
-добавлено раскрытие помощи генеративной модели. Исходный PDF сохранён отдельно;
-его SHA приведён в provenance/source.json. Числа и прежние иллюстрации не изменены.
-
-Для повторной сборки нужны Tectonic0.17.0 и шрифты Noto Serif, Noto Sans,
-DejaVu Sans Mono с кириллицей. Они не входят в Python requirements. При первом
-запуске Tectonic может загрузить TeX bundle; cache создаётся отдельно:
+Классический baseline и полная checkpoint-оценка используют исходный runner:
 
 ```bash
-TECTONIC=tectonic bash scripts/build_report.sh
+.venv/bin/python -B -m scripts.evaluate --classical --filter on --workers 1 --output output-classical
+# --execute добавляется только для сознательного запуска новых эпизодов.
 ```
 
-PDF может иметь другой побитовый SHA при иных шрифтах/TeX bundle; научные данные
-не зависят от верстки. Результаты локальных проверок: [CHECKS](docs/CHECKS.md).
+Включена `tests/fixtures/swing_up_nominal.npz`. Её SHA закреплён в конфигурации.
+Загрузка модели — десериализация доверенного артефакта; не заменяйте ZIP посторонними.
+Inference-комплекты не содержат replay/runtime и **не позволяют продолжить обучение**.
 
-## Что не распространяется
+## 4. Повторить обучение — отдельный дорогой эксперимент
 
-Виртуальные окружения, кэши, переписки, внутренние инструкции, модели,
-replay/runtime, полные recovery/review архивы и episode logs. Их SHA
-сохранены в provenance, но доступ к raw не заменён фиктивными публичными ссылками.
-Ни один файл текущего дерева не превышает50MB; Git LFS/Release для этого состава
-не нужны. Если позже публиковать модели, это отдельный reviewed release с SHA.
-Ограничения лицензирования и публичного размещения: [attribution](THIRD_PARTY_NOTICES.md).
+Научный runner и frozen configs включены; старт fresh, seeds задаются явно.
+Ниже пример одного исходного SAC-on, не автоматический запуск серии и не обещание
+битового воспроизведения стохастического обучения. Duration — защитный предел.
+
+```bash
+.venv/bin/python -B -m scripts.train plan --config sac_training_v2_on --seed 0
+.venv/bin/python -B -m scripts.train init-session --session output-training/session.json --seconds 43200 --reserve-seconds 120
+.venv/bin/python -B -m cartpole.experiments.cloud_guard --session output-training/session.json --phase main --max-seconds 42000 --output-dir output-training/guard -- .venv/bin/python -B -m scripts.train run --config sac_training_v2_on --seed 0 --session output-training/session.json --max-seconds 42000 --output output-training/sac0
+```
+
+Session явно time-only, без фиктивной цены; срок не продлевается. Старые guards и
+scientific runner сохранены. Plan проверен; новое обучение/guard с training в этой
+подготовке не запускались. Нужен существенный запас диска для новых replay/checkpoints.
+Не использовать inference ZIP как начальные веса. В main buffer_size=100000,
+100000 transitions; warmup5000 ожидает 95000 updates, исходные варианты — 99872.
+[Конфигурации main](configs/cloud/), [Stage1](configs/development/),
+[confirmation](configs/confirmation/) — независимые исторические серии.
+Для полноценного прежнего training resume нужны внешние runtime/replay и identities;
+данный компактный комплект его не обещает. Final5000 не входит ни в одну команду.
+
+## 5. Raw-аудит и повторный рендер — внешние данные
+
+В Git нет больших review/recovery, raw-логов и исторических видеовходов.
+[Исходные SHA серий](provenance/archives.json),
+[robustness provenance](provenance/robustness.json),
+[принятый media manifest](media/VIDEO_MANIFEST.json) сохраняют происхождение.
+Для импорта robustness нужны внешние archives и их sidecar/SHA:
+
+```bash
+python3 -B -m cartpole.experiments.robustness_analysis --help
+.venv/bin/python -B -m cartpole.experiments.robustness_video --help
+```
+
+Точные параметры импорта перечислены в [каноническом README](docs/assets/structured_robustness/README.md).
+Видео требует также внешних historical episodes и confirmation analysis — они не
+восстанавливаются из normalized metrics или моделей. На этой подготовке raw-аудит,
+рендер MP4 и rollout не повторялись. Нельзя обозначать compact-check как raw-проверку.
+
+Исторические manifests не переписаны под submission. Семь локально-зависимых
+Markdown-документов отчёта заменены явно производными описаниями; исходные SHA,
+причины и новые SHA — в [PORTABILITY](docs/report/PORTABILITY.json).
+Актуальный состав проверяется по [SHA256SUMS](provenance/SHA256SUMS).

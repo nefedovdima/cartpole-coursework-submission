@@ -16,3 +16,8 @@ __pycache__/
 *.tar.gz
 .env
 .env.*
+
+!models/*/model.zip
+/output-*/
+/docs/report/build/
+/docs/report/tmp/

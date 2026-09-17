@@ -1,0 +1,69 @@
+{
+  "schema": "submission-checks-v1",
+  "date": "2026-09-17",
+  "tree": "separate git-index export; fresh isolated environment; editable import verified",
+  "research_head": "dce6e7fb0f8c1454ff1e2136601c2659e1b35706",
+  "tests": {
+    "total": 189,
+    "seconds": 116.268,
+    "modules": {
+      "robustness_analysis": 56,
+      "robustness_reporting": 29,
+      "robustness_video": 41,
+      "cart_safety": 24,
+      "inference_compatibility": 14,
+      "submission": 10,
+      "frozen_inference": 9,
+      "robustness_results": 3,
+      "training_entrypoint": 3
+    },
+    "result": "passed",
+    "skipped": 0
+  },
+  "dependencies": {
+    "python": "3.12.3",
+    "torch": "2.14.0+cpu",
+    "drake": "1.57.0",
+    "numpy": "2.5.3",
+    "gymnasium": "1.3.0",
+    "matplotlib": "3.11.2",
+    "stable_baselines3": "2.9.0",
+    "sb3_contrib": "2.9.0",
+    "pip_check": "passed"
+  },
+  "compact_results": "passed",
+  "normalization_without_site_packages": "passed",
+  "regenerated_byte_identical": {
+    "csv": 6,
+    "png": 5,
+    "svg": 5
+  },
+  "model_load": {
+    "device": "cpu",
+    "models": 6,
+    "observations_per_model": 23,
+    "action_arrays_per_model": 2,
+    "comparisons": 276,
+    "max_abs_difference": 0
+  },
+  "source_preservation": {
+    "files": 1065,
+    "scientific_python_identical": 61,
+    "index_unchanged": true
+  },
+  "not_run": [
+    "training",
+    "policy evaluation episodes",
+    "Drake rollout",
+    "full raw audit",
+    "CUDA",
+    "server",
+    "final5000",
+    "accepted MP4 encoding",
+    "PDF rebuild"
+  ],
+  "mock_only": [
+    "evaluation execution adapter"
+  ],
+  "report_source_qa": "historical; not repeated"
+}

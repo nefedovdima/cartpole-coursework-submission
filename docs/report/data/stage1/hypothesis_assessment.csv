@@ -1,0 +1,5 @@
+variant,predeclared_diagnostic_seeds_passing,required,score_strictly_improves_baseline,predeclared_hypothesis_supported,causality_proven
+ddpg_on_lr1e4,0,2,False,False,False
+ddpg_on_warmup5000,3,2,True,True,False
+sac_off_lr1e4,0,2,False,False,False
+sac_off_warmup5000,1,2,True,False,False

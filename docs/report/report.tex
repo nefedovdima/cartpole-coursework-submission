@@ -1,336 +1,88 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[margin=19mm,top=19mm,bottom=20mm,headheight=14pt]{geometry}
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=25mm,right=10mm,top=20mm,bottom=20mm,footskip=10mm]{geometry}
 \usepackage{fontspec}
-\setmainfont{Noto Serif}
-\setsansfont{Noto Sans}
-\setmonofont{DejaVu Sans Mono}[Scale=.82]
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{Liberation Serif}\typeout{REPORT FONT: Liberation Serif; Times New Roman unavailable}}
+\setsansfont{DejaVu Sans}[Scale=.88]
+\setmonofont{DejaVu Sans Mono}[Scale=.78]
 \usepackage{polyglossia}
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
-\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,xcolor,enumitem}
-\usepackage{caption,fancyhdr,titlesec,hyperref}
-\definecolor{navy}{HTML}{18334B}
-\definecolor{teal}{HTML}{127C80}
-\definecolor{muted}{HTML}{536B7B}
-\definecolor{pale}{HTML}{EEF5F6}
-\definecolor{warn}{HTML}{8B5234}
-\hypersetup{colorlinks=true,linkcolor=teal,urlcolor=teal,citecolor=teal,pdfauthor={Дмитрий Нефедов},pdftitle={Управление перевёрнутым маятником методами обучения с подкреплением. Промежуточный отчёт},pdfsubject={Курсовая работа, 16 сентября 2026 года}}
-\pagestyle{fancy}\fancyhf{}
-\fancyhead[L]{\sffamily\scriptsize\color{muted}Управление перевёрнутым маятником}
-\fancyhead[R]{\sffamily\scriptsize\color{muted}Промежуточный отчёт · 16.09.2026}
-\fancyfoot[C]{\sffamily\small\thepage}
-\renewcommand{\headrulewidth}{.3pt}
-\titleformat{\section}{\Large\sffamily\bfseries\color{navy}}{\thesection}{.7em}{}
-\titleformat{\subsection}{\normalsize\sffamily\bfseries\color{navy}}{\thesubsection}{.6em}{}
-\titlespacing*{\section}{0pt}{0pt}{10pt}
-\titlespacing*{\subsection}{0pt}{10pt}{5pt}
-\captionsetup{font=small,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=false}
-\renewcommand{\normalsize}{\fontsize{10.5}{13}\selectfont}
-\normalsize
-\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,longtable}
+% Scalable outlines already available locally, at the requested math size.
+\DeclareFontFamily{OML}{cmm}{\skewchar\font127}
+\DeclareFontShape{OML}{cmm}{m}{it}{<->cmmi10}{}
+\DeclareFontShape{OT1}{cmr}{m}{n}{<->cmr10}{}
+\usepackage{setspace,indentfirst,caption,titlesec,enumitem,xcolor,hyperref}
+\definecolor{link}{HTML}{215B7B}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=link,filecolor=link,
+ pdfauthor={Дмитрий Нефедов},pdftitle={Управление перевёрнутым маятником методами обучения с подкреплением},
+ pdfsubject={Промежуточный исследовательский отчёт к 18 сентября 2026 года}}
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{2em}
-\setlist{nosep,leftmargin=1.4em,topsep=4pt}
-\renewcommand{\arraystretch}{1.17}
-\newcommand{\smallnote}[1]{{\small\color{muted}#1\par}}
-\newcommand{\keypoint}[1]{\par\noindent\colorbox{pale}{\parbox{\dimexpr\linewidth-2\fboxsep}{\vspace{4pt}\textbf{#1}\vspace{4pt}}}\par}
-\newenvironment{figureblock}{\par\smallskip\begingroup\centering}{\par\endgroup\smallskip}
-\newcommand{\pagebreaksection}[1]{\clearpage\section{#1}}
-\newcommand{\localref}[2]{\href{run:#1}{#2}}
+\setlength{\textfloatsep}{12pt}
+\setlength{\floatsep}{10pt}
+\setlength{\intextsep}{10pt}
+\clubpenalty=10000\widowpenalty=10000
+\titleformat{\section}{\large\bfseries}{\thesection}{.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{.6em}{}
+\titlespacing*{\section}{0pt}{12pt}{8pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\captionsetup{font=small,labelsep=endash}
+\captionsetup[figure]{name=Рисунок,justification=centering}
+\captionsetup[table]{position=top,justification=raggedright,singlelinecheck=false}
+\setlist{itemsep=0pt,topsep=3pt,parsep=0pt,leftmargin=1.25cm}
+\newenvironment{smalltable}{\begin{singlespace}\fontsize{10}{12}\selectfont\setlength{\tabcolsep}{5pt}\renewcommand{\arraystretch}{1.15}}{\end{singlespace}}
+\newcommand{\chapterstart}[1]{\clearpage\section{#1}}
+\newcommand{\unnumbered}[1]{\clearpage\phantomsection\section*{#1}\addcontentsline{toc}{section}{#1}}
+\makeatletter
+\newcommand{\reportappendix}[2]{\unnumbered{Приложение #1. #2}\protected@edef\@currentlabel{#1}}
+\makeatother
+\newcommand{\source}[1]{\par\smallskip{\footnotesize\noindent Источник: #1\par}}
+\newcommand{\fig}[4]{\begin{figure}[htbp]\centering\includegraphics[width=#3\linewidth]{figures/#1.pdf}\caption{#2}\label{#4}\end{figure}}
+\newcommand{\eref}[2]{\href{run:data/#1}{#2}}
+\newcommand{\vref}[2]{\href{run:media/#1.mp4}{#2}}
 \begin{document}
 \begin{titlepage}
 \centering
-{\sffamily\large Национальный исследовательский университет\\[3pt]«Высшая школа экономики»\par}
+ПРАВИТЕЛЬСТВО РОССИЙСКОЙ ФЕДЕРАЦИИ\par
+\vspace{4mm}
+Федеральное государственное автономное образовательное учреждение\par
+высшего образования\par
+«Национальный исследовательский университет\par
+“Высшая школа экономики”»\par
 \vspace{7mm}
-{\sffamily Факультет компьютерных наук\\Образовательная программа\\«Прикладная математика и информатика»\par}
-\vspace{26mm}
-{\color{teal}\rule{\linewidth}{1.2pt}}
-\vspace{7mm}
-{\sffamily\bfseries\fontsize{25}{32}\selectfont Управление перевёрнутым маятником методами обучения с подкреплением\par}
+Факультет компьютерных наук\par
+Образовательная программа\par
+«Прикладная математика и информатика»\par
+\vspace{22mm}
+{\large\bfseries Управление перевёрнутым маятником\par
+методами обучения с подкреплением\par}
 \vspace{10mm}
-{\sffamily\Large Промежуточный отчёт по курсовой работе\par}
-\vspace{5mm}
-{\color{muted}Модель, протокол экспериментов и текущие результаты\par}
-\vspace{20mm}
-\begin{minipage}{.87\linewidth}
-\textbf{Автор:} Дмитрий Нефедов\\[7pt]
-\textbf{Научный руководитель:}\\Бондарев Андрей Олегович
+Отчёт об индивидуальном исследовательском курсовом проекте\par
+\vspace{3mm}
+Промежуточный отчёт\par
+к 18 сентября 2026 года\par
+\vspace{22mm}
+\hfill\begin{minipage}{.52\linewidth}
+Выполнил:\\студент группы БПМИ-233\\Дмитрий Нефедов\par
+\vspace{7mm}
+Научный руководитель:\\Бондарев Андрей Олегович
 \end{minipage}
-\vfill
-{\sffamily\large 16 сентября 2026 года\par}
-\vspace{6mm}
-\smallnote{Эксперименты в симуляции. Итоговая проверка на held-out final ещё не проводилась.}
+\vfill Москва, 2026
 \end{titlepage}
 \setcounter{page}{2}
-
-\section{Аннотация и постановка задачи}
-Исследуется подъём маятника из нижнего положения (\textit{swing-up}) и его удержание около неустойчивого верхнего равновесия посредством ускорения тележки. Сравниваются классический контроллер, DQN, DDPG, SAC и TQC. Для нейросетевых методов используется общая модель, награда R1 и одинаковый бюджет в 100\,000 переходов. Дополнительный safety-фильтр ограничивает движение тележки.
-
-\keypoint{Основной промежуточный результат: SAC-on и TQC-on успешно решают задачу на всех трёх training seeds в пределах текущего validation-протокола. Это не утверждение о робастности во всём пространстве состояний.}
-
-\subsection{Текущее состояние}
-Основная серия включает 15 обучений: четыре метода с фильтром и SAC без фильтра, каждый на seeds 0, 1, 2. Сохранены и проверены best и last checkpoints. Классика даёт 23/23 успешных эпизода; SAC-on и TQC-on дают по 23/23 на каждом seed. DQN-on даёт 23/23, 16/23 и 23/23; DDPG-on существенно зависит от seed. SAC-off в основной серии не достигает успеха. Раздельные результаты на 20 validation-стартах и трёх named-сценариях приведены далее~\cite{mainaudit}.
-
-Для DDPG-on и SAC-off завершён Stage1: проверены увеличенный warmup и уменьшенная скорость обучения. Confirmation на новых seeds 3, 4, 5 завершён и независимо проверен. Для обеих конфигураций критерий подтверждения не выполнен: \texttt{CONFIRMED=False}. Отрицательные результаты приведены в разделе~\ref{sec:confirmation} и не заменяют собой результаты основной серии~\cite{confirmation}.
-
-\subsection{Установка и цель управления}
-Тележка движется горизонтально, маятник свободно вращается вокруг шарнира. Нижнее положение соответствует $\theta=0$, верхнее --- $\theta=\pi$ с точностью до полного оборота. Управление должно поднять маятник, погасить угловое движение и обеспечить удержание, одновременно сохраняя допустимые положение и скорость тележки.
-\begin{figureblock}
-\includegraphics[width=.89\linewidth]{../../results/figures/system_scheme.pdf}
-\captionof{figure}{Система и обозначения. Угол отсчитывается от нижней вертикали; $u$ --- ускорение тележки. Пунктиром показана желаемая граница $|x|=0{,}24$ м. Схема построена по уравнениям и соглашениям проекта~\cite{contract}.}
-\end{figureblock}
-\smallnote{Работа ограничена симуляцией. Аппаратная реализация и идентификация параметров реальной установки в текущий этап не входят.}
-
-\pagebreaksection{Математическая модель и RL-постановка}
-Полное физическое состояние обозначается $s=(x,v,\theta,\omega)$, где $v=\dot x$ и $\omega=\dot\theta$. Внутренний порядок координат Drake --- $(x,\theta,v,\omega)$; при анализе он явно преобразуется к физическим обозначениям. Модель имеет вид~\cite{contract}
-\begin{equation}
-\dot x=v,\qquad \dot v=u,\qquad \dot\theta=\omega,\qquad
-\dot\omega=-\frac{u\cos\theta+g\sin\theta}{l}.
-\end{equation}
-Входом является ускорение, поэтому масса маятника не входит в эти уравнения. Нельзя интерпретировать $u$ как силу или переносить сюда без изменения модели силовой вход стандартной задачи CartPole.
-
-\begin{figureblock}\small
-\begin{tabularx}{\linewidth}{@{}Xll@{}}
-\toprule Параметр & Значение & Смысл\\\midrule
-Ускорение свободного падения $g$ & $9{,}8$ м/с$^2$ & симуляция\\
-Длина маятника $l$ & $0{,}18$ м & шарнир--масса\\
-Масса в конфигурации & $0{,}118$ кг & не входит в динамику выше\\
-Рабочие пределы $(|x|,|v|,|u|)$ & $(0{,}25;\ 2;\ 4)$ & м; м/с; м/с$^2$\\
-Предельные настройки backend & $(0{,}27;\ 2{,}5;\ 5)$ & те же единицы\\
-Удержание команды $\Delta t$ & $0{,}01$ с & постоянное $u$ на шаге\\
-Горизонт эпизода $T$ & $10$ с & до 1000 переходов\\
-Интегратор & Runge--Kutta 3 & адаптивный шаг\\
-Целевая точность / макс. шаг & $10^{-6}$ / $0{,}01$ с & fixed-step выключен\\
-\bottomrule
-\end{tabularx}
-\captionof{table}{Параметры из конфигураций и сохранённых журналов. Рабочие события остановки наступают раньше предельных настроек backend.}
-\end{figureblock}
-
-\subsection{Состояние, наблюдение и действия}
-Физическое пространство состояний четырёхмерно: $x,v,\omega\in\mathbb R$, угол периодичен, хотя в журнале хранится без оборачивания. Во время штатного эпизода действуют рабочие ограничения на $x$ и $v$. Агент получает нормированное наблюдение типа float32:
-\begin{equation}
-o(s)=\left(\frac{x}{0{,}25},\frac{v}{2},\sin\theta,\cos\theta,
-\frac{\omega}{\sqrt{9{,}8/0{,}18}}\right).
-\end{equation}
-Пара $(\sin\theta,\cos\theta)$ устраняет разрыв представления угла при полном обороте. SAC, TQC и DDPG выбирают $a\in[-1,1]$, которому соответствует запрос $u_{\rm req}=4a$. DQN выбирает один из девяти запросов $\{-4,-3,\ldots,3,4\}$ м/с$^2$. После фильтра исполненная команда DQN может находиться между узлами сетки.
-
-\subsection{Награда R1 и дисконтирование}
-Пусть $q(z)=(1+z^2)^{-1}$, $h(\theta)=(1-\cos\theta)/2$, а $d_t$ --- признак терминального отказа. По состоянию в конце фактического перехода вычисляется
-\begin{equation}
-R_{1,t}=\frac{\Delta t_{\rm actual}}{0{,}01}\,
-h(\theta)q\!\left(\frac{x}{0{,}25}\right)q\!\left(\frac v2\right)
-q\!\left(\frac\omega2\right)q\!\left(\frac{u_{\rm applied}}{40}\right)-5d_t.
-\end{equation}
-Награда поощряет верхнее положение, малые скорости и центральное положение тележки. Постоянного бонуса за выживание нет. Множитель управления эквивалентен $q(0{,}1u/4)$; заменять его на $q(u/4)$ нельзя. При нулевой длительности отказа положительная часть равна нулю. Коэффициент $\gamma=e^{-0{,}01/5}\approx0{,}998002$ фиксирован на переход. Для SAC/TQC оптимизация дополнительно включает энтропию запросов; отчётный return содержит только сумму R1.
-
-\pagebreaksection{Успех, завершение эпизода и безопасность}
-\subsection{Критерий успешного удержания}
-Периодическая ошибка верхнего положения равна
-\[
-e_\theta=\operatorname{atan2}\bigl(\sin(\theta-\pi),\cos(\theta-\pi)\bigr).
-\]
-Успех требует полного горизонта $10$ с без failure и непрерывного заключительного интервала не короче $2$ с, на котором по всем записанным состояниям одновременно выполнены
-\begin{equation}
-|e_\theta|\le10^\circ,\quad |\omega|\le0{,}5\ \text{рад/с},\quad
-|x|\le0{,}20\ \text{м},\quad |v|\le0{,}20\ \text{м/с}.
-\end{equation}
-Раздельные интервалы не складываются. Кратковременный проход через верх, максимальное удержание в середине эпизода и конечное удержание --- разные метрики. Проверка удержания проводится по отсчётам с шагом управления; непрерывная гарантия для угла между отсчётами не заявляется.
-
-\begin{figureblock}\small
-\begin{tabularx}{\linewidth}{@{}lXX@{}}
-\toprule Исход & Флаг среды & Обучающее значение\\\midrule
-Выход за рабочую область & \texttt{terminated} & штраф $-5$, без bootstrap\\
-Отказ safety-фильтра & \texttt{terminated} & $\Delta t=0$, исполненной команды нет\\
-Достижение 10 с без failure & \texttt{truncated} & bootstrap по конечному наблюдению\\
-Техническое исключение & ошибка исполнения & не маскируется обычным переходом\\\bottomrule
-\end{tabularx}
-\end{figureblock}
-Физические события положения и скорости обрабатываются внутри шага. Касание границы с возвратом допускается, выход из рабочей области приводит к остановке. Успех не завершает эпизод досрочно: проверяется удержание именно в его конце~\cite{contract}.
-
-\subsection{Safety-фильтр}
-Фильтр стоит между запросом контроллера и симулятором. Для положения $x$, скорости $v$ и времени удержания команды он выбирает допустимое ускорение в пределах $|u|\le4$, ограничивая движение тележки и сохраняя тормозной запас. При $A=4$, $B=0{,}24-10^{-6}$, $W=2-10^{-6}$ используется внутренняя область
-\begin{equation}
-\mathcal K=\left\{(x,v):\begin{aligned}
-&|x|\le B,\quad |v|\le W,\\[-2pt]
-&x+\frac{\max(v,0)^2}{2A}\le B,\quad
--x+\frac{\max(-v,0)^2}{2A}\le B
-\end{aligned}\right\}.
-\end{equation}
-Эти неравенства учитывают тормозной путь при движении к каждой границе. Фильтр проверяет допустимость на всём интервале постоянной команды и состояние в его конце; допустимый запрос сохраняется, иначе корректируется. Невозможность безопасного решения приводит к явному отказу. Для максимума положения учитывается внутренний экстремум $x(\tau)=x_0+v_0\tau+u\tau^2/2$, если $\tau=-v_0/u$ лежит внутри шага.
-
-Режим \textbf{on} включает фильтр, \textbf{off} оставляет рабочее ограничение команды, но отключает дополнительную safety-коррекцию. Обозначение метода (например, SAC-on) относится к обучению; режим внешней оценки указывается отдельно. В replay сохраняется запрос агента, а исполненная команда служит отдельной диагностикой.
-
-\keypoint{Безопасность тележки и успех задачи оцениваются раздельно. Фильтр не гарантирует подъём маятника. Успех с фильтром относится к системе «политика + фильтр».}
-\smallnote{Обоснование фильтра предполагает точные $x,v$, постоянную команду без задержек и возмущений. Запас $10^{-6}$ м --- инженерный резерв, а не универсальная оценка ошибки численного интегрирования.}
-
-\pagebreaksection{Методы и экспериментальный протокол}
-\subsection{Пять методов}
-\textbf{Классический контроллер.} Используется заранее сохранённая траектория подъёма, рассчитанная методом прямой коллокации. TVLQR отслеживает её по закону $u=u_0-K(t)(q-q_0)-k_0(t)$. После окончания плана происходит однократное переключение на LQR около верхнего положения без повторного планирования. Длительность плана $2{,}256697944$ с; при сетке $0{,}01$ с переключение наступает в $2{,}26$ с. Для LQR в порядке $(x,\theta,v,\omega)$ используются $Q=\operatorname{diag}(10,1,10,1)$, $R=0{,}5$~\cite{classical}.
-
-\textbf{DQN.} Приближает ценность каждого дискретного запроса и выбирает действие с максимальным $Q$. Используются replay и целевая сеть~\cite{dqn}. В данном проекте сетка содержит девять ускорений; $\varepsilon$-жадное исследование уменьшается от 1 до 0,05 за первые 20\% бюджета, целевая сеть обновляется каждые 1000 переходов.
-
-\textbf{DDPG.} Детерминированный actor выбирает непрерывное действие, critic оценивает его ценность~\cite{ddpg}. Здесь применяется один critic и независимый гауссов шум со стандартным отклонением 0,1 в нормированных координатах действия. Этот вариант позволяет проверить, достаточно ли детерминированного actor--critic для подъёма при заданном бюджете.
-
-\textbf{SAC.} Стохастический actor обучается с энтропийной регуляризацией, поддерживающей разнообразие запросов~\cite{sac}. Используются два critic и автоматическая настройка коэффициента энтропии с начальным значением 0,1. Парная серия SAC-off имеет те же настройки и соответствующие начальные параметры сети, но обучение проходит без фильтра.
-
-\textbf{TQC.} Расширяет энтропийный actor--critic распределительными оценками ценности и усечением верхних квантилей~\cite{tqc}. Конфигурация проекта использует два critic по 25 квантилей и параметр отбрасывания 2 на сеть. Назначение метода --- уменьшить переоценку ценности; причина нестабильности других методов этим экспериментом не установлена.
-
-\subsection{Общие условия и начальные состояния}
-Нейросети имеют два скрытых слоя по 64 нейрона с ReLU; оптимизатор Adam, learning rate $3\cdot10^{-4}$, batch size 64, replay buffer 100\,000, одна среда и одно обновление после каждого перехода после warmup 128. Основная серия содержит 99\,872 обновления на обучение. Для непрерывных методов $\tau=0{,}005$; для DQN используется жёсткое обновление целевой сети. Реализации основаны на Stable-Baselines3 и SB3-Contrib; конкретные версии зафиксированы в конфигурациях~\cite{contract}.
-
-Training seeds 0, 1, 2 задают независимые обучения. Reset использует независимые равномерные компоненты
-\[
-x,v\in[-0{,}02;0{,}02],\qquad \theta,\omega\in[-0{,}05;0{,}05]
-\]
-в соответствующих единицах SI. Validation20 --- один сохранённый список нижних стартов, полученный с evaluation seeds 1000--1019. Дополнительно оцениваются \texttt{bottom}: $(0,0,0,0)$, \texttt{plus\_002}: $(0,0,0{,}02,0)$ и \texttt{minus\_002}: $(0,0,-0{,}02,0)$.
-
-\textbf{Выбор checkpoint.} На 0, 10\,000, \ldots, 100\,000 переходов проводится полная детерминированная оценка. Best максимизирует на validation20 лексикографический набор: доля успехов, среднее конечное удержание, среднее максимальное удержание, минус среднее начало подтверждённого удержания, число переходов. При отсутствии такого начала используется 11 с. Named-сценарии и return в ранжирование не входят. Last сохраняется на 100\,000 переходов.
-
-\pagebreaksection{Динамика обучения основной серии}
-\begin{figureblock}
-\includegraphics[width=.99\linewidth,height=.73\textheight,keepaspectratio]{../../results/figures/learning_curves_original.pdf}
-\captionof{figure}{Готовый график независимого аудита основной серии~\cite{mainaudit}. Показаны все 15 обучений: три seeds в каждой из пяти групп. Столбцы: успех, конечное удержание и return на validation20; звёздочки --- выбранные best. Каждая кривая содержит 11 реально измеренных оценок, без добавления повторно использованных отчётов.}
-\end{figureblock}
-Успех и награда изменяются немонотонно. SAC-on и TQC-on находят полностью успешные checkpoints, однако отдельные промежуточные оценки существенно хуже. У DQN seed0 после успешного best качество снижается. У DDPG основная серия разделяется на один успешный seed и два неуспешных; усреднение по seeds скрыло бы это различие.
-
-\textbf{Внешняя оценка:} для каждого best/last проведены режимы filter off и on на тех же 23 стартах, то есть 92 эпизодных слота на обучение. Для классики --- 46. Термин «внешняя» обозначает отдельное исполнение сохранённых checkpoints; это не новый независимый набор состояний. Повторяющиеся политики best/last не считаются независимыми наблюдениями.
-
-\pagebreaksection{Основные результаты}
-\label{sec:results}
-\begin{figureblock}\small
-\begin{tabularx}{\linewidth}{@{}Xccc@{}}
-\toprule Метод / режим обучения & Seed 0 & Seed 1 & Seed 2\\\midrule
-SAC-on, best; оценка on & $20+3$ & $20+3$ & $20+3$\\
-TQC-on, best; оценка on & $20+3$ & $20+3$ & $20+3$\\
-DQN-on, best; оценка on & $20+3$ & $14+2$ & $20+3$\\
-DDPG-on, best; оценка on & $20+3$ & $0+0$ & $0+0$\\
-SAC-off, best; оценка off & $0+0$ & $0+0$ & $0+0$\\\midrule
-Классика; оценка on & \multicolumn{3}{c}{$20+3$; training seed не применяется}\\
-Классика; оценка off & \multicolumn{3}{c}{$20+3$; training seed не применяется}\\\bottomrule
-\end{tabularx}
-\captionof{table}{Успех на validation20 + named3; запись $20+3$ означает 23/23. Все значения взяты из полной проверенной таблицы основной серии~\cite{mainaudit}.}
-\end{figureblock}
-\begin{figureblock}
-\includegraphics[width=.94\linewidth]{../../results/figures/seed_comparison.pdf}
-\captionof{figure}{Зависимость best-результата от training seed. Только validation20; режим оценки совпадает с обучением. Диаграмма построена из полного \texttt{evaluation\_summary.csv}, пересчитанного в аудите по журналам эпизодов.}
-\end{figureblock}
-
-\subsection{Интерпретация}
-\textbf{SAC-on и TQC-on.} Все три best дают 20/20 на validation и 3/3 на named. Корректный вывод --- воспроизводимое решение на трёх seeds в данном протоколе. Вывод о превосходстве на произвольных состояниях или о глобальной устойчивости не следует из этих данных.
-
-\textbf{DQN-on.} Успешные политики найдены, но seed1 решает лишь 14/20 validation-стартов и 2/3 named-сценариев. Best seed0 на 80\,000 переходах даёт 23/23, а last --- 13/23 (11/20 + 2/3). Продолжение обучения само по себе не гарантирует улучшения.
-
-\textbf{DDPG-on и SAC-off.} DDPG best seed0 даёт 23/23, seeds1/2 --- 0/23. У SAC-off все три best и last дают 0/23; включение фильтра только при внешней оценке этих checkpoints результата не меняет. Успех одного seed DDPG недостаточен для заключения об устойчивой обучаемости.
-
-\subsection{Безопасность --- отдельный результат}
-Во всех 713 внешних эпизодных слотах основной серии с filter on не зафиксированы превышения $|x|>0{,}24$ м, события position limit или отказы фильтра; максимальное положение равно $0{,}239999$ м. Это описательная проверка данного набора траекторий. Классика без фильтра успешна в 23/23, но пересекает желаемую границу 0,24 м в 21/23 случаях, не достигая события 0,25 м. С фильтром сохраняется 23/23 и превышений нет.
-
-\pagebreaksection{Зависимость от checkpoint и фильтра}
-\begin{figureblock}
-{\small\input{../../results/figures/best_last_table.tex}}
-\captionof{table}{Внешняя оценка best/last с filter off/on, все seeds. В каждой ячейке успехи на validation20 + named3. Источник --- полная проверенная таблица основной серии~\cite{mainaudit}. Техническое принятие TQC seed1 завершено в Stage1 без новых эпизодов~\cite{stage1}; научные числа не изменились.}
-\end{figureblock}
-\textbf{Best и last.} У SAC-on и TQC-on last также даёт 23/23 при оценке on, однако длительность заключительного удержания может снизиться. У DQN seed0 падение 23/23 $\to$ 13/23 показывает практическую важность сохранения промежуточных checkpoints. Best выбирается по заранее определённым физическим метрикам, а не по максимальной накопленной награде.
-
-\textbf{Парное отключение фильтра.} У DDPG-on seed0 best меняется с 23/23 при on на 0/23 при off. Аналогично SAC-on seed1, TQC-on seeds0/1 и все три DQN-on best без фильтра дают 0/23. Для этих политик фильтр является необходимой частью успешного исполнения на рассмотренных стартах. У SAC-on seeds0/2 и TQC-on seed2 best фильтр не вмешивается; они успешны и без него.
-
-\begin{figureblock}
-\includegraphics[width=.88\linewidth,height=.21\textheight,keepaspectratio]{../../results/figures/ddpg_speed_comparison.pdf}
-\captionof{figure}{Проверенный confirmation seed5 DDPG-on: best 90k и last 100k на validation\_1000. На последних 2 с угол остаётся около верхнего положения, но last нарушает $|v|\le0{,}20$ м/с. Подробности серии --- в разделе~\ref{sec:confirmation}.}
-\end{figureblock}
-
-\pagebreaksection{Stage1 и проверенный confirmation}
-\label{sec:confirmation}
-В Stage1 для DDPG-on и SAC-off отдельно изменяли только один параметр: warmup $128\to5000$ либо learning rate $3\cdot10^{-4}\to10^{-4}$. Бюджет, модель, reset, reward, архитектура и правило выбора best сохранены. Выполнено 12 обучений на seeds 0/1/2. Warmup5000 даёт 95\,000 обновлений, вариант learning rate --- 99\,872~\cite{stage1}.
-\begin{figureblock}\small
-\begin{tabularx}{\linewidth}{@{}Xcc@{}}
-\toprule Вариант & DDPG-on, best /20 & SAC-off, best /20\\\midrule
-Основная серия & $20,\ 0,\ 0$ & $0,\ 0,\ 0$\\
-Stage1: learning rate $10^{-4}$ & $0,\ 13,\ 0$ & $0,\ 0,\ 0$\\
-Stage1: warmup5000 & $0,\ 20,\ 20$ & $20,\ 0,\ 0$\\\bottomrule
-\end{tabularx}
-\captionof{table}{Раздельные серии; внутри ячейки seeds 0, 1, 2. Оценка в режиме обучения, named не входят.}
-\end{figureblock}
-Оба warmup5000 выбраны по заранее зафиксированному правилу: минимум и среднее успеха по seeds, затем минимум и среднее конечного удержания, затем среднее максимального удержания. Минимальный успех остался нулевым. Победа в development-отборе поэтому ещё не подтверждает повторяемость улучшения.
-
-\begin{figureblock}
-\includegraphics[width=.99\linewidth]{../../results/figures/stage1_confirmation.pdf}
-\captionof{figure}{Warmup5000: best и last на validation20. Граница отделяет Stage1 seeds0--2 от новых seeds3--5. Пунктир --- 16/20. Обе серии независимо проверены; named3 исключены. Источник --- полные таблицы Stage1 и confirmation~\cite{stage1,confirmation}.}
-\end{figureblock}
-\begin{figureblock}\small
-\begin{tabularx}{\linewidth}{@{}Xccc@{}}
-\toprule Confirmation: warmup5000 & Seed 3 & Seed 4 & Seed 5\\\midrule
-DDPG-on: best / last, из 20 & $4/0$ & $0/0$ & $20/0$\\
-SAC-off: best / last, из 20 & $0/0$ & $0/0$ & $0/0$\\\bottomrule
-\end{tabularx}
-\end{figureblock}
-Заранее заданный критерий требует best не ниже 16/20 у \emph{каждого} нового seed, last не ниже 16/20 хотя бы у двух из трёх и завершённости всех заданий. Независимый аудит подтвердил \textbf{\texttt{CONFIRMED=False} для обеих конфигураций}; named3 исключены из gate, final-набор не использовался. У DDPG новые best неоднородны, а все last неуспешны; SAC-off не воспроизводит единичный успех Stage1 seed0.
-
-\textbf{DDPG confirmation seed5.} Best 90k даёт 20/20, last 100k --- 0/20. Среднее конечное удержание снижается с 7,8915 до 0,0115 с, хотя средний return R1 остаётся высоким: 752,57 $\to$ 665,45. На последних 2 с last угол, угловая скорость и положение удовлетворяют порогам во всех 20 эпизодах; удержание нарушает скорость тележки. В 19/20 эпизодах порог скорости нарушен и в конечном состоянии. Это конкретное объяснение провала критерия, а не доказательство причины деградации обучения.
-
-\pagebreaksection{Траектория и анимации сохранённых эпизодов}
-\begin{figureblock}
-\includegraphics[width=.94\linewidth,height=.405\textheight,keepaspectratio]{../../results/figures/successful_trajectory.pdf}
-\captionof{figure}{SAC-on, seed1, best 50\,000, filter on, старт $(0,0,0,0)$. Последние 2 с выделены фоном; конечное удержание 7,44 с, 24 вмешательства фильтра на 1000 переходах. Угол показан как периодическая ошибка; её скачок на границе $\pm180^\circ$ не является скачком физического угла. $\Delta u=u_{\rm applied}-u_{\rm req}$.}
-\end{figureblock}
-\begin{figureblock}
-\includegraphics[width=.98\linewidth,height=.19\textheight,keepaspectratio]{../../results/figures/animation_contact_sheet.pdf}
-\captionof{figure}{Стоп-кадры приложенных видео: сверху классика и SAC, снизу TQC и парное сравнение DDPG best/last. Видеофайлы содержат время, состояние, команду и вмешательства фильтра.}
-\end{figureblock}
-Все анимации реконструированы из полных журналов: показан каждый четвёртый сохранённый отсчёт, 25 кадров/с, без нового исполнения политик или интегрирования динамики. Геометрия использует $l=0{,}18$ м. Для каждой записи проверены контрольная сумма и критерий удержания.
-\begin{itemize}\small
-\item \localref{../../media/classical_success.mp4}{\textbf{Классика, MP4}}: фиксированный контроллер, filter on, bottom; успех, hold 7,82 с.
-\item \localref{../../media/sac_on_success.mp4}{\textbf{SAC-on, MP4}}: seed1, best 50k, bottom; успех, hold 7,44 с.
-\item \localref{../../media/tqc_on_success.mp4}{\textbf{TQC-on, MP4}}: seed0, best 80k, bottom; успех, hold 6,80 с.
-\item \localref{../../media/ddpg_failure_or_degradation.mp4}{\textbf{DDPG-on, MP4}}: confirmation warmup5000, seed5, validation\_1000; best 90k (hold 7,90 с) и last 100k (hold 0 с). Видео содержит график скорости с порогами $\pm0{,}20$ м/с.
-\end{itemize}
-\smallnote{bottom означает $(x,v,\theta,\omega)=(0,0,0,0)$. Для DDPG старт $\approx(0{,}000855;0{,}004154;-0{,}002906;-0{,}029675)$ в SI; точные значения сохранены в манифесте. Относительные ссылки работают при сохранении относительной структуры docs/report и media; их открытие зависит от настроек PDF-просмотрщика.}
-
-\pagebreaksection{Ограничения и план следующего этапа}
-\subsection{Что пока нельзя заключить}
-\begin{enumerate}
-\item \textbf{Область стартов узкая.} Training и validation сосредоточены около нижнего положения. Нет оснований распространять полученные доли успеха на большие смещения, скорости или произвольные углы.
-\item \textbf{Validation использовался для выбора best.} Повторная внешняя оценка на тех же состояниях подтверждает сохранённый результат, но не даёт независимой оценки обобщения. Одни и те же 20 состояний повторяются между seeds; это не 60 независимых стартов.
-\item \textbf{Три seeds --- ограниченное свидетельство.} Нельзя выводить общую вероятность успешного обучения или надёжный рейтинг методов из одной удачной реализации. Неуспешные seeds сохранены в результатах.
-\item \textbf{Безопасность условна.} Фильтр проверен на представленных траекториях при идеализированных предположениях; шум, задержки, неопределённость модели и реальная установка не исследованы. Порог безопасности тележки не подменяет критерий удержания.
-\item \textbf{Причина деградации не установлена.} Наблюдаемые изменения reward, удержания и отдельных диагностик обучения не доказывают переоценку $Q$, недостаток exploration или архитектуры. Полные высокоточные training-траектории не сохранены; полные evaluation-логи доступны.
-\item \textbf{Held-out final ещё не использовался.} Confirmation по новым training seeds проверяет повторяемость конфигурации на текущем validation, а не перенос на новые области состояний. Независимый аудит confirmation завершён; обе конфигурации не прошли критерий подтверждения.
-\end{enumerate}
-
-\subsection{Structured robustness: сначала оценка существующих политик}
-На 16.09.2026 протокол и шесть main-best checkpoints SAC-on/TQC-on зафиксированы: 140 development-стартов в семи группах, 98 заданий и 1960 эпизодов с классикой и парными режимами фильтра. Отдельно предусмотрен замер на 40 эпизодах. \textbf{Робастность ещё не измерена}; при подготовке submission rollout не выполнялись. Точные диапазоны и допуски: \localref{../ROBUSTNESS.md}{подготовленный протокол}.
-\begin{figureblock}\small
-\begin{tabularx}{\linewidth}{@{}lX@{}}
-\toprule Категория & Предмет проверки\\\midrule
-Nominal & новые development-старты в исходной нижней области\\
-Position stress & начальные смещения $x$ при контроле прочих координат\\
-Velocity stress & уровни и знаки $v$, направление к границе и тормозной запас\\
-Angle stress & начальные углы вне узкой окрестности нижнего положения\\
-Angular-velocity stress & уровни $\omega$ и их согласование с углом\\
-Boundary recovery & восстановление из допустимых состояний у границы\\
-Joint robustness & совместные изменения координат по заданным стратам\\\bottomrule
-\end{tabularx}
-\end{figureblock}
-Для каждой категории зафиксированы допустимость стартов, общие состояния, режимы фильтра и раздельные метрики успеха и безопасности. Все старты допустимы для фильтра; это ограничивает сравнение off/on внутренним множеством и не доказывает успешный подъём. Неудачи нельзя исключать из объявленного знаменателя. Заведомо недопустимые для фильтра старты относятся к отдельной проверке отказов.
-
-После \textbf{оценки существующих политик} решить, нужны ли curriculum или переобучение с randomized reset. Если переобучение потребуется, провести отдельный development-отбор, затем отдельный confirmation на новых seeds. После окончательной фиксации методов, настроек и критериев --- \textbf{однократный held-out final}, без последующей настройки по его результатам.
-
-\pagebreaksection{Источники и воспроизводимость}
-Экспериментальные числа взяты из сохранённых полных таблиц независимых аудитов основной серии, Stage1 и confirmation. Новые диаграммы результата по seeds и Stage1/confirmation построены по этим таблицам, а график траектории --- по полному журналу эпизода. Готовый график learning curves включён без изменения данных; матрица best/last переоформлена в читаемую таблицу. Исходные графики проекта также приложены в каталоге figures. Исходная схема проекта сохранена отдельно; схема в тексте адаптирована к актуальным обозначениям модели.
-
-В submission сохранены исходники, конфигурации, компактные таблицы, четыре готовых видео и контрольные суммы их источников. Полные журналы, модели и архивы восстановления хранятся отдельно. При первоначальной подготовке видео по пяти журналам проверены R1 и конечное удержание. Полный повтор аудита моделей и всей серии при подготовке отчёта не выполнялся. Хеши, длинные пути и служебные детали вынесены из основного текста в сопроводительные материалы.
-
-\begin{thebibliography}{9}\small
-\bibitem{contract} Нефедов Д. \textit{Общий экспериментальный контракт и Gymnasium: RL\_ENV\_SPEC; конфигурации обучения и исходный код модели, среды и R1}. Материалы проекта, версия на 16.09.2026. Локальные копии: \localref{../PROTOCOL.md}{контракт}, \localref{../../cartpole/experiment_config.py}{физика}, \localref{../../cartpole/rl/reward_pilot.py}{R1}.
-\bibitem{classical} Нефедов Д. \textit{TrackingThenBalance и зафиксированный классический контроллер}. Материалы проекта. \localref{../../cartpole/control/swing_up.py}{Исходный код}; \localref{../../tests/fixtures/swing_up_nominal.npz}{номинальная траектория}.
-\bibitem{mainaudit} \textit{Аудит основной серии: S10/S11. Полные таблицы внешних оценок}. 15.09.2026. Материалы проекта: \localref{../../RESULTS.md}{сводка результатов}, \localref{../../RESULTS.md}{таблицы}, \localref{../../results/tables/main/evaluation_summary.csv}{полный CSV}. Позднейшее закрытие технического принятия TQC seed1 отражено в~[4].
-\bibitem{stage1} \textit{Независимый аудит Development Stage1}. 16.09.2026. Материалы проекта: \localref{../../RESULTS.md}{сводка}, \localref{../../results/tables/stage1/evaluation_summary.csv}{полная таблица}.
-\bibitem{confirmation} \textit{Development confirmation: протокол, таблицы assess и документ независимого аудита}. 16.09.2026. \localref{../PROTOCOL.md}{Протокол}; \localref{../../results/tables/confirmation/evaluation_summary.csv}{таблицы}; \localref{../../RESULTS.md}{сводка результатов}. \localref{../../results/tables/confirmation/confirmation_gate.json}{Формальный gate}: обе конфигурации не подтверждены; независимый аудит завершён.
-\bibitem{dqn} Mnih V., Kavukcuoglu K., Silver D. et al. \textit{Playing Atari with Deep Reinforcement Learning}. 2013. \href{https://arxiv.org/abs/1312.5602}{arXiv:1312.5602}.
-\bibitem{ddpg} Lillicrap T. P., Hunt J. J., Pritzel A. et al. \textit{Continuous Control with Deep Reinforcement Learning}. 2015. \href{https://arxiv.org/abs/1509.02971}{arXiv:1509.02971}.
-\bibitem{sac} Haarnoja T., Zhou A., Abbeel P., Levine S. \textit{Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor}. ICML, PMLR 80, 2018. P. 1861--1870. \href{https://proceedings.mlr.press/v80/haarnoja18b.html}{Статья}.
-\bibitem{tqc} Kuznetsov A., Shvechikov P., Grishin A., Vetrov D. \textit{Controlling Overestimation Bias with Truncated Mixture of Continuous Distributional Quantile Critics}. ICML, PMLR 119, 2020. P. 5556--5566. \href{https://proceedings.mlr.press/v119/kuznetsov20a.html}{Статья}.
-\end{thebibliography}
-\smallnote{Внешние публикации использованы только для краткого описания методов; их экспериментальные результаты не подменяют результаты данной курсовой. Ссылки проверены при подготовке отчёта.}
-\par\smallskip
-\smallnote{Описание применения генеративной модели: OpenAI Codex использовался для помощи с кодом, тестами, анализом, текстом и оформлением отчёта. Численные результаты происходят из сохранённых экспериментов. Характер помощи, ограничения и требования раскрытия: \localref{../AI_USE.md}{отдельная декларация}. Она не заменяет форму ВШЭ при сдаче.}
+{\singlespacing\tableofcontents}
+\input{sections/00_front}
+\input{sections/01_review}
+\input{sections/02_model}
+\input{sections/03_design}
+\input{sections/04_training}
+\input{sections/05_robustness}
+\input{sections/06_conclusion}
+\clearpage\phantomsection\addcontentsline{toc}{section}{Список использованных источников}
+\renewcommand{\refname}{Список использованных источников}
+\input{references}
+\input{sections/07_appendices}
 \end{document}

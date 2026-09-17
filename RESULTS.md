@@ -9,7 +9,7 @@ best/last и evaluation off/on, а не только удачные пример
 **Validation20**, evaluation filter-on; три числа означают seeds0/1/2.
 Training filter указан в названии метода. Named3 в эти числа не входят.
 
-| Метод | Best, успехи из20 | Last, успехи из20 |
+| Метод | Best, успехи из 20 | Last, успехи из 20 |
 | --- | --- | --- |
 | SAC_on | 20 / 20 / 20 | 20 / 20 / 20 |
 | TQC_on | 20 / 20 / 20 | 20 / 20 / 20 |
@@ -26,9 +26,9 @@ SAC-on/TQC-on и классика решают задачу в данном уз
 ## Development и confirmation
 
 Здесь evaluation выполняется **в training filter mode**: DDPG-on с фильтром,
-SAC-off без него. Выбор только по20 validation states.
+SAC-off без него. Выбор только по 20 validation states.
 
-| Вариант Stage1 | Best по seeds0/1/2, из20 |
+| Вариант Stage1 | Best по seeds0/1/2, из 20 |
 | --- | --- |
 | ddpg_on_warmup5000 | 0 / 20 / 20 |
 | ddpg_on_lr1e4 | 0 / 13 / 0 |
@@ -50,13 +50,13 @@ SAC-off без него. Выбор только по20 validation states.
 
 Warmup5000 — строгий лексикографический победитель у обоих методов; minimum success
 остаётся нулём. Это не означает устойчивость. Для SAC-off отдельная гипотеза
-механизма (top coverage к20k улучшится хотя бы у2 из3 seeds) не получила поддержки.
+механизма (top coverage к 20k улучшится хотя бы у 2 из 3 seeds) не получила поддержки.
 Сравнение настроенного SAC-off с ненастроенным SAC-on не является новым чистым
 контролируемым сравнением влияния фильтра.
 
 Confirmation сохранил параметры и проверил training seeds3/4/5 на прежнем roster:
 
-| Вариант | Best, из20 | Last, из20 | Gate |
+| Вариант | Best, из 20 | Last, из 20 | Gate |
 | --- | --- | --- | --- |
 | ddpg_on_warmup5000 | 4 / 0 / 20 | 0 / 0 / 0 | не пройден |
 | sac_off_warmup5000 | 0 / 0 / 0 | 0 / 0 / 0 | не пройден |
@@ -80,4 +80,17 @@ SHA моделей и выбранные поколения: [main](results/tabl
 ![Stage1 и confirmation](results/figures/stage1_confirmation.png)
 
 [Ограничения](docs/LIMITATIONS.md) не позволяют переносить эти результаты на
-произвольные состояния. Structured robustness только подготовлен, final не использован.
+произвольные состояния. Structured robustness выполнен и независимо проверен; final не использован.
+
+## Structured robustness, development · 16.09.2026
+
+98 jobs,1960 эпизодов,980 пар; timing40 отдельно. Все jobs с одной попытки.
+С фильтром нет событий границ и превышений .24 м с учётом допуска, но 184 эпизода не достигают
+удержания.362 пары улучшились,7 ухудшились; во всех семи off превышает .24.
+Общий процент описывает только заданную неоднородную матрицу, не генеральную совокупность.
+
+[По группам, seeds и показательным траекториям](docs/ROBUSTNESS.md),
+[98 строк model/seed/filter/group](docs/assets/structured_robustness/summary_controller_group.csv),
+[парные исходы](docs/assets/structured_robustness/paired_outcomes.csv).
+Off/on означает evaluation-фильтр одних и тех же trained-on весов; это не
+сравнение повторных обучений. Эти результаты не заменяют неудачи confirmation.

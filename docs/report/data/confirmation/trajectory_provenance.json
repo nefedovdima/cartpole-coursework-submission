@@ -1,0 +1,16 @@
+[
+  {
+    "label": "best",
+    "saved_log_sha256": "a9a781c25ab73427e861ffdae23e0759076a6bd3ba59fddf08f67632e282cf30",
+    "case": "validation_1000",
+    "training_seed": 5,
+    "verification": "compressed original SHA matched accepted hold_components.csv; selected state fields copied; no raw re-audit"
+  },
+  {
+    "label": "last",
+    "saved_log_sha256": "4231a65facdf2da86f692c35fe461f783a2c82db99f423ff3d9817740067fa00",
+    "case": "validation_1000",
+    "training_seed": 5,
+    "verification": "compressed original SHA matched accepted hold_components.csv; selected state fields copied; no raw re-audit"
+  }
+]

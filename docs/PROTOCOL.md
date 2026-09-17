@@ -16,7 +16,8 @@
 - Confirmation: новые **training seeds 3/4/5**, прежние validation/named состояния.
   Проверяет повторяемость обучения, а не обобщение на новые старты.
 - Held-out final: не создан и не использован. Structured robustness — отдельный
-  подготовленный development-дизайн, [протокол](ROBUSTNESS.md).
+  выполненный development-дизайн: [результаты](ROBUSTNESS.md),
+  [исторический протокол](ROBUSTNESS_PROTOCOL_20260916.md).
 
 Точный прежний roster: [validation_states.json](../tests/fixtures/validation_states.json).
 

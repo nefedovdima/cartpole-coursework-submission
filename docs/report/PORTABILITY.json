@@ -1,0 +1,52 @@
+{
+  "schema": "report-portability-v1",
+  "original_source_manifest_sha256": "52905a3af96f276f81614563cff1b06eb620ea16d2c1c48c750f91c484f845be",
+  "derived_documents": {
+    "data/main/AUDIT_S10_S11.md": {
+      "original_sha256": "36010fcbb1d22088c3d21cfc27e182b6e15c1a114853d3436e2e5301c6d7bed0",
+      "current_sha256": "ba46de81bde18c988716c8c39f0d96ccda1f45c95aba15d74ca5d087f3c7987a",
+      "reason": "Portable explanation; omit machine-local paths and unavailable raw navigation."
+    },
+    "data/protocols/CART_SAFETY.md": {
+      "original_sha256": "a5c73fc37dda165b2d5c7afa69a75e6b0f7d0a3b09c8d0b57e3663e6b636c124",
+      "current_sha256": "1419679b1f4b52938ab39873ba1af8fbee131575912b5bcf282ece15273fcb84",
+      "reason": "Portable explanation; omit machine-local paths and unavailable raw navigation."
+    },
+    "data/protocols/RL_ENV_SPEC.md": {
+      "original_sha256": "18734ba372064005580a587bd90a39367cca83e8b152405fe662256043df9e9d",
+      "current_sha256": "c5fd97b3f0158f57b3ec62c3a544c1b8cf341e9a17ccc92eef7819fe5306f2ee",
+      "reason": "Portable explanation; omit machine-local paths and unavailable raw navigation."
+    },
+    "data/protocols/DEVELOPMENT_CONFIRMATION_AUDIT.md": {
+      "original_sha256": "7f0c4a9529fbbc911541e8bbf5dc71ae988efbcbd225f1266c9ff3bfd88322e4",
+      "current_sha256": "b001d32ff5b7a6ad0b8065a34a3ba7cf60240ade2cb1e265a6185fa747f6d3c8",
+      "reason": "Portable explanation; omit machine-local paths and unavailable raw navigation."
+    },
+    "data/protocols/STRUCTURED_ROBUSTNESS.md": {
+      "original_sha256": "73a7af5cf028e5d7df499dc1d23e106f884ce44a55f4d09a96a92fb9d100c727",
+      "current_sha256": "327661f2032c479362a94372d52ddd737cd0a99ac8ce7d5266017775e1ec8595",
+      "reason": "Portable explanation; omit machine-local paths and unavailable raw navigation."
+    },
+    "data/protocols/DEVELOPMENT_STAGE1_AUDIT.md": {
+      "original_sha256": "aba97464671a239ee528ce1b6853e2a059113491b4e9266912eb741ac0026200",
+      "current_sha256": "2a9ba9fe7a4b18779f30d6000365e4f9263b51f79707fc1e565e35d6ed663d1b",
+      "reason": "Portable description in place of historical checkout-relative links to omitted data."
+    },
+    "data/protocols/ROBUSTNESS_RESULTS_DRAFT.md": {
+      "original_sha256": "015e27040e832ed402f8034f4230336b4beea429d667a95e13f9d953ad5cfcce",
+      "current_sha256": "966f8ebb662e5f9a9e71a7b9dab799b5bf3b02cdbcf5b7ad2c5421e647b6119e",
+      "reason": "Portable description in place of historical checkout-relative links to omitted data."
+    }
+  },
+  "adapted_scripts": {
+    "scripts/check_report.py": {
+      "original_sha256": "3f058ce3f63814ee216ec01cda28c544f20bb311136a95bc65acf7b74802bc60",
+      "reason": "Validate declared portable document derivatives; scientific checks unchanged."
+    },
+    "scripts/make_figures.py": {
+      "original_sha256": "ba185c8821cb4c5138b08e09015ffa885584b6114d125b1bc5dfb6e3c994eca8",
+      "reason": "Same input validation adaptation; plotting calculations unchanged."
+    }
+  },
+  "unchanged_pdf_sha256": "0a4d6360d34f60b415a1e0b45e493296b9068e31f9b2b380ebdf1c7217356f04"
+}
