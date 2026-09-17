@@ -26,6 +26,11 @@
 \setlength{\floatsep}{10pt}
 \setlength{\intextsep}{10pt}
 \clubpenalty=10000\widowpenalty=10000
+% Запрет разрыва страницы после строки, оканчивающейся переносом слова.
+\brokenpenalty=10000
+% Более свободное размещение плавающих объектов: меньше разреженных страниц.
+\renewcommand{\topfraction}{.85}\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.1}\renewcommand{\floatpagefraction}{.75}
 \titleformat{\section}{\large\bfseries}{\thesection}{.6em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{.6em}{}
 \titlespacing*{\section}{0pt}{12pt}{8pt}
