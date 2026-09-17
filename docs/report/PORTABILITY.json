@@ -54,16 +54,16 @@
     "sha256": "0a4d6360d34f60b415a1e0b45e493296b9068e31f9b2b380ebdf1c7217356f04"
   },
   "current_pdf": {
-    "edition": "editorial-clarity-revision-20260917",
+    "edition": "submission-public-publication-20260918",
     "path": "report.pdf",
-    "sha256": "9659320ea5fa76cc32a4bec6250d2673f0dee9528b72b4d56a4b95982e494125",
-    "bytes": 1862852,
+    "sha256": "304701a4fe12a4689b188b7f8b15a22f792a719771c1474a57a433161fbea8a0",
+    "bytes": 1862747,
     "pages": 41,
     "main_font": "Times New Roman",
     "source_files_sha256": {
       "report.tex": "d194c5324254976dd769cac204c6b08494af8f292c116a77520307f606f16ba9",
       "references.tex": "6c5792575326ddb282b416013de334183b149f7c6f5548e090f17e1a80216d83",
-      "appendix_links.tex": "c1fdee26bdb8a4285c128086a860bd167e2f03c7ccb80b22ce5f5c7c3818d29e",
+      "appendix_links.tex": "38863a41527789b79dda2c6c1f687eb6f57bf7ee403d87b3b3092f9f53c709da",
       "sections/00_front.tex": "21c5515d94676d9d23efc4d280a4b21f78def47cdbc8ed24a9fc15e3873412bb",
       "sections/01_review.tex": "f72c4f953f130ae3614d094320d41f64cb5bad505511f4bfd3fe5b1fbfefa3ea",
       "sections/02_model.tex": "63c9781629a219b3792d5baaac86143211666abfc0e086baae1ba758c4abe9b7",
@@ -71,14 +71,14 @@
       "sections/04_training.tex": "599b1d7d0f3c663262e4ff1c8dfa16380bb3934a63f216d025bcb3e49ab367ff",
       "sections/05_robustness.tex": "99adfd0fd3f5d7e55762e266ec5d5152a0d962b97420a3d8b3ee5644c9bc6444",
       "sections/06_conclusion.tex": "196d8f31d36be0a516bc0a9bc064d677d76e90d7ccc547da2412dcd05361732f",
-      "sections/07_appendices.tex": "1be1a3f1480e5a5047d8abbdeea7eba13acf8f8efe0bd40779621ee4cb3387c8"
+      "sections/07_appendices.tex": "d49f7d22055e2587ad7f5e041dbf7ce121f1ddec73f1a375a28640b557c65bd8"
     },
     "changes": [
-      "Editorial revision of narrative for clarity and explanatory flow",
-      "Corrective pass after independent audit: reward explanation, Stage 1 wording, filter-proof reference, comparison scope, LQR handoff, SAC on/off separation",
-      "Typographic fixes: no page break after a hyphenated line; looser float placement",
-      "Rebuilt locally with XeLaTeX and installed Times New Roman; Russian hyphenation active",
-      "Scientific data, numbers, criteria, figures, models and accepted media unchanged"
+      "Public access notice in the final electronic-materials paragraph; repository URL unchanged",
+      "Clean three-pass XeLaTeX build with embedded Times New Roman",
+      "Pages 1-40 unchanged in extracted text and 90 dpi render; only page 41 changed",
+      "Publication permission recorded from owner confirmation; no general reuse license assigned",
+      "Scientific code, configurations, data, results, figures, models, videos and AI disclosure unchanged"
     ]
   },
   "previous_methodical_pdf": {
@@ -160,6 +160,34 @@
       "Single repository link and descriptive appendix references",
       "Provenance identifiers moved to existing documentation",
       "Scientific data and accepted media unchanged"
+    ]
+  },
+  "previous_private_editorial_pdf": {
+    "edition": "editorial-clarity-revision-20260917",
+    "path": "report.pdf",
+    "sha256": "9659320ea5fa76cc32a4bec6250d2673f0dee9528b72b4d56a4b95982e494125",
+    "bytes": 1862852,
+    "pages": 41,
+    "main_font": "Times New Roman",
+    "source_files_sha256": {
+      "report.tex": "d194c5324254976dd769cac204c6b08494af8f292c116a77520307f606f16ba9",
+      "references.tex": "6c5792575326ddb282b416013de334183b149f7c6f5548e090f17e1a80216d83",
+      "appendix_links.tex": "c1fdee26bdb8a4285c128086a860bd167e2f03c7ccb80b22ce5f5c7c3818d29e",
+      "sections/00_front.tex": "21c5515d94676d9d23efc4d280a4b21f78def47cdbc8ed24a9fc15e3873412bb",
+      "sections/01_review.tex": "f72c4f953f130ae3614d094320d41f64cb5bad505511f4bfd3fe5b1fbfefa3ea",
+      "sections/02_model.tex": "63c9781629a219b3792d5baaac86143211666abfc0e086baae1ba758c4abe9b7",
+      "sections/03_design.tex": "5c0ecc5bb2303fb93d5cb6a3759c7b3d01b9b05a0bf1da84322f9014c30f54fd",
+      "sections/04_training.tex": "599b1d7d0f3c663262e4ff1c8dfa16380bb3934a63f216d025bcb3e49ab367ff",
+      "sections/05_robustness.tex": "99adfd0fd3f5d7e55762e266ec5d5152a0d962b97420a3d8b3ee5644c9bc6444",
+      "sections/06_conclusion.tex": "196d8f31d36be0a516bc0a9bc064d677d76e90d7ccc547da2412dcd05361732f",
+      "sections/07_appendices.tex": "1be1a3f1480e5a5047d8abbdeea7eba13acf8f8efe0bd40779621ee4cb3387c8"
+    },
+    "changes": [
+      "Editorial revision of narrative for clarity and explanatory flow",
+      "Corrective pass after independent audit: reward explanation, Stage 1 wording, filter-proof reference, comparison scope, LQR handoff, SAC on/off separation",
+      "Typographic fixes: no page break after a hyphenated line; looser float placement",
+      "Rebuilt locally with XeLaTeX and installed Times New Roman; Russian hyphenation active",
+      "Scientific data, numbers, criteria, figures, models and accepted media unchanged"
     ]
   }
 }
