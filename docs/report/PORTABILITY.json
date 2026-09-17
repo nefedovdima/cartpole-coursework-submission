@@ -1,5 +1,5 @@
 {
-  "schema": "report-portability-v1",
+  "schema": "report-portability-v2",
   "original_source_manifest_sha256": "52905a3af96f276f81614563cff1b06eb620ea16d2c1c48c750f91c484f845be",
   "derived_documents": {
     "data/main/AUDIT_S10_S11.md": {
@@ -48,5 +48,63 @@
       "reason": "Same input validation adaptation; plotting calculations unchanged."
     }
   },
-  "unchanged_pdf_sha256": "0a4d6360d34f60b415a1e0b45e493296b9068e31f9b2b380ebdf1c7217356f04"
+  "historical_pdf": {
+    "source_commit": "e53d39699dacd0490d875df8d2ec7642503f3081",
+    "path": "docs/report/report.pdf",
+    "sha256": "0a4d6360d34f60b415a1e0b45e493296b9068e31f9b2b380ebdf1c7217356f04"
+  },
+  "current_pdf": {
+    "edition": "submission-private-publication-20260917",
+    "path": "report.pdf",
+    "sha256": "65e8f2aab52a69d8e24df9ff5ac461329fa6c97403c6670ce0cad6333772776d",
+    "bytes": 1802807,
+    "pages": 36,
+    "main_font": "Liberation Serif; Times New Roman unavailable",
+    "source_files_sha256": {
+      "report.tex": "5a55deea09aa118f7838b46ab41024703b1f5afec742ebc7cced02aa2a88882f",
+      "references.tex": "59862def0df507de1a99228fe2c9ab82ba6ba5a440c0b0534d5f8cc0dad2e4ee",
+      "appendix_links.tex": "c1fdee26bdb8a4285c128086a860bd167e2f03c7ccb80b22ce5f5c7c3818d29e",
+      "sections/00_front.tex": "6812a5b2059ce0d99f2bdc9402c606eea89f5a712dd870fe4dac79d39a9b4b19",
+      "sections/01_review.tex": "56064f86ee814d8b1cbc2ec122a571714d81e300ddec62dac28f56cf590497d4",
+      "sections/02_model.tex": "5a8ca32569f9481556cf098bdd42dbb7b866f1af5fb485b44a6f549fe806a6d9",
+      "sections/03_design.tex": "a9d1832301d3dbc04306ad93c21466b37461e760e7792116a21d0f306395dc59",
+      "sections/04_training.tex": "49dcaa8f75329146a3271d3dd4452576966b65b026d5b8454d5bda12d62f19d2",
+      "sections/05_robustness.tex": "ede3317bd788a90785859de24c035a0c1a1c65b621565688694712ca2d13376a",
+      "sections/06_conclusion.tex": "753f2466cc04973efda4753b3ba00e728fb30d8a1046bf2da22401f11ffcd2d4",
+      "sections/07_appendices.tex": "3ad039ad9c82c53d3358c5970b2095a603c0af135b765df69ce753e9deec9088"
+    },
+    "changes": [
+      "Single repository link and descriptive appendix references",
+      "Provenance identifiers moved to existing documentation",
+      "Scientific data and accepted media unchanged"
+    ]
+  },
+  "previous_editorial_pdf": {
+    "edition": "submission-editorial-revision-20260917",
+    "path": "report.pdf",
+    "sha256": "959cfe79370f41ab3c2c84f0ec80edb48057bd4627cbce0897db44819678a532",
+    "bytes": 1808456,
+    "pages": 36,
+    "main_font": "Liberation Serif; Times New Roman unavailable",
+    "source_files_sha256": {
+      "report.tex": "5a55deea09aa118f7838b46ab41024703b1f5afec742ebc7cced02aa2a88882f",
+      "references.tex": "59862def0df507de1a99228fe2c9ab82ba6ba5a440c0b0534d5f8cc0dad2e4ee",
+      "appendix_links.tex": "a26ea0f9f338d218b833cd10b83ce2584eb73e2d5809d5bb3d60486cb305a6a9",
+      "sections/00_front.tex": "6812a5b2059ce0d99f2bdc9402c606eea89f5a712dd870fe4dac79d39a9b4b19",
+      "sections/01_review.tex": "56064f86ee814d8b1cbc2ec122a571714d81e300ddec62dac28f56cf590497d4",
+      "sections/02_model.tex": "5a8ca32569f9481556cf098bdd42dbb7b866f1af5fb485b44a6f549fe806a6d9",
+      "sections/03_design.tex": "a9d1832301d3dbc04306ad93c21466b37461e760e7792116a21d0f306395dc59",
+      "sections/04_training.tex": "49dcaa8f75329146a3271d3dd4452576966b65b026d5b8454d5bda12d62f19d2",
+      "sections/05_robustness.tex": "ede3317bd788a90785859de24c035a0c1a1c65b621565688694712ca2d13376a",
+      "sections/06_conclusion.tex": "753f2466cc04973efda4753b3ba00e728fb30d8a1046bf2da22401f11ffcd2d4",
+      "sections/07_appendices.tex": "3d4738316bf9899e236a31fac95deb0198ba907455ce8c5f24ab274cd2747956"
+    },
+    "changes": [
+      "Checkpoint comparison wording",
+      "Frozen-policy evaluation wording",
+      "Scope limited to 140 selected states",
+      "Single substantive AI disclosure in docs/AI_USE.md",
+      "Descriptive local appendix links and optional publication binding"
+    ]
+  }
 }

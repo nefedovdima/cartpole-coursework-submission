@@ -25,8 +25,9 @@ def close(a, b):
     assert math.isclose(float(a), float(b), rel_tol=1e-12, abs_tol=1e-12), (a, b)
 
 def main():
-    from source_inputs import validate_sources
+    from source_inputs import validate_sources, validate_links
     passed('source integrity: '+str(validate_sources()))
+    passed('electronic appendix links: '+str(validate_links()))
     expected_runs = {'main': 15, 'stage1': 12, 'confirmation': 6}
     for stage, count in expected_runs.items():
         rr = rows(stage + '/runs.csv')
@@ -155,7 +156,7 @@ def main():
     assert support == Counter(nominal=20,position=2)
     assert joint == Counter({2:2,3:10,4:8})
     passed('140 saved starts: K admission and joint training-support classification')
-    source_files=[ROOT/'report.tex',ROOT/'references.tex',*sorted((ROOT/'sections').glob('*.tex'))]
+    source_files=[ROOT/'report.tex',ROOT/'references.tex',ROOT/'appendix_links.tex',*sorted((ROOT/'sections').glob('*.tex'))]
     text='\n'.join(p.read_text() for p in source_files)
     cited={x.strip() for group in re.findall(r'\\cite\{([^}]+)\}',text) for x in group.split(',')}
     bib=set(re.findall(r'\\bibitem\{([^}]+)\}',text)); assert cited==bib
@@ -184,7 +185,7 @@ def main():
         else:
             print('INFO: renderer source outside standalone report; historical binding retained:',name)
     assert video_manifest['evidence']['scientific_sha256'] == 'c1cac3775426748520db67957e988fb7cf3706148d1cc515eca26e88118fb63b'
-    passed('six MP4, six posters, accepted media documentation SHA and relative video links')
+    passed('six MP4, six posters, accepted media documentation SHA and named video references')
     front=(ROOT/'sections/00_front.tex').read_text().split(r'\unnumbered{Введение}')[0]
     assert len(front)<2000
     assert 'БПМИ-233' in text
