@@ -1,10 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[left=25mm,right=10mm,top=20mm,bottom=20mm,footskip=10mm]{geometry}
 \usepackage{fontspec}
-\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{Liberation Serif}\typeout{REPORT FONT: Liberation Serif; Times New Roman unavailable}}
+\setmainfont{Times New Roman}
 \setsansfont{DejaVu Sans}[Scale=.88]
 \setmonofont{DejaVu Sans Mono}[Scale=.78]
 \usepackage{polyglossia}
+\newfontfamily\cyrillicfont{Times New Roman}[Script=Default]
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
 \usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,longtable}
@@ -15,12 +16,12 @@
 \usepackage{setspace,indentfirst,caption,titlesec,enumitem,xcolor,hyperref}
 \definecolor{link}{HTML}{215B7B}
 \hypersetup{unicode=true,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=link,filecolor=link,
- pdfauthor={Дмитрий Нефедов},pdftitle={Управление перевёрнутым маятником методами обучения с подкреплением},
- pdfsubject={Промежуточный исследовательский отчёт к 18 сентября 2026 года}}
+ pdfauthor={Нефедов Дмитрий Львович},pdftitle={Управление перевёрнутым маятником методами обучения с подкреплением},
+ pdfsubject={Отчёт об исследовательском проекте}}
 \onehalfspacing
 \setlength{\parindent}{1.25cm}
 \setlength{\parskip}{0pt}
-\setlength{\emergencystretch}{2em}
+\setlength{\emergencystretch}{5em}
 \setlength{\textfloatsep}{12pt}
 \setlength{\floatsep}{10pt}
 \setlength{\intextsep}{10pt}
@@ -46,33 +47,29 @@
 \begin{titlepage}
 \centering
 ПРАВИТЕЛЬСТВО РОССИЙСКОЙ ФЕДЕРАЦИИ\par
-\vspace{4mm}
-Федеральное государственное автономное образовательное учреждение\par
-высшего образования\par
-«Национальный исследовательский университет\par
-“Высшая школа экономики”»\par
+ФГАОУ ВО НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ\par
+«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»\par
 \vspace{7mm}
 Факультет компьютерных наук\par
 Образовательная программа\par
 «Прикладная математика и информатика»\par
-\vspace{22mm}
+\vspace{25mm}
+Отчёт об исследовательском проекте на тему:\par
+\vspace{5mm}
 {\large\bfseries Управление перевёрнутым маятником\par
 методами обучения с подкреплением\par}
-\vspace{10mm}
-Отчёт об индивидуальном исследовательском курсовом проекте\par
-\vspace{3mm}
-Промежуточный отчёт\par
-к 18 сентября 2026 года\par
-\vspace{22mm}
-\hfill\begin{minipage}{.52\linewidth}
-Выполнил:\\студент группы БПМИ-233\\Дмитрий Нефедов\par
-\vspace{7mm}
-Научный руководитель:\\Бондарев Андрей Олегович
+\vspace{24mm}
+\hfill\begin{minipage}{.58\linewidth}
+Выполнил:\\студент группы БПМИ-233\\Нефедов Дмитрий Львович\par
+\vspace{8mm}
+Руководитель проекта:\\Бондарев Андрей Олегович\\
+Эксперт Проектно-учебной\\лаборатории робототехники\\
+Факультет компьютерных наук НИУ ВШЭ
 \end{minipage}
 \vfill Москва, 2026
 \end{titlepage}
 \setcounter{page}{2}
-{\singlespacing\tableofcontents}
+{\singlespacing\small\tableofcontents}
 \input{sections/00_front}
 \input{sections/01_review}
 \input{sections/02_model}

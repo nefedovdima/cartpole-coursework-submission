@@ -54,29 +54,30 @@
     "sha256": "0a4d6360d34f60b415a1e0b45e493296b9068e31f9b2b380ebdf1c7217356f04"
   },
   "current_pdf": {
-    "edition": "submission-private-publication-20260917",
+    "edition": "research-report-methodical-revision-20260917",
     "path": "report.pdf",
-    "sha256": "65e8f2aab52a69d8e24df9ff5ac461329fa6c97403c6670ce0cad6333772776d",
-    "bytes": 1802807,
+    "sha256": "b2aafb506410c715ad87b9facb50d920e29fce23b978158a0e65eec6f015cc10",
+    "bytes": 1847917,
     "pages": 36,
-    "main_font": "Liberation Serif; Times New Roman unavailable",
+    "main_font": "Times New Roman",
     "source_files_sha256": {
-      "report.tex": "5a55deea09aa118f7838b46ab41024703b1f5afec742ebc7cced02aa2a88882f",
-      "references.tex": "59862def0df507de1a99228fe2c9ab82ba6ba5a440c0b0534d5f8cc0dad2e4ee",
+      "report.tex": "6bb7d03345ed86d2d336809b93556243b27df642ad8ccf3be9bd717daca65d12",
+      "references.tex": "6c5792575326ddb282b416013de334183b149f7c6f5548e090f17e1a80216d83",
       "appendix_links.tex": "c1fdee26bdb8a4285c128086a860bd167e2f03c7ccb80b22ce5f5c7c3818d29e",
-      "sections/00_front.tex": "6812a5b2059ce0d99f2bdc9402c606eea89f5a712dd870fe4dac79d39a9b4b19",
-      "sections/01_review.tex": "56064f86ee814d8b1cbc2ec122a571714d81e300ddec62dac28f56cf590497d4",
-      "sections/02_model.tex": "5a8ca32569f9481556cf098bdd42dbb7b866f1af5fb485b44a6f549fe806a6d9",
-      "sections/03_design.tex": "a9d1832301d3dbc04306ad93c21466b37461e760e7792116a21d0f306395dc59",
-      "sections/04_training.tex": "49dcaa8f75329146a3271d3dd4452576966b65b026d5b8454d5bda12d62f19d2",
-      "sections/05_robustness.tex": "ede3317bd788a90785859de24c035a0c1a1c65b621565688694712ca2d13376a",
-      "sections/06_conclusion.tex": "753f2466cc04973efda4753b3ba00e728fb30d8a1046bf2da22401f11ffcd2d4",
-      "sections/07_appendices.tex": "3ad039ad9c82c53d3358c5970b2095a603c0af135b765df69ce753e9deec9088"
+      "sections/00_front.tex": "e46fc232cf08069b06f99c63822f99bbc80b52bcf1fb44f6c461d7735bfe27cb",
+      "sections/01_review.tex": "0c71d91b07f9b5c425f8007c5f90f60fcd9339c246be8cded9b00c1e187407b3",
+      "sections/02_model.tex": "767b2ede5f9a42fc18cd3eafdaad5548e917a893c49569be498a074142b51dd9",
+      "sections/03_design.tex": "f939027ee604800ce6ebf36fc45e7b2dab56c3b9ac64c0be7635ff5c45b2310e",
+      "sections/04_training.tex": "eaf4935afc392668fb0943e6f916570746ae3f520d660c55031aa586c2f08289",
+      "sections/05_robustness.tex": "a81810a4f2e518403836ab4e0f64e01dcfd29010400a634828183b7d5b336044",
+      "sections/06_conclusion.tex": "ac1f33d9e80aaab7c2618c6dded5f5a69b65db04e101704d402d7ccf5e4d45f4",
+      "sections/07_appendices.tex": "c8faee76528424f111036b51a26a05309d21de28031b660f08e4b3421fb9cd76"
     },
     "changes": [
-      "Single repository link and descriptive appendix references",
-      "Provenance identifiers moved to existing documentation",
-      "Scientific data and accepted media unchanged"
+      "Approved title and author details; no submission date",
+      "Full explanatory editorial revision; literature synthesis expanded",
+      "Technical audit narrative retained in repository documentation",
+      "Scientific data, figures, models and accepted media unchanged"
     ]
   },
   "previous_editorial_pdf": {
@@ -105,6 +106,32 @@
       "Scope limited to 140 selected states",
       "Single substantive AI disclosure in docs/AI_USE.md",
       "Descriptive local appendix links and optional publication binding"
+    ]
+  },
+  "previous_published_pdf": {
+    "edition": "submission-private-publication-20260917",
+    "path": "report.pdf",
+    "sha256": "65e8f2aab52a69d8e24df9ff5ac461329fa6c97403c6670ce0cad6333772776d",
+    "bytes": 1802807,
+    "pages": 36,
+    "main_font": "Liberation Serif; Times New Roman unavailable",
+    "source_files_sha256": {
+      "report.tex": "5a55deea09aa118f7838b46ab41024703b1f5afec742ebc7cced02aa2a88882f",
+      "references.tex": "59862def0df507de1a99228fe2c9ab82ba6ba5a440c0b0534d5f8cc0dad2e4ee",
+      "appendix_links.tex": "c1fdee26bdb8a4285c128086a860bd167e2f03c7ccb80b22ce5f5c7c3818d29e",
+      "sections/00_front.tex": "6812a5b2059ce0d99f2bdc9402c606eea89f5a712dd870fe4dac79d39a9b4b19",
+      "sections/01_review.tex": "56064f86ee814d8b1cbc2ec122a571714d81e300ddec62dac28f56cf590497d4",
+      "sections/02_model.tex": "5a8ca32569f9481556cf098bdd42dbb7b866f1af5fb485b44a6f549fe806a6d9",
+      "sections/03_design.tex": "a9d1832301d3dbc04306ad93c21466b37461e760e7792116a21d0f306395dc59",
+      "sections/04_training.tex": "49dcaa8f75329146a3271d3dd4452576966b65b026d5b8454d5bda12d62f19d2",
+      "sections/05_robustness.tex": "ede3317bd788a90785859de24c035a0c1a1c65b621565688694712ca2d13376a",
+      "sections/06_conclusion.tex": "753f2466cc04973efda4753b3ba00e728fb30d8a1046bf2da22401f11ffcd2d4",
+      "sections/07_appendices.tex": "3ad039ad9c82c53d3358c5970b2095a603c0af135b765df69ce753e9deec9088"
+    },
+    "changes": [
+      "Single repository link and descriptive appendix references",
+      "Provenance identifiers moved to existing documentation",
+      "Scientific data and accepted media unchanged"
     ]
   }
 }

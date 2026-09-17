@@ -13,3 +13,5 @@ results/tables/**/*.csv -text whitespace=cr-at-eol
 models/*/model.zip binary
 # Historical audit Markdown ends with a blank line; retain its pinned bytes.
 docs/report/data/main/RESULTS_TABLES.md whitespace=-blank-at-eof
+# Provided report source ends with a blank line; retain its pinned bytes.
+docs/report/sections/00_front.tex whitespace=-blank-at-eof
